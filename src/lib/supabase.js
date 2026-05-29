@@ -2,7 +2,7 @@ import { createClient } from '@supabase/supabase-js';
 
 // TODO: Replace these with your actual Supabase project URL and anon public key
 // You can find these in your Supabase Dashboard -> Settings -> API
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'YOUR_SUPABASE_URL';
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+const supabaseUrl = 'https://lityzhdoaztveqcxgsxr.supabase.co';
+const supabaseAnonKey = 'sb_publishable_AwqODZbyeyjxE3f6DOpPCw_RlTnt37x';
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
