@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+\n# Environment variables
+.env
+.env.local
+*.zip
