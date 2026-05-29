@@ -96,6 +96,15 @@ const Hero = () => {
             }}>
               {t('hero.btn_work')}
             </button>
+            <button 
+              onClick={() => navigate('/login')}
+              style={{ 
+                fontFamily: 'var(--font-primary)', textTransform: 'uppercase', 
+                fontWeight: 600, letterSpacing: '2px', borderBottom: '1px solid var(--color-cyan)', color: 'var(--color-cyan)', textShadow: '0 2px 5px rgba(0,0,0,0.5)'
+              }}
+            >
+              Community Login
+            </button>
           </motion.div>
         </div>
       </div>

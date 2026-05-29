@@ -4,6 +4,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import ExpertisePage from './pages/ExpertisePage';
 import CinematicStudio from './pages/CinematicStudio';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const { i18n, t } = useTranslation();
@@ -51,6 +53,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/expertise" element={<ExpertisePage />} />
         <Route path="/creative-direction" element={<CinematicStudio />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </div>
   );
