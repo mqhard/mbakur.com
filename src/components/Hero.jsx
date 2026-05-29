@@ -26,7 +26,7 @@ const Hero = () => {
           zIndex: 0
         }}
       >
-        <source src="/hero-bg.mp4" type="video/mp4" />
+        <source src="/hero-background.mp4" type="video/mp4" />
       </video>
 
       {/* Top Gradient Overlay (for Logo/Language readability) */}
