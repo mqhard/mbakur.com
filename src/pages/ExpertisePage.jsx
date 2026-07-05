@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Briefcase, Camera, PenTool, Layout, TrendingUp, MonitorPlay } from 'lucide-react';
 
-const ExpertisePage = () => {
+const ExpertisePage = ({ isEmbedded = false }) => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const isRTL = i18n.language === 'ar';
@@ -29,10 +29,10 @@ const ExpertisePage = () => {
   };
 
   return (
-    <div style={{ background: 'var(--color-bg)', minHeight: '100vh', color: 'var(--color-text)', paddingBottom: '100px' }}>
+    <div style={{ background: isEmbedded ? 'transparent' : 'var(--color-bg)', minHeight: isEmbedded ? 'auto' : '100vh', color: 'var(--color-text)', paddingBottom: isEmbedded ? '0' : '100px', paddingTop: isEmbedded ? '2rem' : '0' }}>
       
       {/* Navbar/Header */}
-      <nav style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'rgba(10,10,10,0.8)', backdropFilter: 'blur(10px)', zIndex: 100 }}>
+      {!isEmbedded && (<nav style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'rgba(10,10,10,0.8)', backdropFilter: 'blur(10px)', zIndex: 100 }}>
         <button 
           onClick={() => navigate('/')}
           style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'transparent', border: 'none', color: 'var(--color-gray-light)', cursor: 'pointer', fontFamily: 'var(--font-secondary)', fontSize: '1.1rem' }}
@@ -40,7 +40,7 @@ const ExpertisePage = () => {
           {isRTL ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
           {data.back_btn}
         </button>
-      </nav>
+      </nav>)}
 
       <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
         
@@ -49,7 +49,7 @@ const ExpertisePage = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          style={{ textAlign: 'center', margin: '10vh 0', position: 'relative' }}
+          style={{ textAlign: 'center', margin: isEmbedded ? '2rem 0 5rem 0' : '10vh 0', position: 'relative' }}
         >
           <div style={{
             position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
@@ -63,8 +63,69 @@ const ExpertisePage = () => {
           <p style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6, position: 'relative', zIndex: 1 }}>
             {data.hero_subtitle}
           </p>
+          <motion.div style={{ position: 'relative', zIndex: 1, marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button
+              onClick={() => navigate('/brand-identity')}
+              style={{
+                background: 'rgba(255,184,0,0.1)',
+                border: '1px solid var(--color-orange)',
+                color: 'var(--color-orange)',
+                padding: '10px 20px',
+                borderRadius: '30px',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                fontSize: '1rem',
+                backdropFilter: 'blur(5px)'
+              }}
+            >
+              <PenTool size={18} />
+              {t('brandIdentity.hero.title2', 'Brand Universe')}
+            </button>
+            <button
+              onClick={() => navigate('/creative-direction')}
+              style={{
+                background: 'rgba(255,0,127,0.1)',
+                border: '1px solid var(--color-magenta)',
+                color: 'var(--color-magenta)',
+                padding: '10px 20px',
+                borderRadius: '30px',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                fontSize: '1rem',
+                backdropFilter: 'blur(5px)'
+              }}
+            >
+              <MonitorPlay size={18} />
+              {t('hero.btn_explore', 'Creative Direction')}
+            </button>
+            <button
+              onClick={() => navigate('/legacy')}
+              style={{
+                background: 'rgba(0,255,255,0.1)',
+                border: '1px solid #00ffff',
+                color: '#00ffff',
+                padding: '10px 20px',
+                borderRadius: '30px',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                fontSize: '1rem',
+                backdropFilter: 'blur(5px)'
+              }}
+            >
+              <Briefcase size={18} />
+              {t('hero.btn_work', 'Proud Projects')}
+            </button>
+          </motion.div>
         </motion.header>
 
+        {!isEmbedded && (
+          <>
         {/* Stats Row */}
         <motion.div 
           variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -76,7 +137,20 @@ const ExpertisePage = () => {
             </motion.div>
           ))}
         </motion.div>
+          </>
+        )}
+      </div>
+      
+      {!isEmbedded && (
+        <>
+          <Expertise />
+          <SciFiHub />
+        </>
+      )}
 
+      <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
+        {!isEmbedded && (
+          <>
         {/* The Technical Matrix */}
         <motion.section 
           variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -145,6 +219,8 @@ const ExpertisePage = () => {
           </div>
         </motion.section>
 
+          </>
+        )}
       </div>
     </div>
   );

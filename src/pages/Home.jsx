@@ -1,20 +1,16 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import SciFiHub from '../components/SciFiHub';
-import Expertise from '../components/Expertise';
 import Portfolio from '../components/Portfolio';
-import Community from '../components/Community';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import ExpertisePage from './ExpertisePage';
 
 const Home = () => {
   return (
     <>
       <Hero />
       <Portfolio />
-      <SciFiHub />
-      <Expertise />
-      <Community />
+      <ExpertisePage isEmbedded={true} />
       <Contact />
       <Footer />
     </>

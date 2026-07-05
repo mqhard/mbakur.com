@@ -70,11 +70,11 @@ const HeroCinematic = () => {
         borderBottom: '1px solid rgba(255,255,255,0.02)'
       }}
     >
-      {/* Background Parallax Layer */}
+      {/* Background Parallax Layer (Now transparent to show global background) */}
       <motion.div style={{
         position: 'absolute',
-        top: '-5%', left: '-5%', right: '-5%', bottom: '-5%', // Overflow slightly to prevent edge cutoff during parallax
-        background: 'radial-gradient(circle at center, rgba(20,20,25,1) 0%, rgba(7,7,9,1) 80%)',
+        top: '-5%', left: '-5%', right: '-5%', bottom: '-5%', 
+        background: 'transparent',
         zIndex: 0,
         x: bgX,
         y: bgY
@@ -119,11 +119,11 @@ const HeroCinematic = () => {
           }}
         >
           {t('creativeDirection.hero.text1')} <br/>
-          <span style={{ color: 'transparent', WebkitTextStroke: '1px var(--color-gray-light)' }}>
+          <span style={{ color: 'var(--color-magenta)', textShadow: '0 0 20px rgba(255,0,127,0.3)' }}>
             {t('creativeDirection.hero.text2')}
           </span><br/>
           {t('creativeDirection.hero.text3')} <br/>
-          <span style={{ color: 'var(--color-magenta)', textShadow: '0 0 40px rgba(255,0,127,0.5)' }}>
+          <span style={{ color: 'var(--color-orange)', textShadow: '0 0 20px rgba(255,69,0,0.3)' }}>
             {t('creativeDirection.hero.text4')}
           </span>
         </motion.h1>

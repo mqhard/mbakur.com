@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const CinematicPhilosophy = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.language === 'ar';
 
   return (
     <section style={{
@@ -11,7 +12,7 @@ const CinematicPhilosophy = () => {
       width: '100vw',
       padding: '15vh 5vw',
       position: 'relative',
-      background: 'var(--color-bg)',
+      background: 'transparent',
       overflow: 'hidden',
       display: 'flex',
       flexDirection: 'column',
@@ -61,14 +62,18 @@ const CinematicPhilosophy = () => {
           }}
         >
           {t('creativeDirection.philosophy.quote1')} <br/>
-          <span style={{ color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.2)' }}>
+          <span style={isRtl 
+            ? { color: 'rgba(255,255,255,0.15)', textShadow: '0 0 20px rgba(255,255,255,0.2)' }
+            : { color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.2)' }}>
             {t('creativeDirection.philosophy.quote1_span')}
           </span>
           <br/><br/>
-          <span style={{ color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.2)' }}>
+          <span style={isRtl 
+            ? { color: 'rgba(255,255,255,0.15)', textShadow: '0 0 20px rgba(255,255,255,0.2)' }
+            : { color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.2)' }}>
             {t('creativeDirection.philosophy.quote2')}
           </span> <br/>
-          <span style={{ color: 'var(--color-magenta)' }}>
+          <span style={{ color: 'var(--color-magenta)', textShadow: '0 0 30px rgba(255,0,127,0.4)' }}>
             {t('creativeDirection.philosophy.quote2_span')}
           </span>
         </motion.h2>

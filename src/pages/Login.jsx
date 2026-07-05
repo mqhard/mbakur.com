@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { User, Briefcase, Mail, Lock, LogIn, UserPlus } from 'lucide-react';
+import { X, User, Briefcase, Mail, Lock, LogIn, UserPlus } from 'lucide-react';
 import '../index.css';
 
-export default function Login() {
+export default function Login({ isModal, onClose }) {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const isRtl = i18n.language === 'ar';
@@ -28,6 +28,7 @@ export default function Login() {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
         navigate('/dashboard');
+        if (isModal && onClose) onClose();
       } else {
         const { data, error } = await supabase.auth.signUp({ 
           email, 
@@ -52,14 +53,24 @@ export default function Login() {
   };
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: 'linear-gradient(135deg, #0f0f15 0%, #1a1a2e 100%)',
-      padding: '2rem'
-    }}>
+    <div style={
+      isModal ? {
+        position: 'fixed',
+        top: 0, left: 0, width: '100vw', height: '100vh',
+        zIndex: 9999,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        background: 'rgba(0, 0, 0, 0.7)',
+        backdropFilter: 'blur(10px)',
+        padding: '1rem'
+      } : {
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'linear-gradient(135deg, #0f0f15 0%, #1a1a2e 100%)',
+        padding: '2rem'
+      }
+    }>
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -77,6 +88,24 @@ export default function Login() {
           overflow: 'hidden'
         }}
       >
+        {isModal && onClose && (
+          <button 
+            onClick={onClose}
+            style={{
+              position: 'absolute',
+              top: '20px',
+              right: isRtl ? 'auto' : '20px',
+              left: isRtl ? '20px' : 'auto',
+              background: 'transparent',
+              border: 'none',
+              color: '#888',
+              cursor: 'pointer',
+              zIndex: 10
+            }}
+          >
+            <X size={24} />
+          </button>
+        )}
         <div style={{ textAlign: 'center' }}>
           <h1 style={{ 
             fontSize: '2rem', 

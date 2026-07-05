@@ -5,7 +5,8 @@ import { useTranslation } from 'react-i18next';
 
 const DirectorPortfolio = () => {
   const [hoveredId, setHoveredId] = useState(null);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.language === 'ar';
 
   const projectsTranslations = t('creativeDirection.portfolio.projects', { returnObjects: true }) || [];
   
@@ -42,7 +43,7 @@ const DirectorPortfolio = () => {
       width: '100vw',
       padding: '10vh 5vw',
       position: 'relative',
-      background: 'var(--color-bg)',
+      background: 'transparent',
       overflow: 'hidden'
     }}>
       <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
@@ -64,7 +65,9 @@ const DirectorPortfolio = () => {
             }}
           >
             {t('creativeDirection.portfolio.title1')} <br/>
-            <span style={{ color: 'transparent', WebkitTextStroke: '1px var(--color-gray-light)' }}>
+            <span style={isRtl 
+              ? { color: 'rgba(255,255,255,0.15)', textShadow: '0 0 20px rgba(255,255,255,0.2)' }
+              : { color: 'transparent', WebkitTextStroke: '1px var(--color-gray-light)' }}>
               {t('creativeDirection.portfolio.title2')}
             </span>
           </motion.h2>
@@ -91,7 +94,10 @@ const DirectorPortfolio = () => {
                 aspectRatio: '3/4',
                 borderRadius: '20px',
                 overflow: 'hidden',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                border: '1px solid rgba(255,255,255,0.05)',
+                boxShadow: hoveredId === project.id ? '0 20px 40px rgba(0,0,0,0.8)' : '0 10px 30px rgba(0,0,0,0.5)',
+                transition: 'box-shadow 0.4s ease'
               }}
             >
               {/* Background Image with Slow Zoom */}
@@ -175,7 +181,8 @@ const DirectorPortfolio = () => {
                   color: '#fff',
                   margin: 0,
                   textTransform: 'uppercase',
-                  fontFamily: 'var(--font-primary)'
+                  fontFamily: 'var(--font-primary)',
+                  textShadow: '0 0 10px rgba(0,0,0,0.8)'
                 }}>
                   {project.title}
                 </h3>

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useMotionTemplate } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const VisualManipulation = () => {
@@ -11,6 +11,12 @@ const VisualManipulation = () => {
   // Mouse tracking
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+
+  // Smooth springs to eliminate polling stutter and make it professional
+  const smoothX = useSpring(mouseX, { stiffness: 800, damping: 50, mass: 0.1 });
+  const smoothY = useSpring(mouseY, { stiffness: 800, damping: 50, mass: 0.1 });
+
+  const maskImage = useMotionTemplate`radial-gradient(circle 300px at ${smoothX}px ${smoothY}px, black 40%, rgba(0,0,0,0.5) 70%, transparent 100%)`;
 
   useEffect(() => {
     if (window.innerWidth < 768) setIsMobile(true);
@@ -76,8 +82,8 @@ const VisualManipulation = () => {
           style={{
             position: 'absolute',
             top: 0, left: 0,
-            x: mouseX,
-            y: mouseY,
+            x: smoothX,
+            y: smoothY,
             translateX: '-50%',
             translateY: '-50%',
             width: '120px',
@@ -110,13 +116,7 @@ const VisualManipulation = () => {
           background: 'radial-gradient(circle at center, rgba(255,0,127,0.08), rgba(10,10,15,0.9), var(--color-bg))',
           WebkitMaskImage: isMobile 
             ? 'radial-gradient(circle 200px at 50% 50%, black 50%, transparent 100%)' 
-            : 'radial-gradient(circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 40%, rgba(0,0,0,0.5) 70%, transparent 100%)'
-        }}
-        onUpdate={(latest) => {
-          if(!isMobile && containerRef.current) {
-            containerRef.current.style.setProperty('--mouse-x', `${mouseX.get()}px`);
-            containerRef.current.style.setProperty('--mouse-y', `${mouseY.get()}px`);
-          }
+            : maskImage
         }}
       >
         <h2 className="glitch-text" style={{

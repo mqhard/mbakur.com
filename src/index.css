@@ -7,6 +7,7 @@
   --color-text: #f5f5f5;
   --color-magenta: #ff007f;
   --color-orange: #ff4500;
+  --color-cyan: #00ffff;
   --color-gray: #1a1a1a;
   --color-gray-light: #333333;
   --color-glass: rgba(255, 255, 255, 0.03);
@@ -151,6 +152,86 @@ button {
   box-shadow: var(--color-neon-glow);
 }
 
+.btn-solid-magenta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  background: var(--color-magenta);
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 50px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-solid-magenta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--color-orange);
+  z-index: -1;
+  transition: var(--transition);
+  border-radius: 50px;
+}
+
+.btn-solid-magenta:hover::before {
+  width: 100%;
+}
+
+.btn-solid-magenta:hover {
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-orange {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--color-orange);
+  color: var(--color-text);
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-orange::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--color-orange);
+  z-index: -1;
+  transition: var(--transition);
+}
+
+.btn-orange:hover::before {
+  width: 100%;
+}
+
+.btn-orange:hover {
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -165,3 +246,40 @@ button {
   background: var(--color-magenta);
 }
 /* deploy force 1 */
+
+/* Brand Gallery Card Hover Effects */
+.brand-gallery-card:hover .bg-reveal {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+.brand-gallery-card:hover .bg-overlay {
+  opacity: 1 !important;
+}
+.brand-gallery-card:hover h3, 
+.brand-gallery-card:hover span {
+  color: #fff !important;
+}
+
+/* VisionOS Styles */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hover-bg-glass:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.hover-white:hover {
+  color: #fff !important;
+}
+.border-radius-12 {
+  border-radius: 12px;
+}
+
+/* VisionOS Carousel Fade Mask */
+.carousel-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}

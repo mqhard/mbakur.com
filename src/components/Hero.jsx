@@ -5,8 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const isRTL = i18n.language === 'ar';
 
   return (
     <section className="hero-section" style={{ height: '100vh', position: 'relative', overflow: 'hidden' }}>
@@ -61,7 +62,7 @@ const Hero = () => {
           style={{ position: 'absolute', top: '25px', left: 0, width: '100%', textAlign: 'center', zIndex: 10 }}
         >
           <h1 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', lineHeight: 1, margin: 0, letterSpacing: '2px', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-            {t('hero.title1')} <span className="gradient-text">{t('hero.title2')}</span>
+            {t('hero.title1')} <span>{t('hero.title2')}</span>
           </h1>
         </motion.div>
 
@@ -72,8 +73,16 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <h2 style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)', fontFamily: 'var(--font-secondary)', fontWeight: 400, color: 'var(--color-text)', margin: 0, letterSpacing: '3px', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-              {t('hero.subtitle')} <span className="text-magenta" style={{ margin: '0 10px' }}>•</span> {t('hero.subtitle_span')}
+            <h2 style={{ 
+              fontSize: isRTL ? 'clamp(1.2rem, 2.2vw, 1.8rem)' : 'clamp(1rem, 2vw, 1.5rem)', 
+              fontFamily: 'var(--font-secondary)', 
+              fontWeight: isRTL ? 700 : 400, 
+              color: 'var(--color-text)', 
+              margin: 0, 
+              letterSpacing: isRTL ? '0px' : '3px', 
+              textShadow: '0 2px 10px rgba(0,0,0,0.8)' 
+            }}>
+              {t('hero.subtitle')}
             </h2>
           </motion.div>
 
@@ -84,15 +93,29 @@ const Hero = () => {
             style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}
           >
             <button 
-              className="btn-primary" 
-              style={{ textShadow: 'none' }}
-              onClick={() => navigate('/expertise')}
+              className="btn-orange" 
+              style={{ 
+                textShadow: 'none',
+                fontSize: isRTL ? '1.1rem' : '1rem',
+                minWidth: isRTL ? '280px' : 'auto',
+                letterSpacing: isRTL ? '0px' : '2px',
+                fontWeight: isRTL ? 800 : 600
+              }}
+              onClick={() => navigate('/creative-direction')}
             >
               {t('hero.btn_explore')}
             </button>
-            <button style={{ 
+            <button 
+              onClick={() => navigate('/legacy')}
+              style={{ 
               fontFamily: 'var(--font-primary)', textTransform: 'uppercase', 
-              fontWeight: 600, letterSpacing: '2px', borderBottom: '1px solid var(--color-magenta)', textShadow: '0 2px 5px rgba(0,0,0,0.5)'
+              fontWeight: isRTL ? 800 : 600, 
+              fontSize: isRTL ? '1.1rem' : '1rem',
+              letterSpacing: isRTL ? '0px' : '2px', 
+              borderBottom: '1px solid var(--color-orange)', 
+              textShadow: '0 2px 5px rgba(0,0,0,0.5)',
+              paddingBottom: '5px',
+              cursor: 'pointer'
             }}>
               {t('hero.btn_work')}
             </button>
@@ -106,7 +129,7 @@ const Hero = () => {
         transition={{ delay: 1.5, duration: 1 }}
         style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}
       >
-        <ChevronDown size={32} color="var(--color-magenta)" style={{ animation: 'bounce 2s infinite' }} />
+        <ChevronDown size={32} color="var(--color-orange)" style={{ animation: 'bounce 2s infinite' }} />
       </motion.div>
       <style>{`
         @keyframes bounce {

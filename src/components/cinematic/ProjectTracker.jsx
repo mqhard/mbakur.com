@@ -39,7 +39,7 @@ const ProjectTracker = () => {
         minHeight: '180vh',
         width: '100vw',
         position: 'relative',
-        background: 'var(--color-bg)',
+        background: 'transparent',
         overflow: 'hidden',
         padding: '10vh 0',
       }}
@@ -105,11 +105,16 @@ const ProjectTracker = () => {
 
           {/* Central Vertical Timeline */}
           {/* Base muted line */}
-          <line x1="50%" y1="0%" x2="50%" y2="100%" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
+          <line 
+            x1={isMobile ? (isRTL ? '90%' : '10%') : '50%'} y1="0%" 
+            x2={isMobile ? (isRTL ? '90%' : '10%') : '50%'} y2="100%" 
+            stroke="rgba(255,255,255,0.05)" strokeWidth="2" 
+          />
           
           {/* Glowing animated path drawing over it */}
           <motion.line 
-            x1="50%" y1="10%" x2="50%" y2="90%"
+            x1={isMobile ? (isRTL ? '90%' : '10%') : '50%'} y1="10%" 
+            x2={isMobile ? (isRTL ? '90%' : '10%') : '50%'} y2="90%"
             stroke="url(#flowGlow)" 
             strokeWidth="4" 
             style={{ pathLength }} 
@@ -120,7 +125,8 @@ const ProjectTracker = () => {
           {/* Data Flow animation (Marching ants) */}
           <motion.line 
             className="data-flow"
-            x1="50%" y1="10%" x2="50%" y2="90%"
+            x1={isMobile ? (isRTL ? '90%' : '10%') : '50%'} y1="10%" 
+            x2={isMobile ? (isRTL ? '90%' : '10%') : '50%'} y2="90%"
             stroke="#fff" 
             strokeWidth="2" 
             strokeDasharray="4, 16"
@@ -148,7 +154,7 @@ const ProjectTracker = () => {
               style={{
                 position: 'absolute',
                 top: `${node.y}%`,
-                left: '50%',
+                left: isMobile ? (isRTL ? '90%' : '10%') : '50%',
                 transform: 'translate(-50%, -50%)',
                 zIndex: activeNode === node.id ? 20 : 10,
                 display: 'flex',
@@ -187,25 +193,30 @@ const ProjectTracker = () => {
               <motion.div
                 animate={{
                   x: isMobile || visualSide === 'center' ? 0 : (visualSide === 'right' ? (activeNode === node.id ? 5 : 0) : (activeNode === node.id ? -5 : 0)),
-                  y: isMobile || visualSide === 'center' ? (activeNode === node.id ? 5 : 0) : 0,
-                  borderColor: activeNode === node.id ? 'var(--color-magenta)' : 'rgba(255,255,255,0.1)'
+                  y: isMobile || visualSide === 'center' ? (activeNode === node.id ? -5 : 0) : 0,
+                  borderColor: activeNode === node.id ? 'var(--color-magenta)' : 'rgba(255,255,255,0.1)',
+                  boxShadow: activeNode === node.id ? '0 15px 40px rgba(255,0,127,0.2)' : '0 10px 30px rgba(0,0,0,0.6)'
                 }}
                 style={{
                   position: 'absolute',
                   // Positioning Logic
-                  ...(isMobile || visualSide === 'center'
-                    ? { top: '60px', left: '50%', transform: 'translateX(-50%)' }
-                    : visualSide === 'right'
-                      ? { left: '60px', top: '50%', transform: 'translateY(-50%)' }
-                      : { right: '60px', top: '50%', transform: 'translateY(-50%)' }
+                  ...(isMobile
+                    ? (isRTL 
+                        ? { right: '40px', top: '50%', transform: 'translateY(-50%)' }
+                        : { left: '40px', top: '50%', transform: 'translateY(-50%)' })
+                    : visualSide === 'center'
+                      ? { top: '60px', left: '50%', transform: 'translateX(-50%)' }
+                      : visualSide === 'right'
+                        ? { left: '60px', top: '50%', transform: 'translateY(-50%)' }
+                        : { right: '60px', top: '50%', transform: 'translateY(-50%)' }
                   ),
-                  width: isMobile ? '85vw' : '400px',
-                  background: 'rgba(15,15,18,0.95)',
-                  backdropFilter: 'blur(20px)',
+                  width: isMobile ? '75vw' : '400px',
+                  background: 'rgba(20,20,25,0.65)',
+                  backdropFilter: 'blur(30px)',
+                  WebkitBackdropFilter: 'blur(30px)',
                   padding: '2rem',
-                  borderRadius: '12px',
+                  borderRadius: '16px',
                   border: '1px solid',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.6)',
                   transition: 'border-color 0.4s ease',
                   textAlign: isRTL ? 'right' : 'left'
                 }}
@@ -247,7 +258,8 @@ const ProjectTracker = () => {
                   fontWeight: 900,
                   marginBottom: '0.8rem',
                   fontFamily: 'var(--font-primary)',
-                  letterSpacing: '1px'
+                  letterSpacing: '1px',
+                  textShadow: '0 0 10px rgba(255,255,255,0.1)'
                 }}>
                   {t(`creativeDirection.projectTracker.nodes.${node.key}.title`)}
                 </h3>

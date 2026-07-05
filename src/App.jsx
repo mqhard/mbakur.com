@@ -1,17 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { User } from 'lucide-react';
 import Home from './pages/Home';
 import ExpertisePage from './pages/ExpertisePage';
 import CinematicStudio from './pages/CinematicStudio';
+import ProudProjects from './pages/ProudProjects';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import BrandIdentity from './pages/BrandIdentity';
+import BrandGallery from './pages/BrandGallery';
+import BrandGuideViewer from './pages/BrandGuideViewer';
 
 function App() {
   const { i18n, t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
@@ -34,8 +39,7 @@ function App() {
         style={{
           position: 'fixed',
           top: '20px',
-          right: i18n.language === 'ar' ? 'auto' : '20px',
-          left: i18n.language === 'ar' ? '20px' : 'auto',
+          right: '20px',
           zIndex: 1000,
           background: 'var(--color-glass)',
           backdropFilter: 'blur(10px)',
@@ -57,12 +61,11 @@ function App() {
 
       {/* Global Login Icon */}
       <button 
-        onClick={() => navigate('/login')}
+        onClick={() => setIsLoginOpen(true)}
         style={{
           position: 'fixed',
           top: '20px',
-          right: i18n.language === 'ar' ? '20px' : 'auto',
-          left: i18n.language === 'ar' ? 'auto' : '20px',
+          left: '20px',
           zIndex: 1000,
           background: 'var(--color-glass)',
           backdropFilter: 'blur(10px)',
@@ -81,12 +84,18 @@ function App() {
         <User size={20} />
       </button>
 
+      {isLoginOpen && <Login isModal={true} onClose={() => setIsLoginOpen(false)} />}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/expertise" element={<ExpertisePage />} />
         <Route path="/creative-direction" element={<CinematicStudio />} />
+        <Route path="/brand-identity" element={<BrandIdentity />} />
+        <Route path="/legacy" element={<ProudProjects />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/brand-gallery" element={<BrandGallery />} />
+        <Route path="/brand-project/:id" element={<BrandGuideViewer />} />
       </Routes>
     </div>
   );

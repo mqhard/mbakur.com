@@ -34,7 +34,7 @@ const Expertise = () => {
   ];
 
   return (
-    <section className="section" style={{ backgroundColor: '#050505' }}>
+    <section className="section" style={{ backgroundColor: '#050505', paddingTop: '5rem' }}>
       <div className="container">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
