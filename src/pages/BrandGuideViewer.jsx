@@ -107,6 +107,28 @@ const ImageWithTextPage = ({ data }) => (
     </div>
 );
 
+const TransformationPage = ({ data, projectPrimaryColor }) => (
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%', padding: '5rem', gap: '3rem' }}>
+        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, margin: 0 }}>Logo Evolution & Transformation</h2>
+        <div style={{ cursor: 'ew-resize', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.5)', width: '100%', maxWidth: '1200px' }}>
+            {data.beforeImg ? (
+                <ReactCompareSlider
+                    itemOne={<ReactCompareSliderImage src={data.beforeImg} alt="Before" style={{ objectFit: 'contain', background: projectPrimaryColor, padding: '3rem' }} />}
+                    itemTwo={<ReactCompareSliderImage src={data.afterImg} alt="After" style={{ objectFit: 'contain', background: projectPrimaryColor, padding: '3rem' }} />}
+                    style={{ width: '100%', height: '600px' }}
+                />
+            ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '600px', background: projectPrimaryColor, gap: '2rem' }}>
+                    <p style={{ fontSize: '1.5rem', opacity: 0.7 }}>Final Logo</p>
+                    <img src={data.afterImg} alt="After" style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'contain' }} />
+                </div>
+            )}
+        </div>
+        {data.desc && <p style={{ fontSize: '1.2rem', lineHeight: 1.7, opacity: 0.8, maxWidth: '800px', fontWeight: 300, textAlign: 'center' }}>{data.desc}</p>}
+    </div>
+);
+
+
 const PlaceholderPage = ({ data }) => (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%', padding: '5%', textAlign: 'center' }}>
         <h2 style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.5, marginBottom: '2rem' }}>
@@ -139,6 +161,7 @@ const createProjectPages = (project) => {
     // 04. Logo
     pages.push({ type: 'SECTION_DIVIDER', data: { number: '04', title: 'The Brand Mark', titleEn: 'The Logo' } });
     if (project.visualIdentity?.logoScreen) pages.push({ type: 'LOGO', data: { logoUrl: project.visualIdentity.logoScreen, subtitle: 'Main Logo' } });
+    if (project.transformation) pages.push({ type: 'TRANSFORMATION', data: project.transformation, projectPrimaryColor: project.visualIdentity.colorSystem[0]?.hex || '#050505' });
     pages.push({ type: 'PLACEHOLDER', data: { title: 'Safe Area' } });
     pages.push({ type: 'PLACEHOLDER', data: { title: 'Minimum Size' } });
     pages.push({ type: 'PLACEHOLDER', data: { title: 'Incorrect Usage' } });
@@ -221,6 +244,7 @@ const BrandGuideViewer = () => {
             case 'COLOR': return <ColorPage data={pageData.data} />;
             case 'LOGO': return <LogoPage data={pageData.data} />;
             case 'IMAGE_TEXT': return <ImageWithTextPage data={pageData.data} />;
+            case 'TRANSFORMATION': return <TransformationPage data={pageData.data} projectPrimaryColor={pageData.projectPrimaryColor} />;
             case 'PLACEHOLDER':
             default:
                 return <PlaceholderPage data={pageData.data} />;

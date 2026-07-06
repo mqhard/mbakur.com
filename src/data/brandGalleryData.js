@@ -134,7 +134,6 @@ export const galleryProjects = [
       { title: "Martial Arts", img: "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=1200" }
     ],
     transformation: {
-      beforeImg: "/images/logos/azm_logo.png",
       afterImg: "/images/logos/al_fursan.png"
     }
   },
