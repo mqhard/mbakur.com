@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 import { galleryProjects } from '../data/brandGalleryData';
+import BrandLogoGuidelines from '../components/BrandLogoGuidelines';
 
 // --- Page-level components ---
 
@@ -205,9 +206,9 @@ const IntroductionPage = ({ data, t, isRTL }) => {
                             {isRTL ? 'التعريف الشامل للعلامة' : 'Brand Overview'}
                         </h3>
                         <p style={{ fontSize: '1.05rem', lineHeight: 1.8, opacity: 0.8, fontWeight: 300, maxWidth: '800px' }}>
-                            {isRTL ? 
-                                '«سَمْت» ليست مجرد علامة تجارية في قطاع العقار؛ بل هي فلسفة تجمع بين "السمت الحسن" (الذي يعكس الرزانة، الثقة، والأصالة المعمارية) وبين السرعة والدقة التي تفرضها تقنيات التحول الرقمي. نحن نعيد صياغة التجربة العقارية في المملكة، عبر تقديم حلول متكاملة تغطي تطوير وإدارة الأملاك والمنصات الذكية.'
-                                : (data.intro?.statement || 'Redefining luxury through profound simplicity...')}
+                            {isRTL 
+                                ? (data.introAr?.statement || 'نظرة عامة على العلامة التجارية...')
+                                : (data.intro?.statement || 'Brand overview...')}
                         </p>
                     </motion.div>
 
@@ -216,25 +217,25 @@ const IntroductionPage = ({ data, t, isRTL }) => {
                         {[
                             { 
                                 title: isRTL ? 'الرؤية' : 'Vision', 
-                                desc: isRTL ? 'سَمْت: وجهتك نحو مستقبل العقار الذكي، والمنظومة الرقمية التي ترتقي بجودة الحياة وتواكب تطلعات مدن المستقبل.' : 'To be the ultimate destination for smart real estate and digital transformation in the region.',
+                                desc: isRTL ? data.overviewAr?.vision : data.overviewEn?.vision,
                                 delay: 0.2
                             },
                             { 
                                 title: isRTL ? 'الرسالة' : 'Mission', 
-                                desc: isRTL ? 'تمكين قطاع العقار بحلول رقمية متطورة وتصاميم مستدامة، لنسهل على المستثمرين والأفراد اتخاذ قرارات ذكية وموثوقة.' : 'Empowering the real estate sector with advanced digital solutions and sustainable designs.',
+                                desc: isRTL ? data.overviewAr?.mission : data.overviewEn?.mission,
                                 delay: 0.3
                             },
                             { 
                                 title: isRTL ? 'الوعد' : 'Brand Promise', 
-                                desc: isRTL ? 'أن نجعل من تعقيدات السوق العقاري تجربة رقمية تتسم بالهدوء، الوضوح، والفعالية.' : 'Making the complexities of the real estate market a calm, clear, and effective digital experience.',
+                                desc: isRTL ? data.overviewAr?.promise : data.overviewEn?.promise,
                                 delay: 0.4
                             },
                             { 
                                 title: isRTL ? 'شخصية العلامة' : 'Personality', 
-                                desc: isRTL ? 'الموثوقية الراسخة، الابتكار التقني، البساطة العميقة، والشفافية.' : 'Trustworthy, innovative, profoundly simple, and highly transparent.',
+                                desc: isRTL ? data.overviewAr?.personality : data.overviewEn?.personality,
                                 delay: 0.5
                             }
-                        ].map((item, idx) => (
+                        ].filter(item => item.desc).map((item, idx) => (
                             <motion.div key={idx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: item.delay }}>
                                 <h4 style={{ fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.8rem', color: '#EBE2D5', textTransform: 'uppercase', letterSpacing: isRTL ? 'normal' : '1px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                     <span style={{ width: '15px', height: '2px', background: '#C6725B', display: 'inline-block' }}></span>
@@ -256,16 +257,18 @@ const BrandMarkPage = ({ data, t, isRTL }) => {
     return (
         <div style={{ position: 'relative', width: '100%', height: '100%', backgroundColor: '#0A0A0A', color: '#fff', overflow: 'hidden' }}>
             
-            {/* Background 3D Image */}
+            {/* Background Image */}
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
-                <motion.img 
-                    initial={{ scale: 1.05, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 1.5, ease: 'easeOut' }}
-                    src="/images/brands/samt/brand-mark-3d.jpg" 
-                    alt="SAMT 3D Logo"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', transform: isRTL ? 'scaleX(-1)' : 'none' }}>
+                    <motion.img 
+                        initial={{ scale: 1.05, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 1.5, ease: 'easeOut' }}
+                        src={data.geometry?.img || data.heroImage} 
+                        alt="Brand Mark Background"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: data.geometry?.objectPosition || 'center center' }}
+                    />
+                </div>
                 {/* Gradient overlay to make text readable */}
                 <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: isRTL ? 'linear-gradient(to right, rgba(10,10,10,0) 20%, rgba(10,10,10,0.95) 70%, #0A0A0A 100%)' : 'linear-gradient(to left, rgba(10,10,10,0) 20%, rgba(10,10,10,0.95) 70%, #0A0A0A 100%)' }} />
             </div>
@@ -278,46 +281,23 @@ const BrandMarkPage = ({ data, t, isRTL }) => {
                     </h2>
                     
                     <h3 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', fontWeight: 300, marginBottom: '1.5rem', lineHeight: 1.2 }}>
-                        {isRTL ? 'أيقونة التميز العقاري' : 'The Icon of Real Estate Excellence'}
+                        {isRTL ? data.brandMark?.titleAr : data.brandMark?.titleEn}
                     </h3>
                     
                     <p style={{ fontSize: '1.1rem', lineHeight: 1.8, opacity: 0.8, fontWeight: 300, marginBottom: '3rem', maxWidth: '600px' }}>
-                        {isRTL ? 
-                            'الشعار ليس مجرد رمز، بل هو تجسيد بصري لفلسفة "سَمْت". يجمع التصميم بين الخطوط الحادة التي تمثل الدقة الهندسية والتحول الرقمي، والانحناءات المتزنة التي تعبر عن الاستقرار والاستدامة. اللون الذهبي يعكس الفخامة والأصالة العقارية.'
-                            : "The logo is not just a symbol; it is a visual embodiment of SAMT's philosophy. The design combines sharp lines representing engineering precision with balanced curves expressing stability and sustainability."}
+                        {isRTL ? data.brandMark?.descAr : data.brandMark?.descEn}
                     </p>
 
                     {/* Features Grid */}
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                        {[
-                            { 
-                                title: isRTL ? 'الهندسة (Geometry)' : 'Geometry', 
-                                desc: isRTL ? 'مبني على شبكة هندسية دقيقة تضمن التوازن البصري والنسب الذهبية في كافة الاستخدامات.' : 'Built on a precise geometric grid ensuring visual balance and golden ratios.',
-                                icon: '📐'
-                            },
-                            { 
-                                title: isRTL ? 'الأيقونة (The Icon)' : 'The Icon', 
-                                desc: isRTL ? 'يمكن استخدامها بشكل مستقل في المنصات الرقمية والتطبيقات كرمز سريع التعرف.' : 'Can be used independently across digital platforms as a highly recognizable symbol.',
-                                icon: '✨'
-                            },
-                            { 
-                                title: isRTL ? 'الألوان (Colors)' : 'Colors', 
-                                desc: isRTL ? 'تدرجات الذهب والنحاس تعكس الفخامة المرتبطة بالعقار المتميز والتقنية المتقدمة.' : 'Gold and copper gradients reflect the luxury associated with premium real estate.',
-                                icon: '🎨'
-                            },
-                            { 
-                                title: isRTL ? 'المرونة (Flexibility)' : 'Flexibility', 
-                                desc: isRTL ? 'مصمم ليتكيف مع كافة الخلفيات، من الواجهات الزجاجية للمباني وحتى الشاشات الذكية.' : 'Designed to adapt across all backgrounds, from building facades to smart screens.',
-                                icon: '🔄'
-                            }
-                        ].map((item, idx) => (
+                        {data.brandMark?.features?.map((item, idx) => (
                             <motion.div key={idx} initial={{ opacity: 0, x: isRTL ? -20 : 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.5 + (idx * 0.1) }} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '16px', backdropFilter: 'blur(10px)' }}>
                                 <div style={{ fontSize: '1.5rem', marginBottom: '0.8rem' }}>{item.icon}</div>
                                 <h4 style={{ fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.5rem', color: '#fff' }}>
-                                    {item.title}
+                                    {isRTL ? item.titleAr : item.titleEn}
                                 </h4>
                                 <p style={{ fontSize: '0.9rem', lineHeight: 1.6, opacity: 0.6, margin: 0, fontWeight: 300 }}>
-                                    {item.desc}
+                                    {isRTL ? item.descAr : item.descEn}
                                 </p>
                             </motion.div>
                         ))}
@@ -424,6 +404,9 @@ const createProjectPages = (project, t, isRTL) => {
 
     // 02. Brand Mark
     pages.push({ type: 'BRAND_MARK', data: project });
+    if (project.logoGuidelines) {
+        pages.push({ type: 'LOGO_GUIDELINES', data: project.logoGuidelines });
+    }
 
     // 03. Colors Palette
     pages.push({ type: 'SECTION_DIVIDER', data: { number: '03', title: isRTL ? 'الألوان' : 'Colors Palette', titleEn: 'Colors Palette' } });
@@ -447,10 +430,17 @@ const createProjectPages = (project, t, isRTL) => {
     pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'المطبوعات الأساسية' : 'Basic Stationery', subtitle: 'Business Cards, Letterhead, Envelopes' } });
     pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'المطبوعات الثانوية' : 'Secondary Stationery', subtitle: 'A4, A5, Folders, Notes' } });
 
-    // 07. Digital
-    pages.push({ type: 'SECTION_DIVIDER', data: { number: '07', title: isRTL ? 'التطبيقات الرقمية' : 'Digital', titleEn: 'Digital' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'السوشيال ميديا' : 'Social Media Platforms', subtitle: 'Covers, Posts, Stories, Highlights, Templates' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'الموقع الإلكتروني' : 'Website', subtitle: 'Homepage, UI Elements, Icons, Forms' } });
+    // 07. Digital & Applications
+    pages.push({ type: 'SECTION_DIVIDER', data: { number: '07', title: isRTL ? 'التطبيقات' : 'Applications', titleEn: 'Applications' } });
+    
+    if (project.applications && project.applications.length > 0) {
+        project.applications.forEach(app => {
+            pages.push({ type: 'IMAGE_WITH_TEXT', data: { img: app.img, title: app.title, titleAr: app.titleAr || app.title, desc: app.desc, descAr: app.descAr || app.desc } });
+        });
+    } else {
+        pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'السوشيال ميديا' : 'Social Media Platforms', subtitle: 'Covers, Posts, Stories, Highlights, Templates' } });
+        pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'الموقع الإلكتروني' : 'Website', subtitle: 'Homepage, UI Elements, Icons, Forms' } });
+    }
 
     // 08. Publications & Signage
     pages.push({ type: 'SECTION_DIVIDER', data: { number: '08', title: isRTL ? 'المطبوعات واللوحات' : 'Publications & Signage', titleEn: 'Publications & Signage' } });
@@ -517,10 +507,33 @@ const BrandGuideViewer = () => {
             case 'INDEX': return <IndexPage t={t} isRTL={isRTL} />;
             case 'INTRODUCTION': return <IntroductionPage data={pageData.data} t={t} isRTL={isRTL} />;
             case 'BRAND_MARK': return <BrandMarkPage data={pageData.data} t={t} isRTL={isRTL} />;
+            case 'LOGO_GUIDELINES':
+                return (
+                    <PageLayout project={project}>
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', height: '100%', padding: '8vh 8vw 14vh 8vw', position: 'relative' }}>
+                            <div style={{ 
+                                width: '100%', 
+                                height: '100%', 
+                                background: 'rgba(20, 20, 20, 0.65)', 
+                                backdropFilter: 'blur(30px)',
+                                WebkitBackdropFilter: 'blur(30px)',
+                                borderRadius: '24px', 
+                                boxShadow: '0 30px 60px rgba(0,0,0,0.5)',
+                                overflowY: 'auto',
+                                overflowX: 'hidden',
+                                color: '#EBE2D5',
+                                border: '1px solid rgba(255,255,255,0.1)',
+                                padding: '0 4vw'
+                            }}>
+                            <BrandLogoGuidelines guidelines={pageData.data} isRTL={isRTL} project={project} />
+                            </div>
+                        </div>
+                    </PageLayout>
+                );
             case 'SECTION_DIVIDER': return <SectionDividerPage data={pageData.data} t={t} isRTL={isRTL} />;
             case 'COLOR': return <ColorPage data={pageData.data} t={t} isRTL={isRTL} />;
             case 'LOGO': return <LogoPage data={pageData.data} t={t} isRTL={isRTL} />;
-            case 'IMAGE_TEXT': return <ImageWithTextPage data={pageData.data} t={t} isRTL={isRTL} />;
+            case 'IMAGE_WITH_TEXT': return <ImageWithTextPage data={pageData.data} t={t} isRTL={isRTL} />;
             case 'TRANSFORMATION': return <TransformationPage data={pageData.data} projectPrimaryColor={pageData.projectPrimaryColor} t={t} isRTL={isRTL} />;
             case 'PLACEHOLDER':
             default:

@@ -9,38 +9,117 @@ export const galleryProjects = [
     year: "2026",
     type: "Brand Identity",
     heroImage: "/images/brands/samt/hero.png",
-    introImage: "/images/brands/samt/pic%20ov.png",
+    introImage: "/images/brands/samt/pic_ov.png",
     intro: {
       statement: "Redefining the Saudi real estate experience with PropTech, merging authentic architecture with smart digital solutions.",
       logoText: "SAMT"
     },
-    introAr: { statement: "إعادة صياغة التجربة العقارية في المملكة، عبر تقديم حلول متكاملة تغطي تطوير وإدارة الأملاك والمنصات الذكية." },
-    storyAr: {
-      challenge: "ابتكار هوية تدمج بين الجماليات العربية التقليدية والهندسة المعمارية العالمية شديدة البساطة دون الشعور بالتناقض.",
-      opportunity: "دمج المنحنيات الانسيابية للخط العربي مع الخطوط الشبكية المعمارية الحادة لإنشاء شعار طباعي خالد.",
-      objective: "تأسيس حضور علامة تجارية هادئ ومهيب يرتقي بتجربة العيش اليومية لعملائها."
+    introAr: { 
+      statement: "«سَمْت (SAMT)» ليست مجرد علامة تجارية في قطاع العقار؛ بل هي فلسفة تجمع بين «السمت الحسن» (الذي يعكس الرزانة، الثقة، والأصالة المعمارية) وبين السرعة والدقة التي تفرضها تقنيات التحول الرقمي. نحن في «سَمْت» نعيد صياغة التجربة العقارية في المملكة العربية السعودية، عبر تقديم حلول متكاملة تغطي كافة مجالات العقار (من التطوير والتصميم، إلى إدارة الأملاك، والتسويق الرقمي، والمنصات الذكية). نؤمن بأن العقار الحديث لم يعد مجرد مساحات مبنية، بل منظومة رقمية ذكية ترتقي بجودة الحياة وتواكب تطلعات مدن المستقبل."
     },
-    strategyAr: [
-      { title: "التمركز", text: "الفخامة، الهدوء، والبراعة المعمارية." },
-      { title: "الجمهور", text: "أصحاب الثروات والمطورين التجاريين المتميزين." },
-      { title: "الشخصية", text: "أنيق، بسيط، عميق." },
-      { title: "القيم", text: "الدقة، التراث، البساطة." },
-      { title: "نبرة الصوت", text: "هادئة، شاعرية، موثوقة." }
-    ],
-    story: {
-      challenge: "Creating an identity that bridges traditional Arabian aesthetics with ultra-minimalist global architecture without feeling disjointed.",
-      opportunity: "Merge the fluid curves of Arabic calligraphy with sharp architectural grid lines to create a timeless typographic logo.",
-      objective: "Establish a serene and commanding brand presence that elevates the daily living experience of its clients."
+    overviewAr: {
+      vision: "سَمْت: وجهتك نحو مستقبل العقار الذكي.",
+      mission: "تمكين قطاع العقار في المملكة العربية السعودية بحلول رقمية متطورة وتصاميم معمارية مستدامة، تجمع بين بساطة الاستخدام وعمق الأثر، لنسهل على المستثمرين والأفراد اتخاذ قرارات عقارية ذكية وموثوقة بنقرة زر.",
+      promise: "أن نجعل من تعقيدات السوق العقاري تجربة رقمية تتسم بالهدوء، الوضوح، والفعالية.",
+      personality: "الموثوقية، الابتكار، البساطة العميقة، والشفافية."
     },
-    strategy: [
-      { title: "Positioning", text: "Luxury, tranquility, and architectural mastery." },
-      { title: "Audience", text: "High-net-worth individuals and premium commercial developers." },
-      { title: "Personality", text: "Elegant, minimalist, profound." },
-      { title: "Values", text: "Precision, heritage, simplicity." },
-      { title: "Tone Of Voice", text: "Hushed, poetic, authoritative." }
-    ],
+    overviewEn: {
+      vision: "SAMT: Your destination for the future of smart real estate.",
+      mission: "Empowering the real estate sector in Saudi Arabia with advanced digital solutions and sustainable architectural designs, combining ease of use with profound impact to facilitate smart real estate decisions.",
+      promise: "Making the complexities of the real estate market a digital experience characterized by calmness, clarity, and effectiveness.",
+      personality: "Trustworthy, Innovative, Profoundly Simple, and Transparent."
+    },
+    brandMark: {
+      titleAr: "أيقونة التميز العقاري",
+      titleEn: "The Icon of Real Estate Excellence",
+      descAr: "الشعار ليس مجرد رمز، بل هو تجسيد بصري لفلسفة 'سَمْت'. يجمع التصميم بين الخطوط الحادة التي تمثل الدقة الهندسية والتحول الرقمي، والانحناءات المتزنة التي تعبر عن الاستقرار والاستدامة. اللون الذهبي يعكس الفخامة والأصالة العقارية.",
+      descEn: "The logo is not just a symbol; it is a visual embodiment of SAMT's philosophy. The design combines sharp lines representing engineering precision with balanced curves expressing stability and sustainability.",
+      features: [
+        { 
+          titleAr: "هندسة العظمة", 
+          titleEn: "Architectural Geometry", 
+          descAr: "مبني بدقة رياضية صارمة تستلهم من النسب الذهبية لتجسد توازناً بصرياً يفيض بالوقار.",
+          descEn: "Built on strict mathematical precision inspired by golden ratios, embodying a visual balance that exudes prestige.",
+          icon: "📐"
+        },
+        { 
+          titleAr: "الأيقونة الخالدة", 
+          titleEn: "The Timeless Icon", 
+          descAr: "رمز استثنائي يختزل الفخامة العقارية، صُمم ليترك أثراً عميقاً ومستداماً في الذاكرة.",
+          descEn: "An exceptional symbol distilling real estate luxury, designed to leave a profound and lasting legacy in memory.",
+          icon: "✨"
+        },
+        { 
+          titleAr: "شخصية الطباعة", 
+          titleEn: "Typographic Persona", 
+          descAr: "حروف صُيغت ببراعة لتمزج بين أصالة الجذور ورؤية المستقبل بعنفوان وثقة لا تُضاهى.",
+          descEn: "Lettering masterfully crafted to merge heritage roots with a visionary future, projecting unmatched confidence.",
+          icon: "✍️"
+        },
+        { 
+          titleAr: "المرونة المطلقة", 
+          titleEn: "Absolute Versatility", 
+          descAr: "تحفة بصرية تتكيف بهيبة تامة؛ من الواجهات المعمارية العملاقة إلى أدق التفاصيل الرقمية.",
+          descEn: "A visual masterpiece adapting flawlessly; from towering architectural facades to the finest digital details.",
+          icon: "🔄"
+        }
+      ]
+    },
+    logoGuidelines: {
+      logotype: {
+        titleAr: "تكوين الشعار",
+        titleEn: "Logotype & Brandmark",
+        descAr: "شعار يحمل وصافاً ثنائية اللغة (Dual language descriptor)، يدمج بين الرمز المعماري الدقيق والطباعة الكلاسيكية الحديثة.",
+        descEn: "A dual language descriptor brandmark, blending precise architectural symbolism with modern classic typography."
+      },
+      clearSpace: {
+        titleAr: "المساحات (Clear Space & Minimum Size)",
+        titleEn: "Clear Space",
+        descAr: "لضمان ظهور الشعار بالشكل الأمثل يرجى مراعاة المساحة الهامشية للشعار وتركها كمساحة فارغة من كافة العناصر.",
+        descEn: "To ensure optimal visibility, please allow for a marginal space around the logo and keep it clear of all elements.",
+        unit: "X"
+      },
+      colorVersions: {
+        titleAr: "إصدارات الألوان",
+        titleEn: "Color Versions",
+        descAr: "توجد ملفات عمل فنية مختلفة للشعار لمتطلبات الاستنساخ المختلفة.",
+        descEn: "There are different logotype artwork files for varying reproduction requirements.",
+        versions: [
+          {
+            typeAr: "إصدارات بالألوان الكاملة",
+            typeEn: "Full-color versions",
+            descAr: "كلما كان ذلك ممكناً، استخدم الشعارات ذات الألوان الكاملة كأفضلية على الإصدارات الأخرى.",
+            descEn: "Wherever possible use the full-color logotypes in preference to the greyscale or single-colored versions."
+          },
+          {
+            typeAr: "إصدارات تدرج الرمادي",
+            typeEn: "Grayscale versions",
+            descAr: "استخدم إصدارات الشعار ذات التدرج الرمادي للاستنساخ الأبيض والأسود.",
+            descEn: "Use the greyscale logotype versions for B/W reproduction."
+          },
+          {
+            typeAr: "إصدارات أحادية اللون",
+            typeEn: "Single-color versions",
+            descAr: "استخدم إصدارات الشعار أحادية اللون الخاصة بنا للتكاثر، وكذلك على جميع الخلفيات الملونة.",
+            descEn: "Use our single-color logotype versions for specific reproduction, and also on all colored backgrounds."
+          }
+        ]
+      },
+      imageryAndPositioning: {
+        titleAr: "الشعار على الصور ومواضع الشعار",
+        titleEn: "Logotype on Imagery & Positioning",
+        descAr: "عند وضع الشعار على الصور، يجب ضمان التباين اللوني والوضوح لتأكيد مصداقية الهوية.",
+        descEn: "When positioning the logo on imagery, ensure high contrast and clarity to maintain brand credibility."
+      },
+      incorrectUse: {
+        titleAr: "الاستخدامات الخاطئة للشعار",
+        titleEn: "Incorrect Use",
+        descAr: "بعض الأمثلة على ما لا يجب فعله بالشعار لضمان مصداقية الهوية ووضوحها.",
+        descEn: "Some examples of what not to do with the logo to ensure its credibility and clarity."
+      }
+    },
     visualIdentity: {
-      logoScreen: "/images/brands/samt/icon%20samt.png", 
+      logoScreen: "/images/brands/samt/icon_samt.png", 
       colorSystem: [
         { hex: "#1A1C1D", name: "Charcoal Black", rgb: "26, 28, 29", cmyk: "70, 60, 60, 80", pantone: "433 C", desc: "A grounded and deep charcoal representing the strength of raw materials." },
         { hex: "#C6725B", name: "Terracotta", rgb: "198, 114, 91", cmyk: "15, 60, 65, 5", pantone: "7601 C", desc: "A warm, earthy accent inspired by traditional Arabian clay and sunset light." },
@@ -51,22 +130,21 @@ export const galleryProjects = [
         secondary: { name: "Inter", role: "Secondary Typeface", weights: ["Regular", "Medium"], desc: "Provides high legibility with generous letter-spacing to evoke a sense of modern luxury." }
       }
     },
-    motion: {
-      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-modern-architecture-building-interior-4161-large.mp4"
-    },
     geometry: {
-      img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200",
+      img: "/images/brands/samt/samt_brand_mark_gold.jpg",
+      objectPosition: "center 100%",
       title: "Architectural Grid",
       desc: "Built on a strict 3:4 golden ratio grid, the brand utilizes extremely fine lines to divide space elegantly without cluttering the canvas."
     },
     socialMedia: {
-      img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=1200",
+      img: "/images/brands/samt/samt_website_hero_bg_1784474076063.jpg",
       title: "Digital Minimalism",
       desc: "Social channels act as an expansive digital gallery. Vast negative spaces, charcoal typography, and perfectly framed interior shots."
     },
     applications: [
-      { title: "Stationery System", img: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=1200" },
-      { title: "Lookbook Profile", img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=1200" }
+      { title: "Digital Infrastructure", img: "/images/brands/samt/premium_digital_infrastructure_bg_1784473466107.jpg" },
+      { title: "Brand Environment", img: "/images/brands/samt/samt_icon_infrastructure_bg_1784473748874.jpg" },
+      { title: "Abstract Aesthetics", img: "/images/brands/samt/samt_abstract_digital_wallpaper_1784473166017.jpg" }
     ]
   },
   {
