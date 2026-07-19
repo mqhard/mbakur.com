@@ -112,18 +112,18 @@ const HeroCinematic = () => {
             fontSize: 'clamp(2.5rem, 7vw, 7rem)',
             fontWeight: 900,
             lineHeight: 1.05,
-            letterSpacing: '1px',
+            letterSpacing: 'var(--tracking-tight)',
             marginBottom: '2rem',
             textTransform: 'uppercase',
             fontFamily: 'var(--font-primary)'
           }}
         >
           {t('creativeDirection.hero.text1')} <br/>
-          <span style={{ color: 'var(--color-magenta)', textShadow: '0 0 20px rgba(255,0,127,0.3)' }}>
+          <span style={{ color: 'var(--color-accent)', textShadow: '0 0 20px rgba(255,0,127,0.3)' }}>
             {t('creativeDirection.hero.text2')}
           </span><br/>
           {t('creativeDirection.hero.text3')} <br/>
-          <span style={{ color: 'var(--color-orange)', textShadow: '0 0 20px rgba(255,69,0,0.3)' }}>
+          <span style={{ color: 'var(--color-accent-dark)', textShadow: '0 0 20px rgba(255,69,0,0.3)' }}>
             {t('creativeDirection.hero.text4')}
           </span>
         </motion.h1>
@@ -138,7 +138,7 @@ const HeroCinematic = () => {
             fontWeight: 300,
             maxWidth: '600px',
             margin: '0 auto',
-            letterSpacing: '2px',
+            letterSpacing: 'var(--tracking-wide)',
             lineHeight: 1.8
           }}
         >
@@ -162,7 +162,7 @@ const HeroCinematic = () => {
           gap: '15px'
         }}
       >
-        <span style={{ fontSize: '0.65rem', letterSpacing: '4px', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase' }}>{t('creativeDirection.hero.desc_btn')}</span>
+        <span style={{ fontSize: '0.65rem', letterSpacing: 'var(--tracking-widest)', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase' }}>{t('creativeDirection.hero.desc_btn')}</span>
         <motion.div
           animate={{ y: [0, 15, 0], opacity: [0.2, 1, 0.2] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}

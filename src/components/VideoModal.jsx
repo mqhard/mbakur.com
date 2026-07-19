@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const VideoModal = ({ isOpen, onClose, youtubeId, isVertical }) => {
+const VideoModal = ({ isOpen, onClose, youtubeId, isVertical, titleKey, descKey }) => {
+  const { t } = useTranslation();
   // Lock body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -78,7 +80,7 @@ const VideoModal = ({ isOpen, onClose, youtubeId, isVertical }) => {
             <X size={24} />
           </button>
 
-          {/* Video Container */}
+          {/* Video & Content Container */}
           <motion.div
             initial={{ scale: 0.95, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -86,25 +88,57 @@ const VideoModal = ({ isOpen, onClose, youtubeId, isVertical }) => {
             transition={{ type: 'spring', damping: 25, stiffness: 300, delay: 0.1 }}
             style={{
               width: isVertical ? 'min(450px, 90vw)' : 'min(1200px, 90vw)',
+              maxHeight: '90vh',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+            }}
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the video
+          >
+            {/* Video Frame */}
+            <div style={{
+              width: '100%',
               aspectRatio: isVertical ? '9/16' : '16/9',
               backgroundColor: '#050505',
               borderRadius: '16px',
               overflow: 'hidden',
               boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 0, 127, 0.15)',
-              border: '1px solid rgba(255,255,255,0.05)'
-            }}
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the video
-          >
-            <iframe
-              width="100%"
-              height="100%"
-              src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&color=white`}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
+              border: '1px solid rgba(255,255,255,0.05)',
+              flexShrink: 0
+            }}>
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&color=white`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+
+            {/* Description Area */}
+            {descKey && (
+              <div style={{
+                background: 'rgba(0,0,0,0.6)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '1.5rem 2rem',
+                border: '1px solid rgba(255,255,255,0.05)',
+                color: '#fff',
+                overflowY: 'auto'
+              }}>
+                {titleKey && (
+                  <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--color-magenta)' }}>
+                    {t(titleKey)}
+                  </h3>
+                )}
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.8, whiteSpace: 'pre-wrap', color: 'rgba(255,255,255,0.9)' }}>
+                  {t(descKey)}
+                </p>
+              </div>
+            )}
           </motion.div>
         </motion.div>
       )}

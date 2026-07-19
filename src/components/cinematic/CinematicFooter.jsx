@@ -32,7 +32,7 @@ const CinematicFooter = () => {
           fontSize: 'clamp(2rem, 5vw, 5rem)',
           fontWeight: 900,
           color: '#fff',
-          letterSpacing: '5px',
+          letterSpacing: 'var(--tracking-max)',
           textTransform: 'uppercase',
           marginBottom: '3rem',
           lineHeight: 1.2
@@ -45,7 +45,7 @@ const CinematicFooter = () => {
           display: 'inline-block',
           color: 'var(--color-amber)',
           fontSize: '1.2rem',
-          letterSpacing: '3px',
+          letterSpacing: 'var(--tracking-wider)',
           textDecoration: 'none',
           textTransform: 'uppercase',
           fontWeight: 600,
@@ -62,7 +62,7 @@ const CinematicFooter = () => {
         bottom: '3rem',
         color: 'rgba(255,255,255,0.2)',
         fontSize: '0.75rem',
-        letterSpacing: '4px',
+        letterSpacing: 'var(--tracking-widest)',
         textTransform: 'uppercase',
         fontFamily: 'monospace'
       }}>

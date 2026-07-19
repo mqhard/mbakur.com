@@ -43,10 +43,10 @@ const BlueprintStrategy = () => {
             fontSize: 'clamp(1.5rem, 3vw, 3rem)',
             color: '#fff',
             fontWeight: 800,
-            letterSpacing: '2px',
+            letterSpacing: 'var(--tracking-wide)',
             marginBottom: '4rem',
             textTransform: 'uppercase',
-            borderLeft: '4px solid var(--color-magenta)',
+            borderLeft: '4px solid var(--color-accent)',
             paddingLeft: '20px',
             fontFamily: 'var(--font-primary)'
           }}
@@ -109,7 +109,7 @@ const BlueprintStrategy = () => {
                 <div style={{
                   fontSize: '3rem',
                   fontWeight: 900,
-                  color: activeStep === index ? 'var(--color-magenta)' : 'rgba(255,255,255,0.1)',
+                  color: activeStep === index ? 'var(--color-accent)' : 'rgba(255,255,255,0.1)',
                   fontFamily: 'var(--font-primary)',
                   marginBottom: '1.5rem',
                   transition: 'color 0.4s ease'
@@ -121,7 +121,7 @@ const BlueprintStrategy = () => {
                   fontSize: '1.4rem',
                   color: '#fff',
                   marginBottom: '1rem',
-                  letterSpacing: '1px',
+                  letterSpacing: 'var(--tracking-tight)',
                   fontWeight: 700,
                   fontFamily: 'var(--font-primary)'
                 }}>
@@ -132,7 +132,7 @@ const BlueprintStrategy = () => {
                   color: 'rgba(255,255,255,0.6)',
                   fontSize: '1rem',
                   fontWeight: 300,
-                  letterSpacing: '0.5px',
+                  letterSpacing: 'var(--tracking-tighter)',
                   lineHeight: 1.6
                 }}>
                   {step.desc}
@@ -149,7 +149,7 @@ const BlueprintStrategy = () => {
                   bottom: 0,
                   left: 0,
                   height: '3px',
-                  background: 'var(--color-magenta)'
+                  background: 'var(--color-accent)'
                 }}
               />
             </motion.div>

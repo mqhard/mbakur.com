@@ -74,14 +74,14 @@ const EndToEndPyramid = () => {
             fontSize: 'clamp(2rem, 4vw, 4rem)',
             color: '#fff',
             fontWeight: 900,
-            letterSpacing: '2px',
+            letterSpacing: 'var(--tracking-wide)',
             textTransform: 'uppercase',
             fontFamily: 'var(--font-primary)'
           }}
         >
           {t('creativeDirection.endToEnd.title')}
           <br />
-          <span style={{ fontSize: '1rem', color: 'var(--color-magenta)', fontWeight: 400, letterSpacing: '4px' }}>
+          <span style={{ fontSize: '1rem', color: 'var(--color-accent)', fontWeight: 400, letterSpacing: 'var(--tracking-widest)' }}>
             {t('creativeDirection.endToEnd.subtitle')}
           </span>
         </motion.h2>
@@ -102,7 +102,7 @@ const EndToEndPyramid = () => {
         >
           <defs>
             <linearGradient id="glowLine" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="var(--color-magenta)" stopOpacity="0.8" />
+              <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="0.8" />
               <stop offset="100%" stopColor="#fff" stopOpacity="0.3" />
             </linearGradient>
             <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
@@ -127,7 +127,7 @@ const EndToEndPyramid = () => {
               <motion.line x1="50%" y1="10%" x2="75%" y2="35%" stroke="url(#glowLine)" strokeWidth="3" style={{ pathLength }} filter="url(#glow)" />
               
               {/* Level 2 Crosslink */}
-              <motion.line x1="25%" y1="35%" x2="75%" y2="35%" stroke="var(--color-magenta)" strokeWidth="1" strokeDasharray="6,6" style={{ pathLength }} opacity="0.4" />
+              <motion.line x1="25%" y1="35%" x2="75%" y2="35%" stroke="var(--color-accent)" strokeWidth="1" strokeDasharray="6,6" style={{ pathLength }} opacity="0.4" />
               
               {/* Level 2 to 3 */}
               <motion.line x1="25%" y1="35%" x2="50%" y2="65%" stroke="url(#glowLine)" strokeWidth="3" style={{ pathLength }} filter="url(#glow)" />
@@ -182,7 +182,7 @@ const EndToEndPyramid = () => {
                 height: '28px',
                 borderRadius: '50%',
                 background: '#050505',
-                border: '2px solid var(--color-magenta)',
+                border: '2px solid var(--color-accent)',
                 marginBottom: '1rem',
                 position: 'relative'
               }}
@@ -213,7 +213,7 @@ const EndToEndPyramid = () => {
               <div style={{
                 fontSize: '2rem',
                 fontWeight: 900,
-                color: activeNode === node.id ? 'var(--color-magenta)' : 'rgba(255,255,255,0.1)',
+                color: activeNode === node.id ? 'var(--color-accent)' : 'rgba(255,255,255,0.1)',
                 fontFamily: 'var(--font-primary)',
                 marginBottom: '0.5rem',
                 transition: 'color 0.4s ease'
@@ -227,7 +227,7 @@ const EndToEndPyramid = () => {
                 fontWeight: 800,
                 marginBottom: '0.5rem',
                 fontFamily: 'var(--font-primary)',
-                letterSpacing: '1px',
+                letterSpacing: 'var(--tracking-tight)',
                 textTransform: 'uppercase'
               }}>
                 {t(`creativeDirection.endToEnd.nodes.${node.key}.title`)}

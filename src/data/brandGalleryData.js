@@ -3,17 +3,30 @@ export const galleryProjects = [
     id: "samt-architecture",
     brandName: "SAMT",
     brandNameAr: "سَمْت",
-    industryAr: "عمارة وتصميم داخلي",
+    industryAr: "عقارات ذكية وتقنيات عقارية",
     typeAr: "هوية بصرية",
-    industry: "Architecture & Interior",
+    industry: "PropTech & Smart Real Estate",
     year: "2026",
     type: "Brand Identity",
-    heroImage: "https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=2000",
+    heroImage: "/images/brands/samt/hero.png",
+    introImage: "/images/brands/samt/pic%20ov.png",
     intro: {
-      statement: "Redefining luxury through profound simplicity. A high-end architectural studio speaking the language of calm and balance.",
+      statement: "Redefining the Saudi real estate experience with PropTech, merging authentic architecture with smart digital solutions.",
       logoText: "SAMT"
     },
-    introAr: { statement: "إعادة تعريف الفخامة من خلال البساطة العميقة. استوديو عمارة راقٍ يتحدث لغة الهدوء والاتزان." },
+    introAr: { statement: "إعادة صياغة التجربة العقارية في المملكة، عبر تقديم حلول متكاملة تغطي تطوير وإدارة الأملاك والمنصات الذكية." },
+    storyAr: {
+      challenge: "ابتكار هوية تدمج بين الجماليات العربية التقليدية والهندسة المعمارية العالمية شديدة البساطة دون الشعور بالتناقض.",
+      opportunity: "دمج المنحنيات الانسيابية للخط العربي مع الخطوط الشبكية المعمارية الحادة لإنشاء شعار طباعي خالد.",
+      objective: "تأسيس حضور علامة تجارية هادئ ومهيب يرتقي بتجربة العيش اليومية لعملائها."
+    },
+    strategyAr: [
+      { title: "التمركز", text: "الفخامة، الهدوء، والبراعة المعمارية." },
+      { title: "الجمهور", text: "أصحاب الثروات والمطورين التجاريين المتميزين." },
+      { title: "الشخصية", text: "أنيق، بسيط، عميق." },
+      { title: "القيم", text: "الدقة، التراث، البساطة." },
+      { title: "نبرة الصوت", text: "هادئة، شاعرية، موثوقة." }
+    ],
     story: {
       challenge: "Creating an identity that bridges traditional Arabian aesthetics with ultra-minimalist global architecture without feeling disjointed.",
       opportunity: "Merge the fluid curves of Arabic calligraphy with sharp architectural grid lines to create a timeless typographic logo.",
@@ -27,7 +40,7 @@ export const galleryProjects = [
       { title: "Tone Of Voice", text: "Hushed, poetic, authoritative." }
     ],
     visualIdentity: {
-      logoScreen: "https://images.unsplash.com/photo-1541888040-52fb298bfd11?auto=format&fit=crop&q=80&w=1200", 
+      logoScreen: "/images/brands/samt/icon%20samt.png", 
       colorSystem: [
         { hex: "#1A1C1D", name: "Charcoal Black", rgb: "26, 28, 29", cmyk: "70, 60, 60, 80", pantone: "433 C", desc: "A grounded and deep charcoal representing the strength of raw materials." },
         { hex: "#C6725B", name: "Terracotta", rgb: "198, 114, 91", cmyk: "15, 60, 65, 5", pantone: "7601 C", desc: "A warm, earthy accent inspired by traditional Arabian clay and sunset light." },
@@ -71,6 +84,18 @@ export const galleryProjects = [
       logoText: "الفرسان"
     },
     introAr: { statement: "هوية قوية متجذرة ثقافياً لعلامة تجارية سعودية للفنون القتالية. أكثر من مجرد قوة، إنها فن." },
+    storyAr: {
+      challenge: "ابتكار هوية للفنون القتالية تعكس الانضباط والقوة والفخر السعودي دون الاعتماد على القوالب النمطية للياقة البدنية.",
+      opportunity: "دمج الطباعة العربية الحادة والديناميكية مع الرموز الهندسية التي تنقل الزخم والتركيز والتراث.",
+      objective: "بناء نظام علامة تجارية متماسك وعالي التأثير يمتد عبر المنصات الرقمية والمطبوعات والمنتجات المادية."
+    },
+    strategyAr: [
+      { title: "التمركز", text: "الانضباط، القوة، والفخر السعودي." },
+      { title: "الجمهور", text: "الرياضيون والأفراد الذين يسعون للإتقان الجسدي والعقلي." },
+      { title: "الشخصية", text: "قوي، منضبط، متجذر ثقافياً." },
+      { title: "القيم", text: "النزاهة، القوة، التراث." },
+      { title: "نبرة الصوت", text: "موثوقة، ملهمة، مركزة." }
+    ],
     story: {
       challenge: "Creating a martial arts identity that reflects discipline, strength, and Saudi pride without relying on generic fitness tropes.",
       opportunity: "Merge sharp, dynamic Arabic typography with geometric symbols that convey momentum, focus, and heritage.",
@@ -152,6 +177,18 @@ export const galleryProjects = [
       logoText: "SÈVE"
     },
     introAr: { statement: "هوية راقية لعلامة عطور باريسية فاخرة، تمزج بين الأناقة الخالدة والبساطة الحديثة." },
+    storyAr: {
+      challenge: "إنشاء هوية بارزة في سوق العطور الفاخرة المشبع بحيث تعطي طابعاً تراثياً وعصرياً في نفس الوقت.",
+      opportunity: "استخدام نهج بسيط مع طباعة كلاسيكية أنيقة ولمسات ذهبية غنية للتعبير عن الفخامة المطلقة.",
+      objective: "تصميم عبوات ونظام علامة تجارية يبدو وكأنه قطعة فنية نادرة للمقتنين."
+    },
+    strategyAr: [
+      { title: "التمركز", text: "جوهر الفخامة الحديثة." },
+      { title: "الجمهور", text: "الأفراد الراقون الذين يقدرون الحرفية الدقيقة والعالية الجودة." },
+      { title: "الشخصية", text: "أنيق، راقٍ، غامض." },
+      { title: "القيم", text: "النقاء، التراث، الحصرية." },
+      { title: "نبرة الصوت", text: "شاعرية، واثقة، موجزة." }
+    ],
     story: {
       challenge: "Creating a standout identity in the saturated luxury fragrance market that felt both heritage and contemporary.",
       opportunity: "Using a minimalist approach with elegant serif typography and rich gold accents to convey pure luxury.",
@@ -202,7 +239,19 @@ export const galleryProjects = [
       statement: "A dynamic, high-energy identity for an exclusive fitness club tailored to peak performers.",
       logoText: "APEX"
     },
-    introAr: { statement: "هوية ديناميكية عالية الطاقة لنادي لياقة بدنية حصري مصمم للأداء العالي." },
+    introAr: { statement: "هوية ديناميكية وعالية الطاقة لنادي لياقة بدنية حصري مصمم لرواد الأداء العالي." },
+    storyAr: {
+      challenge: "التميز عن الصالات الرياضية العادية من خلال إنشاء علامة تجارية تبدو وكأنها معهد أداء نخبوي وخاص.",
+      opportunity: "استخدام أشكال هندسية أنيقة ولوحة ألوان داكنة ومكثفة لإلهام الدافع والتركيز.",
+      objective: "بناء هوية مكانية ورقمية متماسكة تحفز الأعضاء على الوصول إلى أقصى إمكاناتهم."
+    },
+    strategyAr: [
+      { title: "التمركز", text: "قمة الأداء الجسدي." },
+      { title: "الجمهور", text: "المحترفون الطموحون ونخبة الرياضيين." },
+      { title: "الشخصية", text: "مكثف، مركز، فاخر." },
+      { title: "القيم", text: "الانضباط، القوة، المجتمع." },
+      { title: "نبرة الصوت", text: "مباشرة، محفزة، موثوقة." }
+    ],
     story: {
       challenge: "Differentiating from standard gyms by creating a brand that feels like a private, elite performance institute.",
       opportunity: "Utilize sleek geometric forms and a dark, intense color palette to inspire drive and focus.",
@@ -254,6 +303,18 @@ export const galleryProjects = [
       logoText: "CHRONOS"
     },
     introAr: { statement: "هوية فكرية خالدة لمتحف حديث يسد الفجوة بين التاريخ والمستقبل." },
+    storyAr: {
+      challenge: "جعل مؤسسة تاريخية جذابة لجمهور شاب وعصري دون فقدان صوتها الموثوق والرسمي.",
+      opportunity: "دمج الطباعة الكلاسيكية مع الأشكال الهندسية المعاصرة والمجردة التي تمثل مرور الزمن.",
+      objective: "إنشاء نظام هوية مرن يعمل عبر المعارض والمنصات الرقمية واللافتات المعمارية."
+    },
+    strategyAr: [
+      { title: "التمركز", text: "حيث يلتقي الماضي بالمستقبل." },
+      { title: "الجمهور", text: "العقول الفضولية، الطلاب، وخبراء الفن." },
+      { title: "الشخصية", text: "فكري، ملهم، خالد." },
+      { title: "القيم", text: "الحفظ، التعليم، الابتكار." },
+      { title: "نبرة الصوت", text: "تنويرية، عميقة، جذابة." }
+    ],
     story: {
       challenge: "Making a historical institution appealing to a younger, modern audience without losing its authoritative voice.",
       opportunity: "Merge classic serif typography with abstract, contemporary geometric shapes representing the passage of time.",
@@ -305,6 +366,18 @@ export const galleryProjects = [
       logoText: "NEXUS"
     },
     introAr: { statement: "هوية متطورة وتقنية لشركة ذكاء اصطناعي من الجيل القادم." },
+    storyAr: {
+      challenge: "تجسيد الشبكات العصبية المجردة والتعلم العميق بطريقة تبدو أنيقة وسهلة الفهم.",
+      opportunity: "استخدام تدرجات كهربائية وطباعة مستقبلية خالية من الزوائد للتعبير عن السرعة والاتصال والذكاء.",
+      objective: "تصميم نظام تصميم رقمي قوي لمنصتهم البرمجية واتصالاتهم المؤسسية."
+    },
+    strategyAr: [
+      { title: "التمركز", text: "ذكاء الغد، اليوم." },
+      { title: "الجمهور", text: "مبتكرو التكنولوجيا، المطورون، وعملاء الشركات." },
+      { title: "الشخصية", text: "ذو رؤية، سريع، تحليلي." },
+      { title: "القيم", text: "الابتكار، الدقة، الاتصال." },
+      { title: "نبرة الصوت", text: "حادة، واضحة، تفكير مستقبلي." }
+    ],
     story: {
       challenge: "Visualizing abstract neural networks and deep learning in a way that feels sleek and accessible.",
       opportunity: "Use electric gradients and futuristic sans-serif typography to convey speed, connectivity, and intelligence.",
@@ -356,6 +429,18 @@ export const galleryProjects = [
       logoText: "THE MARMONT"
     },
     introAr: { statement: "هوية راقية وهادئة لفندق بوتيك فاخر، تجسد جوهر الملاذ الخاص." },
+    storyAr: {
+      challenge: "ابتكار علامة تجارية تبدو تاريخية وراسخة على الفور، على الرغم من كونها منشأة حديثة الافتتاح.",
+      opportunity: "تطوير شعار نبالة متطور واستخدام لوحة ألوان هادئة وعضوية من الأخضر المريمية والعاج.",
+      objective: "تصميم كل نقطة اتصال - من مفاتيح الغرف إلى قوائم الطعام - لتعكس جواءً فخماً ومرحباً."
+    },
+    strategyAr: [
+      { title: "التمركز", text: "ملاذك الخاص." },
+      { title: "الجمهور", text: "المسافرون المميزون الباحثون عن السلام والفخامة الشخصية." },
+      { title: "الشخصية", text: "دافئ، يقظ، راقٍ." },
+      { title: "القيم", text: "الضيافة، الهدوء، الاهتمام بالتفاصيل." },
+      { title: "نبرة الصوت", text: "مرحبة، هادئة، أنيقة." }
+    ],
     story: {
       challenge: "Creating a brand that feels instantly historic and established, despite being a newly opened property.",
       opportunity: "Develop a sophisticated crest and utilize a calming, organic color palette of sage and ivory.",
@@ -407,6 +492,18 @@ export const galleryProjects = [
       logoText: "ALTIUS"
     },
     introAr: { statement: "هوية معمارية قوية لعلامة تجارية راقية في مجال التطوير العقاري تشكل أفق المدينة." },
+    storyAr: {
+      challenge: "البروز في سوق العقارات الفاخرة بعلامة تجارية تبدو صلبة وجديرة بالثقة، ومبتكرة للغاية في نفس الوقت.",
+      opportunity: "استخدام أيقونات هيكلية وبسيطة مستوحاة من الهندسة المعمارية الحديثة، مقترنة بلوحة ألوان ثابتة وأساسية.",
+      objective: "تصميم نظام علامة تجارية شامل للكتيبات العقارية، ولافتات المواقع، والتسويق الرقمي."
+    },
+    strategyAr: [
+      { title: "التمركز", text: "بناء معالم الغد." },
+      { title: "الجمهور", text: "كبار المستثمرين ومشتري المنازل الفاخرة." },
+      { title: "الشخصية", text: "موثوقة، صلبة، ذات رؤية." },
+      { title: "القيم", text: "الجودة، الثقة، التميز المعماري." },
+      { title: "نبرة الصوت", text: "واثقة، راسخة، فاخرة." }
+    ],
     story: {
       challenge: "Standing out in the luxury real estate market with a brand that feels solid, trustworthy, yet highly innovative.",
       opportunity: "Use structural, minimalist icons inspired by modern architecture, paired with a solid, grounded color palette.",

@@ -66,7 +66,7 @@ export default function Dashboard() {
         }}>
           <div>
             <h1 style={{ margin: 0, fontSize: '1.8rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              {isClient ? <Briefcase color="var(--color-magenta)" /> : <User color="var(--color-cyan)" />}
+              {isClient ? <Briefcase color="var(--color-accent)" /> : <User color="var(--color-cyan)" />}
               {isClient ? 'Client Portal' : 'Freelancer Hub'}
             </h1>
             <p style={{ margin: '5px 0 0 0', color: '#888' }}>{user?.email}</p>
@@ -107,7 +107,7 @@ export default function Dashboard() {
             className="glass-panel"
             style={{ padding: '2rem', borderRadius: '15px' }}
           >
-            <h2 style={{ marginTop: 0, color: 'var(--color-magenta)' }}>Welcome Back!</h2>
+            <h2 style={{ marginTop: 0, color: 'var(--color-accent)' }}>Welcome Back!</h2>
             <p style={{ color: '#aaa', lineHeight: 1.6 }}>
               {isClient 
                 ? 'Manage your active projects, view invoices, and communicate directly with freelancers.' 

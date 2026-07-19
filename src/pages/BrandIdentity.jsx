@@ -13,7 +13,7 @@ const pathsConfig = [
   {
     id: 'personal',
     icon: User,
-    color: '#ff007f',
+    color: '#C5A059',
     img: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80',
     examples: [
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800',
@@ -170,9 +170,9 @@ const BrandIdentity = () => {
             if (selectedPath) setSelectedPath(null);
             else navigate('/');
           }}
-          style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'transparent', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', fontFamily: 'var(--font-secondary)', fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '1px' }}
+          style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'transparent', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', fontFamily: 'var(--font-secondary)', fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-tight)' }}
         >
-          {isRTL ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
+          <ArrowLeft size={20} />
           {selectedPath ? t('brandIdentity.hub.changePath', 'Change Path') : t('expertisePage.back_btn', 'العودة')}
         </button>
       </nav>
@@ -197,7 +197,7 @@ const BrandIdentity = () => {
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 10, padding: '10vh 5%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'start' }}>
                 
                 {/* Header Title */}
-                <h1 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '4px', color: 'rgba(255,255,255,0.5)', marginBottom: '2rem', width: '100%', textAlign: 'center' }}>{t('brandIdentity.hub.title', 'What Are You Building?')}</h1>
+                <h1 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-widest)', color: 'rgba(255,255,255,0.5)', marginBottom: '2rem', width: '100%', textAlign: 'center' }}>{t('brandIdentity.hub.title', 'What Are You Building?')}</h1>
 
                 {/* The PS5 Ribbon (Small Tiles) */}
                 <div style={{ display: 'flex', gap: '20px', marginBottom: '2rem', justifyContent: 'center', flexWrap: 'wrap', width: '100%' }}>
@@ -270,7 +270,7 @@ const BrandIdentity = () => {
                         
                         <motion.p 
                           initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-                          style={{ fontSize: '1.2rem', color: paths[activeIndex].color, margin: '0 0 1.5rem 0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}
+                          style={{ fontSize: '1.2rem', color: paths[activeIndex].color, margin: '0 0 1.5rem 0', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 'var(--tracking-tight)' }}
                         >
                           {paths[activeIndex].subtitle}
                         </motion.p>
@@ -317,7 +317,7 @@ const BrandIdentity = () => {
                             fontSize: '1.2rem', 
                             fontWeight: 'bold', 
                             textTransform: 'uppercase', 
-                            letterSpacing: '1px', 
+                            letterSpacing: 'var(--tracking-tight)', 
                             cursor: 'pointer', 
                             display: 'flex', 
                             alignItems: 'center', 
@@ -336,7 +336,7 @@ const BrandIdentity = () => {
                             e.currentTarget.style.color = '#000';
                           }}
                         >
-                          {t('brandIdentity.hub.startJourney', 'Start Journey')} {isRTL ? <ArrowLeft size={24} /> : <ArrowRight size={24} />}
+                          {t('brandIdentity.hub.startJourney', 'Start Journey')} <ArrowRight size={24} />
                         </motion.button>
                       </motion.div>
                     </AnimatePresence>
@@ -369,7 +369,7 @@ const BrandIdentity = () => {
                           position: 'relative', overflow: 'hidden'
                         }}>
                           <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', padding: '30px 20px', background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent)' }}>
-                             <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '3px', color: paths[activeIndex].color, fontWeight: 'bold' }}>{t('brandIdentity.hub.featuredExample', 'Featured Example')}</span>
+                             <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', color: paths[activeIndex].color, fontWeight: 'bold' }}>{t('brandIdentity.hub.featuredExample', 'Featured Example')}</span>
                           </div>
                         </div>
                         <div style={{ 
@@ -442,7 +442,7 @@ const BrandIdentity = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.8 }}
-                      style={{ display: 'flex', flexDirection: isRTL ? 'row-reverse' : 'row', gap: '3rem', marginBottom: '6rem', position: 'relative', zIndex: 1 }}
+                      style={{ display: 'flex', gap: '3rem', marginBottom: '6rem', position: 'relative', zIndex: 1 }}
                     >
                       {/* Node */}
                       <div style={{ flexShrink: 0, width: '80px', display: 'flex', justifyContent: 'center' }}>
@@ -462,7 +462,7 @@ const BrandIdentity = () => {
                       }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
                           <phase.icon size={28} color={selectedPath.color} />
-                          <h3 style={{ fontSize: '1.2rem', letterSpacing: '2px', textTransform: 'uppercase', color: selectedPath.color, margin: 0 }}>
+                          <h3 style={{ fontSize: '1.2rem', letterSpacing: 'var(--tracking-wide)', textTransform: 'uppercase', color: selectedPath.color, margin: 0 }}>
                             Phase {phase.id} — {phase.title}
                           </h3>
                         </div>
@@ -470,7 +470,7 @@ const BrandIdentity = () => {
                         <p style={{ fontSize: '1.1rem', color: '#aaa', lineHeight: 1.6, marginBottom: '2rem' }}>{phase.desc}</p>
                         
                         <div style={{ background: 'rgba(0,0,0,0.3)', borderRadius: '12px', padding: '1.5rem' }}>
-                          <h5 style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', color: '#777', margin: '0 0 1rem 0' }}>{t('brandIdentity.journey.deliverables', 'Deliverables')}</h5>
+                          <h5 style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-tight)', color: '#777', margin: '0 0 1rem 0' }}>{t('brandIdentity.journey.deliverables', 'Deliverables')}</h5>
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
                             {phase.deliverables.map((item, idx) => (
                               <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.05)', padding: '8px 16px', borderRadius: '30px', fontSize: '0.9rem' }}>
@@ -528,7 +528,7 @@ const BrandIdentity = () => {
                     fontSize: '1.1rem',
                     fontWeight: 'bold',
                     textTransform: 'uppercase',
-                    letterSpacing: '1px',
+                    letterSpacing: 'var(--tracking-tight)',
                     cursor: 'pointer',
                     boxShadow: `0 10px 30px ${selectedPath.color}44`,
                     transition: 'transform 0.3s ease'

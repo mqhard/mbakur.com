@@ -82,7 +82,7 @@ const Footer = () => {
           
           {/* LEFT: QUICK LINKS */}
           <div style={{ flex: '1 1 200px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginTop: '4rem' }}>
-            <h4 style={{ marginBottom: '1.5rem', color: '#fff', fontSize: '1.1rem', letterSpacing: '2px', textTransform: 'uppercase', fontFamily: 'var(--font-primary)' }}>{t('footer.quick')}</h4>
+            <h4 style={{ marginBottom: '1.5rem', color: '#fff', fontSize: '1.1rem', letterSpacing: 'var(--tracking-wide)', textTransform: 'uppercase', fontFamily: 'var(--font-primary)' }}>{t('footer.quick')}</h4>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.2rem' }}>
               {['q1', 'q2', 'q3', 'q4'].map((item, i) => (
                 <motion.li key={i} whileHover={{ y: -3 }}>
@@ -100,7 +100,7 @@ const Footer = () => {
               <span style={{ color: '#fff', textShadow: '0 0 20px rgba(255,255,255,0.5)' }}>{t('footer.name')}</span>
               <span style={{ color: '#fff', textShadow: '0 0 20px rgba(255,255,255,0.5)' }}>{t('footer.name_span')}</span>
             </h3>
-            <p style={{ color: 'var(--color-orange)', fontSize: '1.2rem', maxWidth: '400px', margin: '0 auto', lineHeight: 1.6 }}>{t('footer.desc')}</p>
+            <p style={{ color: 'var(--color-accent-dark)', fontSize: '1.2rem', maxWidth: '400px', margin: '0 auto', lineHeight: 1.6 }}>{t('footer.desc')}</p>
           </div>
 
           {/* RIGHT: SOCIAL & CONTACT */}
@@ -108,7 +108,7 @@ const Footer = () => {
             
             {/* SOCIAL */}
             <div>
-              <h4 style={{ marginBottom: '1.5rem', color: '#fff', fontSize: '1.1rem', letterSpacing: '2px', textTransform: 'uppercase', fontFamily: 'var(--font-primary)' }}>{t('footer.social')}</h4>
+              <h4 style={{ marginBottom: '1.5rem', color: '#fff', fontSize: '1.1rem', letterSpacing: 'var(--tracking-wide)', textTransform: 'uppercase', fontFamily: 'var(--font-primary)' }}>{t('footer.social')}</h4>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <a href="#" aria-label="X (Twitter)" className="social-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', borderRadius: '50%', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', color: '#fff', transition: 'all 0.3s', textDecoration: 'none' }} onMouseOver={e => {e.currentTarget.style.background='#000'; e.currentTarget.style.borderColor='#333'; e.currentTarget.style.transform='translateY(-5px)'}} onMouseOut={e => {e.currentTarget.style.background='rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor='rgba(255,255,255,0.05)'; e.currentTarget.style.transform='none'}}>
                   <XIcon size={18} />
@@ -116,7 +116,7 @@ const Footer = () => {
                 <a href="#" aria-label="YouTube" className="social-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', borderRadius: '50%', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', color: '#fff', transition: 'all 0.3s', textDecoration: 'none' }} onMouseOver={e => {e.currentTarget.style.background='#FF0000'; e.currentTarget.style.borderColor='#FF0000'; e.currentTarget.style.transform='translateY(-5px)'}} onMouseOut={e => {e.currentTarget.style.background='rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor='rgba(255,255,255,0.05)'; e.currentTarget.style.transform='none'}}>
                   <YoutubeIcon size={22} />
                 </a>
-                <a href="#" aria-label="Instagram" className="social-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', borderRadius: '50%', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', color: '#fff', transition: 'all 0.3s', textDecoration: 'none' }} onMouseOver={e => {e.currentTarget.style.background='var(--color-magenta)'; e.currentTarget.style.borderColor='var(--color-magenta)'; e.currentTarget.style.transform='translateY(-5px)'}} onMouseOut={e => {e.currentTarget.style.background='rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor='rgba(255,255,255,0.05)'; e.currentTarget.style.transform='none'}}>
+                <a href="#" aria-label="Instagram" className="social-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', borderRadius: '50%', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', color: '#fff', transition: 'all 0.3s', textDecoration: 'none' }} onMouseOver={e => {e.currentTarget.style.background='var(--color-accent)'; e.currentTarget.style.borderColor='var(--color-accent)'; e.currentTarget.style.transform='translateY(-5px)'}} onMouseOut={e => {e.currentTarget.style.background='rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor='rgba(255,255,255,0.05)'; e.currentTarget.style.transform='none'}}>
                   <InstagramIcon size={20} />
                 </a>
                 <a href="#" aria-label="LinkedIn" className="social-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', borderRadius: '50%', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', color: '#fff', transition: 'all 0.3s', textDecoration: 'none' }} onMouseOver={e => {e.currentTarget.style.background='#0077b5'; e.currentTarget.style.borderColor='#0077b5'; e.currentTarget.style.transform='translateY(-5px)'}} onMouseOut={e => {e.currentTarget.style.background='rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor='rgba(255,255,255,0.05)'; e.currentTarget.style.transform='none'}}>
@@ -130,7 +130,7 @@ const Footer = () => {
             
             {/* CONTACT */}
             <div>
-              <h4 style={{ marginBottom: '1.5rem', color: '#fff', fontSize: '1.1rem', letterSpacing: '2px', textTransform: 'uppercase', fontFamily: 'var(--font-primary)' }}>{t('footer.contact')}</h4>
+              <h4 style={{ marginBottom: '1.5rem', color: '#fff', fontSize: '1.1rem', letterSpacing: 'var(--tracking-wide)', textTransform: 'uppercase', fontFamily: 'var(--font-primary)' }}>{t('footer.contact')}</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', alignItems: 'center' }}>
                 <a href="mailto:hello@mohammedbakur.com" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#aaa', fontSize: '1.1rem', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = '#fff'} onMouseOut={e => e.currentTarget.style.color = '#aaa'}>
                   <Mail size={18} />
@@ -159,7 +159,7 @@ const Footer = () => {
           textAlign: 'center'
         }}>
           <p style={{ color: '#fff', fontSize: '0.9rem', margin: 0 }}>
-            Designed by <span style={{ color: 'var(--color-magenta)' }}>Visual Craftsmanship</span>
+            Designed by <span style={{ color: 'var(--color-accent)' }}>Visual Craftsmanship</span>
           </p>
           <p style={{ color: '#fff', fontSize: '0.9rem', margin: 0 }}>{t('footer.rights')}</p>
         </div>

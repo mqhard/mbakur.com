@@ -8,7 +8,7 @@ const baseCreativeData = [
   {
     id: 'copywriting',
     number: '01',
-    color: '#ff007f', // Magenta
+    color: '#C5A059', // Magenta
     mainImage: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
     projectsThumb: [
       'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&q=80',
@@ -28,7 +28,7 @@ const baseCreativeData = [
   {
     id: 'multimedia',
     number: '03',
-    color: '#ff4500', // Orange
+    color: '#8C7335', // Orange
     mainImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80',
     projectsThumb: [
       'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&q=80',
@@ -75,7 +75,7 @@ const CopywritingObject = ({ isHovered, isActive }) => {
             fontFamily: 'var(--font-primary)',
             textTransform: 'uppercase',
             opacity: 0.8,
-            textShadow: '0 0 20px #ff007f'
+            textShadow: '0 0 20px #C5A059'
           }}
           animate={{
             rotateY: i * (360 / words.length),
@@ -137,7 +137,7 @@ const MultimediaObject = ({ isHovered, isActive }) => {
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         style={{
           width: '200px', height: '200px', borderRadius: '50%',
-          border: '4px dashed #ff4500',
+          border: '4px dashed #8C7335',
           boxShadow: '0 0 50px rgba(255, 69, 0, 0.5)'
         }}
       />
@@ -148,7 +148,7 @@ const MultimediaObject = ({ isHovered, isActive }) => {
           position: 'absolute',
           width: '250px', height: '250px', borderRadius: '50%',
           border: '1px solid rgba(255, 255, 255, 0.2)',
-          borderTop: '2px solid #ff4500'
+          borderTop: '2px solid #8C7335'
         }}
       />
     </motion.div>
@@ -576,7 +576,7 @@ const CreativeCommandCenter = () => {
                         color: activePanel.color,
                         textTransform: 'uppercase',
                         lineHeight: 1,
-                        letterSpacing: '8px',
+                        letterSpacing: 'var(--tracking-max)',
                         textShadow: `0 0 50px ${activePanel.color}50`,
                         margin: 0,
                         whiteSpace: isMobile ? 'normal' : 'nowrap',
@@ -605,22 +605,22 @@ const CreativeCommandCenter = () => {
                 <div style={{ flex: isMobile ? 'none' : 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingRight: isRTL ? (isMobile ? '5%' : 0) : '5%', paddingLeft: isRTL ? '5%' : (isMobile ? '5%' : 0), gap: '2rem', paddingBottom: isMobile ? '5rem' : 0 }}>
                   
                   <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
-                    <h4 style={{ color: activePanel.color, letterSpacing: '2px', fontSize: '0.9rem', marginBottom: '10px' }}>{t('creativeCommandCenter.ui.about')}</h4>
+                    <h4 style={{ color: activePanel.color, letterSpacing: 'var(--tracking-wide)', fontSize: '0.9rem', marginBottom: '10px' }}>{t('creativeCommandCenter.ui.about')}</h4>
                     <p style={{ color: '#fff', fontSize: '1.2rem', lineHeight: 1.6 }}>{activePanel.profile.about}</p>
                   </motion.div>
                   
                   <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
-                    <h4 style={{ color: activePanel.color, letterSpacing: '2px', fontSize: '0.9rem', marginBottom: '10px' }}>{t('creativeCommandCenter.ui.psychRole')}</h4>
+                    <h4 style={{ color: activePanel.color, letterSpacing: 'var(--tracking-wide)', fontSize: '0.9rem', marginBottom: '10px' }}>{t('creativeCommandCenter.ui.psychRole')}</h4>
                     <p style={{ color: '#aaa', fontSize: '1.1rem' }}>{activePanel.psychologicalFunction}</p>
                   </motion.div>
                   
                   <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 }}>
-                    <h4 style={{ color: activePanel.color, letterSpacing: '2px', fontSize: '0.9rem', marginBottom: '10px' }}>{t('creativeCommandCenter.ui.methods')}</h4>
+                    <h4 style={{ color: activePanel.color, letterSpacing: 'var(--tracking-wide)', fontSize: '0.9rem', marginBottom: '10px' }}>{t('creativeCommandCenter.ui.methods')}</h4>
                     <p style={{ color: '#aaa', fontSize: '1.1rem' }}>{activePanel.profile.methods}</p>
                   </motion.div>
                   
                   <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}>
-                    <h4 style={{ color: activePanel.color, letterSpacing: '2px', fontSize: '0.9rem', marginBottom: '10px' }}>{t('creativeCommandCenter.ui.execution')}</h4>
+                    <h4 style={{ color: activePanel.color, letterSpacing: 'var(--tracking-wide)', fontSize: '0.9rem', marginBottom: '10px' }}>{t('creativeCommandCenter.ui.execution')}</h4>
                     <p style={{ color: '#aaa', fontSize: '1.1rem' }}>{activePanel.profile.executionProcess}</p>
                   </motion.div>
                   

@@ -36,8 +36,8 @@ const CinematicPhilosophy = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1 }}
           style={{
-            color: 'var(--color-magenta)',
-            letterSpacing: '5px',
+            color: 'var(--color-accent)',
+            letterSpacing: 'var(--tracking-max)',
             textTransform: 'uppercase',
             fontSize: '1rem',
             marginBottom: '4rem',
@@ -73,7 +73,7 @@ const CinematicPhilosophy = () => {
             : { color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.2)' }}>
             {t('creativeDirection.philosophy.quote2')}
           </span> <br/>
-          <span style={{ color: 'var(--color-magenta)', textShadow: '0 0 30px rgba(255,0,127,0.4)' }}>
+          <span style={{ color: 'var(--color-accent)', textShadow: '0 0 30px rgba(255,0,127,0.4)' }}>
             {t('creativeDirection.philosophy.quote2_span')}
           </span>
         </motion.h2>
@@ -86,7 +86,7 @@ const CinematicPhilosophy = () => {
           style={{
             width: '1px',
             height: '100px',
-            background: 'linear-gradient(to bottom, var(--color-magenta), transparent)',
+            background: 'linear-gradient(to bottom, var(--color-accent), transparent)',
             margin: '0 auto 4rem auto'
           }}
         />
@@ -102,7 +102,7 @@ const CinematicPhilosophy = () => {
             fontWeight: 300,
             maxWidth: '700px',
             margin: '0 auto',
-            letterSpacing: '1px',
+            letterSpacing: 'var(--tracking-tight)',
             lineHeight: 1.8
           }}
         >

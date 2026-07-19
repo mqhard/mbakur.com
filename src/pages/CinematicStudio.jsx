@@ -74,14 +74,14 @@ const CinematicStudio = () => {
       <div className="noise-overlay"></div>
       
       {/* Navbar/Header matching ExpertisePage */}
-      <nav style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'fixed', width: '100%', top: 0, background: 'linear-gradient(to bottom, rgba(3,3,3,0.8), transparent)', zIndex: 100 }}>
+      <nav dir="ltr" style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'fixed', width: '100%', top: 0, background: 'linear-gradient(to bottom, rgba(3,3,3,0.8), transparent)', zIndex: 100 }}>
         {/* Back Button */}
         <button 
           onClick={() => navigate('/')}
           className="interactive"
           style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'transparent', border: 'none', color: 'var(--color-gray-light)', cursor: 'pointer', fontFamily: 'var(--font-secondary)', fontSize: '1.1rem' }}
         >
-          {isRTL ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
+          <ArrowLeft size={20} />
           {t('expertisePage.back_btn')}
         </button>
 
@@ -93,7 +93,7 @@ const CinematicStudio = () => {
           color: '#fff',
           fontSize: '1rem',
           fontWeight: 800,
-          letterSpacing: '2px',
+          letterSpacing: 'var(--tracking-wide)',
           textTransform: 'uppercase',
           fontFamily: 'var(--font-primary)',
           opacity: 0.9,

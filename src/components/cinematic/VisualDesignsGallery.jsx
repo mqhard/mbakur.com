@@ -60,7 +60,7 @@ const VisualDesignsGallery = () => {
               fontSize: 'clamp(2rem, 5vw, 4rem)',
               color: '#fff',
               fontWeight: 900,
-              letterSpacing: '2px',
+              letterSpacing: 'var(--tracking-wide)',
               textTransform: 'uppercase',
               fontFamily: 'var(--font-primary)'
             }}
@@ -169,7 +169,7 @@ const VisualDesignsGallery = () => {
               >
                 <p style={{
                   color: 'var(--color-cyan)',
-                  letterSpacing: '3px',
+                  letterSpacing: 'var(--tracking-wider)',
                   textTransform: 'uppercase',
                   fontSize: '0.8rem',
                   margin: 0,

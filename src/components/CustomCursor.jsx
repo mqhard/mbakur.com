@@ -59,7 +59,7 @@ const CustomCursor = () => {
         height: '32px',
         borderRadius: '50%',
         backgroundColor: isHovered ? 'rgba(212, 175, 55, 0.2)' : 'transparent',
-        border: `1px solid ${isHovered ? 'var(--color-orange)' : 'rgba(255, 255, 255, 0.4)'}`,
+        border: `1px solid ${isHovered ? 'var(--color-accent-dark)' : 'rgba(255, 255, 255, 0.4)'}`,
         pointerEvents: 'none',
         zIndex: 9999,
         display: 'flex',

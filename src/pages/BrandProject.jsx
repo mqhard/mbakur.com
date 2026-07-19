@@ -9,7 +9,7 @@ import { galleryProjects } from '../data/brandGalleryData';
 const EmptySection = ({ number, title, subtitle }) => (
   <section style={{ padding: '15vh 5%', position: 'relative', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
     <div style={{ position: 'absolute', right: '5%', top: '10%', fontSize: 'clamp(6rem, 15vw, 12rem)', fontWeight: 700, opacity: 0.02, lineHeight: 0.8, pointerEvents: 'none' }}>{number}</div>
-    <h2 style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.5, marginBottom: '2rem' }}>
+    <h2 style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', opacity: 0.5, marginBottom: '2rem' }}>
       {number < 10 ? `0${number}` : number}. {title}
     </h2>
     <div style={{ maxWidth: '800px', opacity: 0.6 }}>
@@ -67,27 +67,14 @@ const BrandProject = () => {
   return (
     <div style={{ background: bgColor, minHeight: '100vh', color: textColor, fontFamily: 'var(--font-primary)', transition: 'background 0.5s ease', overflowX: 'hidden' }}>
       
-      {/* Navbar Minimal with improved Back Button */}
-      <nav style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'fixed', top: 0, width: '100%', zIndex: 100, mixBlendMode: 'difference' }}>
-        <button 
-          onClick={() => navigate('/brand-gallery')}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: isRTL ? 'flex-end' : 'flex-start', background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', fontFamily: 'var(--font-secondary)' }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.1rem', letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 500 }}>
-            {isRTL ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
-            Brand Gallery
-          </div>
-          <div style={{ fontSize: '0.75rem', opacity: 0.6, paddingLeft: isRTL ? '0' : '30px', paddingRight: isRTL ? '30px' : '0', letterSpacing: '1px', textTransform: 'uppercase', marginTop: '4px' }}>
-            Explore Our Selected Work
-          </div>
-        </button>
-      </nav>
+
+
 
       {/* 01. Cover */}
       <section style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', paddingTop: '20vh', position: 'relative' }}>
         <div style={{ position: 'absolute', right: '2%', top: '5%', fontSize: 'clamp(10rem, 25vw, 20rem)', fontWeight: 700, opacity: 0.05, lineHeight: 0.8, pointerEvents: 'none' }}>01</div>
         <div style={{ padding: '0 5%', marginBottom: '10vh', position: 'relative', zIndex: 10 }}>
-          <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.6, marginBottom: '2rem' }}>01. Cover</h2>
+          <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', opacity: 0.6, marginBottom: '2rem' }}>01. Cover</h2>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}
             style={{ fontSize: 'clamp(4rem, 10vw, 10rem)', fontWeight: 300, margin: '0 0 1rem 0', letterSpacing: '-0.02em', lineHeight: 0.9 }}
@@ -96,7 +83,7 @@ const BrandProject = () => {
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }}
-            style={{ fontSize: '1.2rem', opacity: 0.8, fontWeight: 300, letterSpacing: '2px', textTransform: 'uppercase' }}
+            style={{ fontSize: '1.2rem', opacity: 0.8, fontWeight: 300, letterSpacing: 'var(--tracking-wide)', textTransform: 'uppercase' }}
           >
             Brand Guidelines &bull; V 1.0 &bull; {project.year}
           </motion.p>
@@ -114,10 +101,10 @@ const BrandProject = () => {
       <section style={{ padding: '15vh 5%', background: sectionBg, position: 'relative' }}>
         <div style={{ position: 'absolute', left: '-5%', top: '5%', fontSize: 'clamp(10rem, 25vw, 20rem)', fontWeight: 700, opacity: 0.05, lineHeight: 0.8, pointerEvents: 'none' }}>02</div>
         <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
-          <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.6, marginBottom: '8vh' }}>02. Index</h2>
+          <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', opacity: 0.6, marginBottom: '8vh' }}>02. Index</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {sections.map((sec, idx) => (
-              <div key={idx} style={{ fontSize: '1.5rem', fontWeight: 300, opacity: 0.8, borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1rem', letterSpacing: '1px' }}>
+              <div key={idx} style={{ fontSize: '1.5rem', fontWeight: 300, opacity: 0.8, borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1rem', letterSpacing: 'var(--tracking-tight)' }}>
                 {sec}
               </div>
             ))}
@@ -128,7 +115,7 @@ const BrandProject = () => {
       {/* 03. About The Brand */}
       <section style={{ padding: '20vh 5%', position: 'relative' }}>
         <div style={{ position: 'absolute', right: '5%', top: '5%', fontSize: 'clamp(10rem, 25vw, 20rem)', fontWeight: 700, opacity: 0.05, lineHeight: 0.8, pointerEvents: 'none' }}>03</div>
-        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.6, marginBottom: '10vh' }}>03. About The Brand</h2>
+        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', opacity: 0.6, marginBottom: '10vh' }}>03. About The Brand</h2>
         
         <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '15vh' }}>
           
@@ -141,7 +128,7 @@ const BrandProject = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8vh' }}>
             {['challenge', 'opportunity', 'objective'].map((key) => project.story[key] && (
               <div key={key} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
-                <h3 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '2px', color: highlightColor }}>{key}</h3>
+                <h3 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wide)', color: highlightColor }}>{key}</h3>
                 <p style={{ fontSize: 'clamp(1.2rem, 2vw, 1.8rem)', fontWeight: 300, lineHeight: 1.6, margin: 0, opacity: 0.8 }}>
                   {project.story[key]}
                 </p>
@@ -152,7 +139,7 @@ const BrandProject = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', marginTop: '5vh' }}>
             {project.strategy.map((item, i) => (
               <div key={i} style={{ background: 'rgba(255,255,255,0.02)', padding: '2.5rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <h3 style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '2px', color: highlightColor, margin: '0 0 1rem 0' }}>{item.title}</h3>
+                <h3 style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wide)', color: highlightColor, margin: '0 0 1rem 0' }}>{item.title}</h3>
                 <p style={{ fontSize: '1.3rem', fontWeight: 300, lineHeight: 1.5, margin: 0 }}>{item.text}</p>
               </div>
             ))}
@@ -164,7 +151,7 @@ const BrandProject = () => {
       {/* 04. The Brand (Logo) */}
       <section style={{ padding: '20vh 0', background: sectionBgDark, position: 'relative' }}>
         <div style={{ position: 'absolute', left: '-5%', top: '5%', fontSize: 'clamp(10rem, 25vw, 20rem)', fontWeight: 700, opacity: 0.05, lineHeight: 0.8, pointerEvents: 'none' }}>04</div>
-        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.6, marginBottom: '10vh', padding: '0 5%' }}>04. The Brand (Logo)</h2>
+        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', opacity: 0.6, marginBottom: '10vh', padding: '0 5%' }}>04. The Brand (Logo)</h2>
         
         <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '5%', marginBottom: '10vh', background: 'rgba(255,255,255,0.01)' }}>
           <img src={project.visualIdentity.logoScreen} alt="Logo Showcase" style={{ width: '100%', maxWidth: '1000px', height: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 20px 30px rgba(0,0,0,0.3))' }} />
@@ -172,7 +159,7 @@ const BrandProject = () => {
 
         {project.transformation && (
           <div style={{ padding: '0 5%', maxWidth: '1400px', margin: '0 auto' }}>
-            <h3 style={{ fontSize: '1.5rem', fontWeight: 300, color: highlightColor, marginBottom: '3rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Logo Evolution & Transformation</h3>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 300, color: highlightColor, marginBottom: '3rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wide)' }}>Logo Evolution & Transformation</h3>
             <div style={{ cursor: 'ew-resize', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.5)' }}>
               <ReactCompareSlider
                 itemOne={<ReactCompareSliderImage src={project.transformation.beforeImg} alt="Before" style={{ objectFit: 'contain', background: '#050505', padding: '3rem' }} />}
@@ -187,7 +174,7 @@ const BrandProject = () => {
       {/* 05. Color System */}
       <section style={{ padding: '20vh 5%', position: 'relative' }}>
         <div style={{ position: 'absolute', right: '5%', top: '5%', fontSize: 'clamp(10rem, 25vw, 20rem)', fontWeight: 700, opacity: 0.05, lineHeight: 0.8, pointerEvents: 'none' }}>05</div>
-        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.6, marginBottom: '10vh' }}>05. Color System</h2>
+        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', opacity: 0.6, marginBottom: '10vh' }}>05. Color System</h2>
         
         <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem' }}>
@@ -219,13 +206,13 @@ const BrandProject = () => {
       {/* 06. Typography */}
       <section style={{ padding: '20vh 5%', background: sectionBg, position: 'relative' }}>
         <div style={{ position: 'absolute', left: '-5%', top: '5%', fontSize: 'clamp(10rem, 25vw, 20rem)', fontWeight: 700, opacity: 0.05, lineHeight: 0.8, pointerEvents: 'none' }}>06</div>
-        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.6, marginBottom: '10vh' }}>06. Typography</h2>
+        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', opacity: 0.6, marginBottom: '10vh' }}>06. Typography</h2>
         
         <div style={{ maxWidth: '1600px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '20vh' }}>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
             <div style={{ position: 'sticky', top: '20vh' }}>
-              <h3 style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '2px', color: highlightColor, marginBottom: '1rem' }}>{isEditorial ? project.visualIdentity.typography.primary.role : 'Primary Typeface'}</h3>
+              <h3 style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wide)', color: highlightColor, marginBottom: '1rem' }}>{isEditorial ? project.visualIdentity.typography.primary.role : 'Primary Typeface'}</h3>
               <h4 style={{ fontSize: '4.5rem', fontWeight: 500, margin: '0 0 2rem 0', letterSpacing: '-1px' }}>{isEditorial ? project.visualIdentity.typography.primary.name : project.visualIdentity.typography.primary}</h4>
               {isEditorial && <p style={{ fontSize: '1.3rem', opacity: 0.8, lineHeight: 1.6, fontWeight: 300 }}>{project.visualIdentity.typography.primary.desc}</p>}
             </div>
@@ -241,7 +228,7 @@ const BrandProject = () => {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
             <div style={{ position: 'sticky', top: '20vh' }}>
-              <h3 style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '2px', color: highlightColor, marginBottom: '1rem' }}>{isEditorial ? project.visualIdentity.typography.secondary.role : 'Secondary Typeface'}</h3>
+              <h3 style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wide)', color: highlightColor, marginBottom: '1rem' }}>{isEditorial ? project.visualIdentity.typography.secondary.role : 'Secondary Typeface'}</h3>
               <h4 style={{ fontSize: '4.5rem', fontWeight: 500, margin: '0 0 2rem 0', fontFamily: 'var(--font-secondary)', letterSpacing: '-1px' }}>{isEditorial ? project.visualIdentity.typography.secondary.name : project.visualIdentity.typography.secondary}</h4>
               {isEditorial && <p style={{ fontSize: '1.3rem', opacity: 0.8, lineHeight: 1.6, fontWeight: 300 }}>{project.visualIdentity.typography.secondary.desc}</p>}
             </div>
@@ -261,7 +248,7 @@ const BrandProject = () => {
       {/* 07. Visual System */}
       <section style={{ padding: '20vh 5%', position: 'relative' }}>
         <div style={{ position: 'absolute', right: '5%', top: '5%', fontSize: 'clamp(10rem, 25vw, 20rem)', fontWeight: 700, opacity: 0.05, lineHeight: 0.8, pointerEvents: 'none' }}>07</div>
-        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.6, marginBottom: '10vh' }}>07. Visual System</h2>
+        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', opacity: 0.6, marginBottom: '10vh' }}>07. Visual System</h2>
         
         {project.geometry && (
           <div style={{ maxWidth: '1600px', margin: '0 auto 10vh auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '5rem', alignItems: 'center' }}>
@@ -303,7 +290,7 @@ const BrandProject = () => {
       {/* 09. Digital Applications */}
       <section style={{ padding: '20vh 5%', background: sectionBgDark, position: 'relative' }}>
         <div style={{ position: 'absolute', right: '5%', top: '5%', fontSize: 'clamp(10rem, 25vw, 20rem)', fontWeight: 700, opacity: 0.05, lineHeight: 0.8, pointerEvents: 'none' }}>09</div>
-        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.6, marginBottom: '10vh' }}>09. Digital Applications</h2>
+        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', opacity: 0.6, marginBottom: '10vh' }}>09. Digital Applications</h2>
         
         {project.socialMedia ? (
           <div style={{ maxWidth: '1600px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '5rem', alignItems: 'center' }}>
@@ -330,7 +317,7 @@ const BrandProject = () => {
       {/* 10. Prints */}
       <section style={{ padding: '20vh 5%', position: 'relative' }}>
         <div style={{ position: 'absolute', left: '-5%', top: '5%', fontSize: 'clamp(10rem, 25vw, 20rem)', fontWeight: 700, opacity: 0.05, lineHeight: 0.8, pointerEvents: 'none' }}>10</div>
-        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.6, marginBottom: '10vh' }}>10. Prints & Applications</h2>
+        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', opacity: 0.6, marginBottom: '10vh' }}>10. Prints & Applications</h2>
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15vh', alignItems: 'center' }}>
           {project.applications && project.applications.length > 0 ? project.applications.map((app, i) => (
@@ -341,7 +328,7 @@ const BrandProject = () => {
             >
               <img src={app.img} alt={app.title} style={{ width: '100%', height: 'auto', borderRadius: '4px', boxShadow: '0 30px 60px rgba(0,0,0,0.4)' }} />
               <div style={{ position: 'absolute', bottom: '-4rem', left: '2rem' }}>
-                <p style={{ fontSize: '1.5rem', fontWeight: 300, opacity: 0.9, letterSpacing: '2px', textTransform: 'uppercase', margin: 0 }}>{app.title}</p>
+                <p style={{ fontSize: '1.5rem', fontWeight: 300, opacity: 0.9, letterSpacing: 'var(--tracking-wide)', textTransform: 'uppercase', margin: 0 }}>{app.title}</p>
                 <div style={{ height: '2px', width: '50px', background: highlightColor, marginTop: '1rem' }} />
               </div>
             </motion.div>
@@ -362,7 +349,7 @@ const BrandProject = () => {
       {/* 13. Final Page */}
       <section style={{ padding: '20vh 5% 10vh 5%', textAlign: 'center', position: 'relative', background: bgColor, borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div style={{ position: 'absolute', right: '5%', top: '5%', fontSize: 'clamp(10rem, 25vw, 20rem)', fontWeight: 700, opacity: 0.02, lineHeight: 0.8, pointerEvents: 'none' }}>13</div>
-        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.5, marginBottom: '10vh' }}>13. The Back Cover</h2>
+        <h2 style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', opacity: 0.5, marginBottom: '10vh' }}>13. The Back Cover</h2>
         
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4rem' }}>
           <p style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 300, opacity: 0.9, maxWidth: '800px', margin: '0 auto', fontStyle: 'italic' }}>
@@ -372,8 +359,8 @@ const BrandProject = () => {
           <img src={project.visualIdentity.logoScreen} alt="Logo Silhouette" style={{ width: '150px', opacity: 0.3, filter: 'grayscale(100%) brightness(200%)' }} />
 
           <div style={{ marginTop: '10vh', paddingTop: '5vh', borderTop: '1px solid rgba(255,255,255,0.1)', width: '100%', maxWidth: '600px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <h4 style={{ fontSize: '1.5rem', textTransform: 'uppercase', letterSpacing: '4px', margin: 0, fontWeight: 500 }}>Brand Gallery</h4>
-            <p style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '2px', opacity: 0.6, margin: 0 }}>Explore Our Selected Work</p>
+            <h4 style={{ fontSize: '1.5rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-widest)', margin: 0, fontWeight: 500 }}>Brand Gallery</h4>
+            <p style={{ fontSize: '1rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wide)', opacity: 0.6, margin: 0 }}>Explore Our Selected Work</p>
           </div>
         </div>
       </section>

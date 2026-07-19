@@ -39,7 +39,7 @@ const SciFiHub = () => {
         marginBottom: '50px',
         zIndex: 2,
       }}>
-        <h2 style={{ fontSize: '2rem', color: '#fff', textTransform: 'uppercase', letterSpacing: '2px', opacity: 0.8 }}>
+        <h2 style={{ fontSize: '2rem', color: '#fff', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wide)', opacity: 0.8 }}>
           Expertise & Services
         </h2>
       </div>
@@ -92,7 +92,7 @@ const SciFiHub = () => {
               fontSize: isMobile ? '0.8rem' : '0.95rem',
               fontWeight: 600,
               textTransform: 'uppercase',
-              letterSpacing: '1px',
+              letterSpacing: 'var(--tracking-tight)',
             }}>
               {node.title}
             </span>

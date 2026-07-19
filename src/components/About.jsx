@@ -18,7 +18,7 @@ const About = () => {
               className="glass-panel dotted-border"
               style={{ padding: '3rem', height: '100%' }}
             >
-              <h2 style={{ fontSize: '3rem', marginBottom: '2rem' }}>{t('about.title')} <span className="text-magenta">{t('about.title_span')}</span></h2>
+              <h2 style={{ fontSize: '3rem', marginBottom: '2rem' }}>{t('about.title')} <span className="text-accent">{t('about.title_span')}</span></h2>
               <p style={{ fontSize: '1.2rem', lineHeight: 1.8, marginBottom: '2rem', color: '#aaa' }}>
                 <strong style={{ color: '#fff', marginInlineEnd: '5px' }}>{t('about.story_title')}</strong> {t('about.story_text')}
               </p>

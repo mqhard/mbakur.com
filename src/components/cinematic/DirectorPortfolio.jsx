@@ -59,7 +59,7 @@ const DirectorPortfolio = () => {
               fontSize: 'clamp(2rem, 5vw, 4rem)',
               color: '#fff',
               fontWeight: 900,
-              letterSpacing: '2px',
+              letterSpacing: 'var(--tracking-wide)',
               textTransform: 'uppercase',
               fontFamily: 'var(--font-primary)'
             }}
@@ -140,7 +140,7 @@ const DirectorPortfolio = () => {
                       width: '60px', height: '60px',
                       borderRadius: '50%',
                       background: 'rgba(255,0,127,0.2)',
-                      border: '1px solid var(--color-magenta)',
+                      border: '1px solid var(--color-accent)',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       zIndex: 2,
                       boxShadow: '0 0 30px rgba(255,0,127,0.5)'
@@ -166,8 +166,8 @@ const DirectorPortfolio = () => {
                 }}
               >
                 <p style={{
-                  color: 'var(--color-magenta)',
-                  letterSpacing: '3px',
+                  color: 'var(--color-accent)',
+                  letterSpacing: 'var(--tracking-wider)',
                   textTransform: 'uppercase',
                   fontSize: '0.8rem',
                   margin: 0,

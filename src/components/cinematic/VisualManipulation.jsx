@@ -125,12 +125,12 @@ const VisualManipulation = () => {
           color: '#fff',
           marginBottom: '1rem',
           textAlign: 'center',
-          letterSpacing: '2px',
+          letterSpacing: 'var(--tracking-wide)',
           fontFamily: 'var(--font-primary)',
           position: 'relative'
         }}>
           {t('creativeDirection.manipulation.title1')}<br/>
-          <span style={{ color: 'var(--color-magenta)' }}>{t('creativeDirection.manipulation.title2')}</span>
+          <span style={{ color: 'var(--color-accent)' }}>{t('creativeDirection.manipulation.title2')}</span>
         </h2>
         <p style={{
           color: 'rgba(255,255,255,0.9)',
@@ -138,7 +138,7 @@ const VisualManipulation = () => {
           textAlign: 'center',
           fontSize: 'clamp(1rem, 1.5vw, 1.5rem)',
           fontWeight: 300,
-          letterSpacing: '1px',
+          letterSpacing: 'var(--tracking-tight)',
           lineHeight: 1.6,
           textShadow: '0 4px 20px rgba(0,0,0,0.5)'
         }}>
@@ -153,7 +153,7 @@ const VisualManipulation = () => {
           position: 'absolute',
           bottom: '10vh',
           color: '#fff',
-          letterSpacing: '3px',
+          letterSpacing: 'var(--tracking-wider)',
           fontSize: '0.8rem',
           textTransform: 'uppercase',
           zIndex: 10,
@@ -169,7 +169,7 @@ const VisualManipulation = () => {
           <motion.div 
             animate={{ y: [0, 10, 0] }} 
             transition={{ repeat: Infinity, duration: 1.5 }}
-            style={{ width: '4px', height: '4px', background: 'var(--color-magenta)', borderRadius: '50%', marginTop: '4px' }}
+            style={{ width: '4px', height: '4px', background: 'var(--color-accent)', borderRadius: '50%', marginTop: '4px' }}
           />
         </div>
         {t('creativeDirection.manipulation.indicator')}

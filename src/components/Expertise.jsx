@@ -11,13 +11,13 @@ const Expertise = () => {
       id: 'creative',
       title: t('expertise.creative'),
       subitems: [t('expertise.creative_sub1'), t('expertise.creative_sub2'), t('expertise.creative_sub3')],
-      color: 'var(--color-magenta)'
+      color: 'var(--color-accent)'
     },
     {
       id: 'production',
       title: t('expertise.production'),
       subitems: [t('expertise.prod_sub1'), t('expertise.prod_sub2'), t('expertise.prod_sub3')],
-      color: 'var(--color-orange)'
+      color: 'var(--color-accent-dark)'
     },
     {
       id: 'design',

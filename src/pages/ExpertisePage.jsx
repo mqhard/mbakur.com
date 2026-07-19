@@ -32,12 +32,12 @@ const ExpertisePage = ({ isEmbedded = false }) => {
     <div style={{ background: isEmbedded ? 'transparent' : 'var(--color-bg)', minHeight: isEmbedded ? 'auto' : '100vh', color: 'var(--color-text)', paddingBottom: isEmbedded ? '0' : '100px', paddingTop: isEmbedded ? '2rem' : '0' }}>
       
       {/* Navbar/Header */}
-      {!isEmbedded && (<nav style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'rgba(10,10,10,0.8)', backdropFilter: 'blur(10px)', zIndex: 100 }}>
+      {!isEmbedded && (<nav dir="ltr" style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'rgba(10,10,10,0.8)', backdropFilter: 'blur(10px)', zIndex: 100 }}>
         <button 
           onClick={() => navigate('/')}
           style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'transparent', border: 'none', color: 'var(--color-gray-light)', cursor: 'pointer', fontFamily: 'var(--font-secondary)', fontSize: '1.1rem' }}
         >
-          {isRTL ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
+          <ArrowLeft size={20} />
           {data.back_btn}
         </button>
       </nav>)}
@@ -68,8 +68,8 @@ const ExpertisePage = ({ isEmbedded = false }) => {
               onClick={() => navigate('/brand-identity')}
               style={{
                 background: 'rgba(255,184,0,0.1)',
-                border: '1px solid var(--color-orange)',
-                color: 'var(--color-orange)',
+                border: '1px solid var(--color-accent-dark)',
+                color: 'var(--color-accent-dark)',
                 padding: '10px 20px',
                 borderRadius: '30px',
                 cursor: 'pointer',
@@ -87,8 +87,8 @@ const ExpertisePage = ({ isEmbedded = false }) => {
               onClick={() => navigate('/creative-direction')}
               style={{
                 background: 'rgba(255,0,127,0.1)',
-                border: '1px solid var(--color-magenta)',
-                color: 'var(--color-magenta)',
+                border: '1px solid var(--color-accent)',
+                color: 'var(--color-accent)',
                 padding: '10px 20px',
                 borderRadius: '30px',
                 cursor: 'pointer',
@@ -133,7 +133,7 @@ const ExpertisePage = ({ isEmbedded = false }) => {
         >
           {[data.stats.sales, data.stats.partnerships, data.stats.experience, data.stats.execution].map((stat, i) => (
             <motion.div key={i} variants={itemVariants} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '15px', textAlign: 'center' }}>
-              <h3 style={{ fontSize: '1.3rem', color: 'var(--color-magenta)', fontWeight: 600 }}>{stat}</h3>
+              <h3 style={{ fontSize: '1.3rem', color: 'var(--color-accent)', fontWeight: 600 }}>{stat}</h3>
             </motion.div>
           ))}
         </motion.div>
@@ -166,7 +166,7 @@ const ExpertisePage = ({ isEmbedded = false }) => {
               const icons = [<PenTool size={30}/>, <Camera size={30}/>, <Layout size={30}/>, <MonitorPlay size={30}/>];
               return (
                 <motion.div key={i} variants={itemVariants} className="glass-panel" style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1.5rem', transition: 'transform 0.3s ease' }} onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-10px)'} onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <div style={{ color: 'var(--color-orange)', background: 'rgba(255,85,0,0.1)', padding: '1rem', borderRadius: '50%' }}>
+                  <div style={{ color: 'var(--color-accent-dark)', background: 'rgba(255,85,0,0.1)', padding: '1rem', borderRadius: '50%' }}>
                     {icons[i % 4]}
                   </div>
                   <h3 style={{ fontSize: '1.5rem' }}>{item.title}</h3>
@@ -186,11 +186,11 @@ const ExpertisePage = ({ isEmbedded = false }) => {
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             {Array.isArray(data.timeline_items) && data.timeline_items.map((item, i) => (
-              <motion.div key={i} variants={itemVariants} style={{ display: 'flex', gap: '2rem', background: 'rgba(255,255,255,0.02)', padding: '2.5rem', borderRadius: '20px', borderLeft: isRTL ? 'none' : '4px solid var(--color-magenta)', borderRight: isRTL ? '4px solid var(--color-magenta)' : 'none' }}>
+              <motion.div key={i} variants={itemVariants} style={{ display: 'flex', gap: '2rem', background: 'rgba(255,255,255,0.02)', padding: '2.5rem', borderRadius: '20px', borderLeft: isRTL ? 'none' : '4px solid var(--color-accent)', borderRight: isRTL ? '4px solid var(--color-accent)' : 'none' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: 1 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--color-magenta)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--color-accent)' }}>
                     <Briefcase size={20} />
-                    <span style={{ fontWeight: 600, letterSpacing: '1px' }}>{item.company}</span>
+                    <span style={{ fontWeight: 600, letterSpacing: 'var(--tracking-tight)' }}>{item.company}</span>
                   </div>
                   <h3 style={{ fontSize: '1.8rem' }}>{item.role}</h3>
                   <p style={{ color: 'var(--color-gray-light)', lineHeight: 1.8, fontSize: '1.1rem' }}>{item.desc}</p>
@@ -212,7 +212,7 @@ const ExpertisePage = ({ isEmbedded = false }) => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
             {Array.isArray(data.arsenal_items) && data.arsenal_items.map((item, i) => (
               <motion.div key={i} variants={itemVariants} style={{ background: 'rgba(255,255,255,0.03)', padding: '2rem', borderRadius: '15px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <h3 style={{ color: 'var(--color-orange)', marginBottom: '1rem', fontSize: '1.2rem' }}>{item.category}</h3>
+                <h3 style={{ color: 'var(--color-accent-dark)', marginBottom: '1rem', fontSize: '1.2rem' }}>{item.category}</h3>
                 <p style={{ color: 'var(--color-text)', lineHeight: 1.6 }}>{item.tools}</p>
               </motion.div>
             ))}

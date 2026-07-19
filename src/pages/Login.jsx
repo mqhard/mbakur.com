@@ -144,7 +144,7 @@ export default function Login({ isModal, onClose }) {
                   flex: 1,
                   padding: '1rem',
                   background: role === 'client' ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
-                  border: `1px solid ${role === 'client' ? 'var(--color-magenta)' : 'var(--color-glass-border)'}`,
+                  border: `1px solid ${role === 'client' ? 'var(--color-accent)' : 'var(--color-glass-border)'}`,
                   borderRadius: '12px',
                   color: '#fff',
                   cursor: 'pointer',
@@ -155,7 +155,7 @@ export default function Login({ isModal, onClose }) {
                   transition: 'all 0.3s ease'
                 }}
               >
-                <Briefcase size={24} color={role === 'client' ? 'var(--color-magenta)' : '#888'} />
+                <Briefcase size={24} color={role === 'client' ? 'var(--color-accent)' : '#888'} />
                 <span style={{ fontSize: '0.9rem' }}>I am a Client</span>
               </button>
               
@@ -204,7 +204,7 @@ export default function Login({ isModal, onClose }) {
                 outline: 'none',
                 transition: 'border-color 0.3s ease'
               }}
-              onFocus={(e) => e.target.style.borderColor = 'var(--color-magenta)'}
+              onFocus={(e) => e.target.style.borderColor = 'var(--color-accent)'}
               onBlur={(e) => e.target.style.borderColor = 'var(--color-glass-border)'}
             />
           </div>
@@ -230,7 +230,7 @@ export default function Login({ isModal, onClose }) {
                 outline: 'none',
                 transition: 'border-color 0.3s ease'
               }}
-              onFocus={(e) => e.target.style.borderColor = 'var(--color-magenta)'}
+              onFocus={(e) => e.target.style.borderColor = 'var(--color-accent)'}
               onBlur={(e) => e.target.style.borderColor = 'var(--color-glass-border)'}
             />
           </div>
@@ -318,7 +318,7 @@ export default function Login({ isModal, onClose }) {
               style={{
                 background: 'none',
                 border: 'none',
-                color: 'var(--color-magenta)',
+                color: 'var(--color-accent)',
                 cursor: 'pointer',
                 fontWeight: 'bold',
                 marginLeft: '5px',

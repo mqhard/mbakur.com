@@ -66,14 +66,14 @@ const ProjectTracker = () => {
             fontSize: 'clamp(2rem, 4vw, 4rem)',
             color: '#fff',
             fontWeight: 900,
-            letterSpacing: '2px',
+            letterSpacing: 'var(--tracking-wide)',
             textTransform: 'uppercase',
             fontFamily: 'var(--font-primary)'
           }}
         >
           {t('creativeDirection.projectTracker.title')}
           <br />
-          <span style={{ fontSize: '1rem', color: 'var(--color-magenta)', fontWeight: 400, letterSpacing: '4px' }}>
+          <span style={{ fontSize: '1rem', color: 'var(--color-accent)', fontWeight: 400, letterSpacing: 'var(--tracking-widest)' }}>
             {t('creativeDirection.projectTracker.subtitle')}
           </span>
         </motion.h2>
@@ -94,7 +94,7 @@ const ProjectTracker = () => {
         >
           <defs>
             <linearGradient id="flowGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="var(--color-magenta)" stopOpacity="1" />
+              <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="1" />
               <stop offset="100%" stopColor="#fff" stopOpacity="0.5" />
             </linearGradient>
             <filter id="neonBlur" x="-20%" y="-20%" width="140%" height="140%">
@@ -176,11 +176,11 @@ const ProjectTracker = () => {
                   height: '40px',
                   borderRadius: '50%',
                   background: '#050505',
-                  border: '3px solid var(--color-magenta)',
+                  border: '3px solid var(--color-accent)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: 'var(--color-magenta)',
+                  color: 'var(--color-accent)',
                   position: 'relative',
                   zIndex: 2,
                   cursor: 'crosshair'
@@ -194,7 +194,7 @@ const ProjectTracker = () => {
                 animate={{
                   x: isMobile || visualSide === 'center' ? 0 : (visualSide === 'right' ? (activeNode === node.id ? 5 : 0) : (activeNode === node.id ? -5 : 0)),
                   y: isMobile || visualSide === 'center' ? (activeNode === node.id ? -5 : 0) : 0,
-                  borderColor: activeNode === node.id ? 'var(--color-magenta)' : 'rgba(255,255,255,0.1)',
+                  borderColor: activeNode === node.id ? 'var(--color-accent)' : 'rgba(255,255,255,0.1)',
                   boxShadow: activeNode === node.id ? '0 15px 40px rgba(255,0,127,0.2)' : '0 10px 30px rgba(0,0,0,0.6)'
                 }}
                 style={{
@@ -229,7 +229,7 @@ const ProjectTracker = () => {
                     [visualSide === 'right' ? 'left' : 'right']: '-60px',
                     width: '60px',
                     height: '2px',
-                    background: activeNode === node.id ? 'var(--color-magenta)' : 'rgba(255,255,255,0.2)',
+                    background: activeNode === node.id ? 'var(--color-accent)' : 'rgba(255,255,255,0.2)',
                     transform: 'translateY(-50%)',
                     zIndex: -1,
                     transition: 'background 0.4s ease'
@@ -240,12 +240,12 @@ const ProjectTracker = () => {
                 <div style={{
                   display: 'inline-block',
                   background: activeNode === node.id ? 'rgba(255,0,127,0.15)' : 'rgba(255,255,255,0.05)',
-                  color: activeNode === node.id ? 'var(--color-magenta)' : 'rgba(255,255,255,0.5)',
+                  color: activeNode === node.id ? 'var(--color-accent)' : 'rgba(255,255,255,0.5)',
                   padding: '4px 12px',
                   borderRadius: '4px',
                   fontSize: '0.7rem',
                   fontWeight: 800,
-                  letterSpacing: '2px',
+                  letterSpacing: 'var(--tracking-wide)',
                   marginBottom: '1rem',
                   textTransform: 'uppercase'
                 }}>
@@ -258,7 +258,7 @@ const ProjectTracker = () => {
                   fontWeight: 900,
                   marginBottom: '0.8rem',
                   fontFamily: 'var(--font-primary)',
-                  letterSpacing: '1px',
+                  letterSpacing: 'var(--tracking-tight)',
                   textShadow: '0 0 10px rgba(255,255,255,0.1)'
                 }}>
                   {t(`creativeDirection.projectTracker.nodes.${node.key}.title`)}

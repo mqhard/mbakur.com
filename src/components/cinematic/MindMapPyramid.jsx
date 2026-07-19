@@ -70,14 +70,14 @@ const MindMapPyramid = () => {
             fontSize: 'clamp(2rem, 4vw, 4rem)',
             color: '#fff',
             fontWeight: 900,
-            letterSpacing: '2px',
+            letterSpacing: 'var(--tracking-wide)',
             textTransform: 'uppercase',
             fontFamily: 'var(--font-primary)'
           }}
         >
           {t('creativeDirection.mindmap.title')}
           <br />
-          <span style={{ fontSize: '1rem', color: 'var(--color-magenta)', fontWeight: 400, letterSpacing: '4px' }}>
+          <span style={{ fontSize: '1rem', color: 'var(--color-accent)', fontWeight: 400, letterSpacing: 'var(--tracking-widest)' }}>
             {t('creativeDirection.mindmap.subtitle')}
           </span>
         </motion.h2>
@@ -99,7 +99,7 @@ const MindMapPyramid = () => {
         >
           <defs>
             <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="var(--color-magenta)" stopOpacity="0.8" />
+              <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="0.8" />
               <stop offset="100%" stopColor="#fff" stopOpacity="0.2" />
             </linearGradient>
             <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
@@ -170,7 +170,7 @@ const MindMapPyramid = () => {
                 height: '24px',
                 borderRadius: '50%',
                 background: '#111',
-                border: '2px solid var(--color-magenta)',
+                border: '2px solid var(--color-accent)',
                 marginBottom: '1rem',
                 position: 'relative'
               }}
@@ -204,7 +204,7 @@ const MindMapPyramid = () => {
                 fontWeight: 800,
                 marginBottom: '0.5rem',
                 fontFamily: 'var(--font-primary)',
-                letterSpacing: '1px'
+                letterSpacing: 'var(--tracking-tight)'
               }}>
                 {t(`creativeDirection.mindmap.nodes.${node.key}.title`)}
               </h3>

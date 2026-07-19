@@ -33,7 +33,7 @@ const CreativeTechInnovation = () => {
               fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
               color: '#fff',
               fontWeight: 900,
-              letterSpacing: '2px',
+              letterSpacing: 'var(--tracking-wide)',
               textTransform: 'uppercase',
               fontFamily: 'var(--font-primary)',
               textShadow: '0 0 10px rgba(0,0,0,0.5)'
@@ -102,7 +102,7 @@ const CreativeTechInnovation = () => {
 
               <div style={{ position: 'relative', zIndex: 1 }}>
                 <div style={{
-                  color: idx === 1 ? 'var(--color-cyan)' : 'var(--color-magenta)',
+                  color: idx === 1 ? 'var(--color-cyan)' : 'var(--color-accent)',
                   marginBottom: '2rem'
                 }}>
                   {feature.icon}

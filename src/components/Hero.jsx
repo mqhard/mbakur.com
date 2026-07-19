@@ -61,7 +61,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.2 }}
           style={{ position: 'absolute', top: '25px', left: 0, width: '100%', textAlign: 'center', zIndex: 10 }}
         >
-          <h1 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', lineHeight: 1, margin: 0, letterSpacing: '2px', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+          <h1 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', lineHeight: 1, margin: 0, letterSpacing: 'var(--tracking-wide)', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
             {t('hero.title1')} <span>{t('hero.title2')}</span>
           </h1>
         </motion.div>
@@ -112,7 +112,7 @@ const Hero = () => {
               fontWeight: isRTL ? 800 : 600, 
               fontSize: isRTL ? '1.1rem' : '1rem',
               letterSpacing: isRTL ? '0px' : '2px', 
-              borderBottom: '1px solid var(--color-orange)', 
+              borderBottom: '1px solid var(--color-accent-dark)', 
               textShadow: '0 2px 5px rgba(0,0,0,0.5)',
               paddingBottom: '5px',
               cursor: 'pointer'
@@ -129,7 +129,7 @@ const Hero = () => {
         transition={{ delay: 1.5, duration: 1 }}
         style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}
       >
-        <ChevronDown size={32} color="var(--color-orange)" style={{ animation: 'bounce 2s infinite' }} />
+        <ChevronDown size={32} color="var(--color-accent-dark)" style={{ animation: 'bounce 2s infinite' }} />
       </motion.div>
       <style>{`
         @keyframes bounce {

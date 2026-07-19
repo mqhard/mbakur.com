@@ -51,12 +51,12 @@ const ProudProjects = () => {
       </Helmet>
 
       {/* Navbar */}
-      <nav style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'rgba(3,3,3,0.85)', backdropFilter: 'blur(15px)', zIndex: 100 }}>
+      <nav dir="ltr" style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'rgba(3,3,3,0.85)', backdropFilter: 'blur(15px)', zIndex: 100 }}>
         <button 
           onClick={() => navigate('/')}
           style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'transparent', border: 'none', color: 'var(--color-gray-light)', cursor: 'pointer', fontFamily: 'var(--font-secondary)', fontSize: '1.1rem' }}
         >
-          {isRTL ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
+          <ArrowLeft size={20} />
           {t('expertisePage.back_btn', 'Back to Home')}
         </button>
       </nav>
@@ -76,7 +76,7 @@ const ProudProjects = () => {
             filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none'
           }} />
           
-          <h1 className="gradient-text" style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', marginBottom: '1.5rem', position: 'relative', zIndex: 1, letterSpacing: '2px' }}>
+          <h1 className="gradient-text" style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', marginBottom: '1.5rem', position: 'relative', zIndex: 1, letterSpacing: 'var(--tracking-wide)' }}>
             {data.hero_title}
           </h1>
           <p style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)', color: '#ccc', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6, position: 'relative', zIndex: 1, fontFamily: 'var(--font-secondary)' }}>
@@ -94,7 +94,7 @@ const ProudProjects = () => {
               <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#fff', marginBottom: '0.5rem' }}>{data.featured_title}</h2>
               <p style={{ color: 'var(--color-gray-light)', fontSize: '1.2rem' }}>{data.featured_subtitle}</p>
             </div>
-            <Sparkles color="var(--color-orange)" size={40} />
+            <Sparkles color="var(--color-accent-dark)" size={40} />
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
@@ -102,7 +102,7 @@ const ProudProjects = () => {
               <motion.div key={i} variants={itemVariants} className="glass-panel" style={{ borderRadius: '15px', overflow: 'hidden', cursor: 'pointer' }}>
                 <div style={{ height: '300px', background: i === 0 ? 'url(https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80) center/cover' : 'url(https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80) center/cover', transition: 'transform 0.5s ease' }} className="project-img" />
                 <div style={{ padding: '2rem' }}>
-                  <span style={{ color: 'var(--color-magenta)', fontSize: '0.9rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>
+                  <span style={{ color: 'var(--color-accent)', fontSize: '0.9rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 'var(--tracking-tight)' }}>
                     {i === 0 ? 'Case Study' : 'Future Work'}
                   </span>
                   <h3 style={{ fontSize: '1.8rem', margin: '1rem 0' }}>{i === 0 ? 'The Silent Brand Evolution' : 'Immersive Digital Experience'}</h3>
@@ -119,14 +119,14 @@ const ProudProjects = () => {
           style={{ marginBottom: '15vh' }}
         >
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--color-orange)' }}>{data.arsenal_title}</h2>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--color-accent-dark)' }}>{data.arsenal_title}</h2>
             <p style={{ color: '#ccc', fontSize: '1.2rem', marginTop: '1rem' }}>{data.arsenal_subtitle}</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {data.categories && data.categories.map((cat, i) => {
               const icons = [<Video size={40}/>, <Layout size={40}/>, <Camera size={40}/>, <Zap size={40}/>];
-              const colors = ['var(--color-magenta)', '#00ffff', 'var(--color-orange)', '#ffff00'];
+              const colors = ['var(--color-accent)', '#00ffff', 'var(--color-accent-dark)', '#ffff00'];
               return (
                 <motion.div key={i} variants={itemVariants} className="dotted-border glass-panel" style={{ padding: '3rem 2rem', textAlign: 'center', borderRadius: '20px', transition: 'all 0.3s ease' }} onMouseOver={(e) => { e.currentTarget.style.borderColor = colors[i]; e.currentTarget.style.transform = 'translateY(-10px)'; }} onMouseOut={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
                   <div style={{ color: colors[i], marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
@@ -176,14 +176,14 @@ const ProudProjects = () => {
               <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>{data.blog_title}</h2>
               <p style={{ color: 'var(--color-gray-light)', fontSize: '1.2rem' }}>{data.blog_subtitle}</p>
             </div>
-            <PenTool color="var(--color-magenta)" size={40} />
+            <PenTool color="var(--color-accent)" size={40} />
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {data.blog_items && data.blog_items.map((item, i) => (
               <motion.div key={i} variants={itemVariants} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '2rem', background: 'rgba(255,255,255,0.02)', borderRadius: '15px', border: '1px solid rgba(255,255,255,0.05)', cursor: 'pointer', transition: 'background 0.3s' }} onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'} onMouseOut={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.02)'}>
                 <h3 style={{ fontSize: '1.4rem', margin: 0 }}>{item.title}</h3>
-                <span style={{ color: 'var(--color-orange)', fontSize: '1rem', fontFamily: 'var(--font-secondary)' }}>{item.date}</span>
+                <span style={{ color: 'var(--color-accent-dark)', fontSize: '1rem', fontFamily: 'var(--font-secondary)' }}>{item.date}</span>
               </motion.div>
             ))}
           </div>
@@ -205,17 +205,17 @@ const ProudProjects = () => {
                 <span style={{ fontSize: '1rem', fontWeight: 600 }}>Figma UI Kit</span>
               </div>
               <div style={{ width: '220px', height: '160px', background: 'rgba(255,255,255,0.1)', borderRadius: '15px', border: '1px solid rgba(255,0,127,0.3)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'all 0.3s' }} onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseOut={(e) => e.currentTarget.style.transform = 'none'}>
-                <MonitorPlay color="var(--color-magenta)" size={32} style={{ marginBottom: '10px' }} />
+                <MonitorPlay color="var(--color-accent)" size={32} style={{ marginBottom: '10px' }} />
                 <span style={{ fontSize: '1rem', fontWeight: 600 }}>After Effects Script</span>
               </div>
               <div style={{ width: '220px', height: '160px', background: 'rgba(255,255,255,0.1)', borderRadius: '15px', border: '1px solid rgba(255,69,0,0.3)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'all 0.3s' }} onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseOut={(e) => e.currentTarget.style.transform = 'none'}>
-                <Camera color="var(--color-orange)" size={32} style={{ marginBottom: '10px' }} />
+                <Camera color="var(--color-accent-dark)" size={32} style={{ marginBottom: '10px' }} />
                 <span style={{ fontSize: '1rem', fontWeight: 600 }}>Lighting LUTs</span>
               </div>
             </div>
             
             <button 
-              style={{ marginTop: '3rem', background: 'transparent', border: '1px solid #00ffff', color: '#00ffff', padding: '1rem 2.5rem', borderRadius: '30px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer', transition: 'all 0.3s' }} 
+              style={{ marginTop: '3rem', background: 'transparent', border: '1px solid #00ffff', color: '#00ffff', padding: '1rem 2.5rem', borderRadius: '30px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 'var(--tracking-tight)', cursor: 'pointer', transition: 'all 0.3s' }} 
               onClick={() => window.open('https://instagram.com/mbakur', '_blank')}
               onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(0,255,255,0.1)'; e.currentTarget.style.boxShadow = '0 0 15px rgba(0,255,255,0.4)'; }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.boxShadow = 'none'; }}

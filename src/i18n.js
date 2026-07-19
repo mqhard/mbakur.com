@@ -15,7 +15,7 @@ const resources = {
       
       "brand_gallery": {
         "title": "Brand Gallery",
-        "subtitle": "Explore Our Selected Work",
+        "subtitle": "Explore My Selected Work",
         "specifications": "Brand Specifications",
         "primary_typeface": "Primary Typeface",
         "secondary_typeface": "Secondary Typeface",
@@ -44,7 +44,7 @@ const resources = {
         "vision_text": "Bridging the gap between raw emotion and digital perfection. Every frame, every pixel, every transition is meticulously calculated to deliver an unforgettable cinematic experience.",
         "experience": "Experience",
         "philosophy_title": "Working Philosophy",
-        "philosophy_text": "\"We believe in the power of asymmetrical beauty. Perfection lies in the careful balance of chaos and order. Black is our canvas, magenta is our heartbeat, orange is our spark.\""
+        "philosophy_text": "\"I believe in the power of asymmetrical beauty. Perfection lies in the careful balance of chaos and order. Black is my canvas, magenta is my heartbeat, orange is my spark.\""
       },
       "expertise": {
         "title": "EXPERTISE",
@@ -87,6 +87,38 @@ const resources = {
         "cat_colorgrading": "Color Grading",
         "cat_directing": "Directing",
         "proj_global": "Global Tech Commercial",
+        "proj_savage": "Savage & SHē (Albarrad)",
+        "proj_finzey": "Finzey Finance Commercial",
+        "proj_finzey_desc": "As an expert in Commercial Video Production and Creative Direction, I took charge of executing this promotional advertisement for Finzey Finance.\n\nThis project reflects my ability to deliver comprehensive B2B visual production services, particularly for the financial sector. The process began with strategic Concept Creation and Scriptwriting to highlight accessible financing solutions in a direct and engaging manner. We then moved to on-location Commercial Videography to convey professionalism and trust, culminating in dynamic Video Editing to ensure a fast-paced rhythm perfectly optimized for social media platforms.\n\nBecause a financial message requires precision and clarity, my services also included Performance Directing to ensure Finzey’s message was delivered with absolute confidence and credibility to the target audience.\n\nWatch the commercial now to see how I translate corporate messages into professional visual content that builds trust! 🚀🎬",
+        "proj_finzey_narrative": "Finzey Finance (Narrative Ad)",
+        "proj_finzey_narrative_desc": "As an expert in Commercial Video Production and Creative Direction, I took charge of executing this narrative-driven promotional advertisement for Finzey Finance.\n\nThis project reflects my ability to deliver comprehensive B2B visual production services, particularly for the financial sector. The process began with strategic Concept Creation and Scriptwriting to highlight Sharia-compliant financing solutions through a short, relatable, and engaging dramatic format. We then moved to on-location Commercial Videography to convey professionalism and trust, culminating in dynamic Video Editing to ensure a smooth, impactful rhythm perfectly optimized for social media platforms.\n\nBecause a financial message requires precision and persuasion, my services also included Performance Directing to ensure Finzey’s message was delivered with absolute confidence and credibility, effectively highlighting the ease of financing and B2B partnerships.\n\nWatch the commercial now to see how I translate corporate messages into professional visual content that builds trust! 🚀🎬",
+        "proj_diman": "Diman Water Factory",
+        "proj_diman_desc": "As an expert in Video Editing and Post-Production, I took on the editing process for the corporate profile video of the \"Diman Water Factory\".\n\nThis project showcases my ability to transform raw industrial footage into a compelling and visually pleasing narrative. My services focused on Professional Video Editing, carefully adjusting the pacing to match the fast-moving machinery and production lines, giving the viewer a seamless sense of the operations. I also applied precise Color Grading to highlight the purity of the water and the pristine work environment, reflecting the factory's high-quality standards. This was paired with subtle and effective Sound Design that complements the visuals without distraction.\n\nThe result is a smooth, cohesively edited corporate video that goes beyond merely showing equipment; it highlights the factory's technological advancement and serves as a powerful B2B marketing tool to build trust with partners.\n\nWatch the video now to see how professional editing can transform complex industrial footage into captivating visual content! 🚀🎬",
+        "proj_tyson": "Mike Tyson Visit Coverage",
+        "proj_tyson_desc": "As an expert in Visual Production for Global Events, I directed the on-ground coverage and production for the visit of the legendary Mike Tyson to \"Al Othaim\" center, which included public meet-and-greets and a special honor ceremony.\n\nThis project showcases my ability to manage Celebrity Coverage. My services centered on Dynamic Event Videography, capturing Tyson's presence, audience interaction, and exclusive behind-the-scenes moments amidst dense crowds and lighting challenges. This was followed by Cinematic Video Editing to arrange events into an impactful, fast-paced sequence, emphasizing the \"legendary status\" of Mike Tyson and the professionalism of the organizers and crowd engagement.\n\nThe result is a standout, high-intensity documentary video that highlights the success of the event. It confirms my capability to handle the pressures of filming in crowded environments, serving as an exceptional marketing asset for documenting major events and attracting media attention.\n\nWatch the coverage now to see how I transform celebrity visits into world-class visual content! 🥊🌍",
+        "proj_dar": "Dar & Emaar Testimonial",
+        "proj_dar_desc": "As an expert in Corporate Videography, I led the production and direction of this testimonial video, highlighting the residents' experience at \"Dar & Emaar\" real estate development during their community Eid celebration.\n\nThis project showcases my ability to manage Interview Production professionally. My services focused on multi-angle cinematic coverage to capture the authentic, spontaneous emotions of the residents, with a strong emphasis on high-quality audio to ensure their feedback was crystal clear. I engineered the shot selection to weave together residents' testimonials regarding build quality, community organization, and personal experiences, culminating in a Professional Edit that turns these human stories into compelling brand marketing content, boosting trust among current and prospective clients.\n\nThe result is a professional testimonial video that captures the \"community life\" within Dar & Emaar developments, serving as a powerful asset for brand loyalty and highlighting the excellence of their urban projects.\n\nWatch the coverage now to see how I transform client testimonials into success stories that reflect project quality! 🏠✨",
+        "proj_way": "WAY Coffee & Bakery",
+        "proj_way_desc": "As an expert in Corporate Visual Production and Commercial Videography, I led the directing, shooting, and editing for this promotional video for \"WAY\" Coffee & Bakery.\n\nThis project showcases my ability to create an inviting and visually compelling experience. My services focused on B-roll Videography to capture the brand's visual identity—from exterior shots and the serene interior design to the intricate details of professional coffee brewing. I also emphasized Customer Experience by documenting friendly service through candid shots, reflecting the warmth of the cafe's environment for its visitors.\n\nThe result is a punchy, short-form promotional video that blends aesthetic appeal with technical precision. It serves as an ideal marketing asset for social media platforms (Reels/Shorts) to attract visitors and highlight the unique ambiance of the space.\n\nWatch the work now to see how I translate a cafe's identity into a vibrant visual experience! ☕🥐",
+        "proj_marathon": "Saudi Boxing Federation - Riyadh Marathon",
+        "proj_marathon_desc": "As an expert in Sports Visual Production and Event Coverage, I led the on-ground videography and post-production for the Saudi Boxing Federation's activation at the Riyadh Marathon.\n\nThis project showcases my ability to transform interactive events into highly energetic visual content. My services focused on Dynamic Event Videography to capture the spontaneous engagement of the crowd—across all ages—with the boxing activities, highlighting the adrenaline-filled atmosphere that blends the runners' determination with the passion of boxing. This was seamlessly paired with Fast-Paced Video Editing, creating a rapid visual rhythm that perfectly matches the sports environment and is optimized for social media platforms.\n\nThe result is an impactful, short-form visual content that not only documents the event's success but also highlights the Saudi Boxing Federation's active role in community engagement. It serves as an ideal marketing tool to boost digital interaction and brand presence.\n\nWatch the coverage now to see how I transform crowd energy into captivating, interactive content! 🥊🏃‍♂️",
+        "proj_cr7": "CR7 Run Club",
+        "proj_cr7_desc": "As an expert in Sports Visual Production and National Event Coverage, I directed the on-ground videography and post-production for the CR7 Run Club training session, an event organized to support and celebrate Saudi Arabia's bid to host the 2034 World Cup.\n\nThis project showcases my ability to blend athletic energy with national pride in an impactful visual format. My services focused on Dynamic Sports Videography to capture the participants' stamina, the running action, and the enthusiastic moments featuring the Saudi flag and the World Cup trophy. This was followed by Cinematic Video Editing to synchronize the fast-paced footage with patriotic audio, creating a rhythm that resonates emotionally and reflects community solidarity.\n\nThe result is an inspiring, short-form visual content tailored for social media. It goes beyond documenting a sports event; it translates the Kingdom's vision and ambition into a powerful promotional message that supports this historic milestone.\n\nWatch the coverage now to see how I transform sports events into visual stories that inspire national pride! 🇸🇦🏆",
+        "proj_cafe": "Cafe & Bakery B-roll",
+        "proj_cafe_desc": "As an expert in Commercial Videography and Cinematography for the F&B sector, I led the complete on-location shooting for this promotional video of a specialty coffee shop and bakery.\n\nThis project exemplifies my skills in shot engineering and lighting control. My services focused heavily on Macro & B-roll Videography to highlight product quality—from the smooth shots of espresso extraction and machinery movement to the rich textures of fresh baked goods. I also utilized dynamic camera angles and smooth movements to capture the aesthetic interior design, giving the viewer a sense of depth and the warm, inviting atmosphere of the space.\n\nThe result is rich, high-quality visual footage that captures the \"soul\" of the cafe. It translates the physical experience into powerful visual content that engages the viewer's senses, serving as the ultimate marketing tool to drive foot traffic through social media platforms.\n\nWatch the video now to see how I craft vibrant shots that highlight every perfect detail of your coffee! ☕🎬",
+        "proj_beauty": "Bridal Preparation Reel",
+        "proj_beauty_desc": "As an expert in Digital Content Creation and Social Media Visual Production, I handled the videography and editing for this short bridal preparation video, created for a professional Hair Stylist and Makeup Artist.\n\nThis project exemplifies my ability to craft eye-catching short-form content. My services focused on precise Beauty Videography to professionally capture the intricate details of the styling process. This was followed by Trendy Video Editing and Seamless Transitions, creating an engaging visual rhythm that showcases the stunning transformation from preparation to the final bridal look, perfectly synced with the music.\n\nThe result is dynamic visual content tailored specifically for platforms like Reels and Shorts. It goes beyond mere documentation to highlight the stylist’s artistry, serving as a powerful marketing tool to attract clients and boost the brand's digital engagement.\n\nWatch the video now to see how I transform artistic skills into viral, interactive content! ✂️💄",
+        "proj_boxing": "Saudi Boxing Federation",
+        "proj_boxing_desc": "As an expert in Sports Visual Production and Major Event Coverage, I led the on-ground documentation and editing for the \"Saudi Boxing Federation\" activation at Expo 24.\n\nThis project highlights my ability to capture the high energy and excitement of interactive sports events. My services focused on Dynamic Event Videography to showcase audience engagement across all ages with the sport of boxing, documenting the adrenaline-filled atmosphere. This was seamlessly combined with Fast-Paced Professional Editing, creating a rapid visual rhythm that synchronizes with the athletic movements and music, perfectly tailored for maximum reach and engagement on social media platforms (Shorts/Reels).\n\nThe result is an impactful, short-form visual content that not only documents the event's success but also boosts the Federation's digital presence, serving as an ideal marketing asset to highlight sports activities and community participation.\n\nWatch the coverage now to see how I transform sports events into eye-catching, interactive content in just a few seconds! 🚀🥊",
+        "proj_finzey_short": "Finzey Finance (Short Ad)",
+        "proj_finzey_short_desc": "As an expert in Commercial Video Production and Creative Direction, I executed this short promotional advertisement for Finzey Finance, focusing on the ease of their app and the widespread availability of their branches.\n\nThis project exemplifies my ability to deliver comprehensive B2B visual production services. The process started with Concept Creation and Scriptwriting, designing a spontaneous and relatable conversational scene inside a car. We then moved to Commercial Videography, focusing on capturing authentic performances and highlighting the company's visual identity through exterior shots. The journey concluded with dynamic Video Editing to deliver a short, impactful video perfectly tailored for social media platforms.\n\nTo ensure the promotional message felt natural and persuasive, my services included Performance Directing. This helped effectively communicate Finzey’s core message about their fast procedures and nationwide availability to serve customers.\n\nWatch the commercial now to see how I craft short, impactful visual stories that drive business goals and engage target audiences! 🚀🎬",
+        "proj_nupco": "Nupco National Day Coverage",
+        "proj_nupco_desc": "As an expert in Corporate Visual Production and Cinematic Event Coverage, I led the professional documentation of Nupco's celebration for the Saudi National Day.\n\nThis project showcases my ability to transform live events into timeless visual stories. My services centered on Cinematic Event Videography, meticulously capturing the joy of the children, the massive crowd interaction, and the intricate details of the traditional setup. This was followed by Professional Cinematic Editing, seamlessly blending spontaneous moments with national melodies to create an emotionally resonant visual rhythm.\n\nThe result is a comprehensive coverage video that goes beyond mere documentation; it highlights Nupco's commitment to fostering national spirit and community engagement, making it an ideal asset for public relations and corporate platforms.\n\nWatch the coverage now to see how I document major events and turn them into a visual memory that elevates brand identity! 🚀🎬",
+        "proj_savage_desc": "An exceptional night... The rhythms of Savage & SHē!\n\nAs a visual creator specializing in cinematic event coverage in Riyadh, I captured through my lens this legendary event engineered by \"Albarrad\". Focusing on high-end event videography, I documented everything from the luxurious backstage setups and lighting design to the insane crowd interaction with the magical Deep House tunes and live instruments at this premier music festival.\n\nI present to you this cinematic coverage so you can travel back with me to that night... and feel the energy pulsing in every frame! 🎧🎬",
+        "proj_shining_tours": "Shining Tours (Desert Safari)",
+        "proj_shining_tours_desc": "Through my lens, I had the pleasure of capturing an exhilarating journey with an international group of tourists as they explored the breathtaking landscapes of Saudi Arabia with Shining Tours.\n\nFrom the lively afternoon meeting point in Riyadh to hitting the road in a fleet of SUVs, the excitement was palpable. I documented our off-road adventure through the rugged desert, culminating in a spectacular sunset at the iconic \"Edge of the World.\" The day wrapped up with a traditional, starlit barbecue dinner, bringing everyone together to share their unforgettable experiences. This video is a true reflection of the magic of Saudi tourism and the memorable adventures crafted by Shining Tours.",
+        "proj_sumify": "Sumify Launch (End-to-End Production)",
+        "proj_sumify_desc": "As a specialist in Creative Direction and End-to-End Visual Production, I spearheaded the complete execution of the official launch video for the Sumify platform.\n\nThis project showcases the comprehensive suite of creative B2B services I provide. The process began with strategic Scriptwriting that captures the brand's identity and simplifies its technical solutions, followed by detailed Storyboard Design, and culminated in full execution using 3D Motion Graphics to highlight the platform's features with stunning visual precision.\n\nTo ensure an immersive experience, my services on this project also included advanced Audio Engineering and professional Voiceover Production, delivering a tone that blends confidence with technical sophistication.\n\nWatch the launch video now to see how I transform concepts into compelling visual realities that drive business goals! 🚀🎬",
         "proj_summer": "Summer Collection",
         "proj_silent": "The Silent Echo",
         "proj_modern": "Web & App Design",
@@ -110,7 +142,7 @@ const resources = {
       "community": {
         "title1": "THE",
         "title2": "COMMUNITY",
-        "desc": "A collective of visionaries, visual craftsmen, and storytellers. We believe in the power of shared knowledge and collaborative growth. Join our philosophy.",
+        "desc": "A collective of visionaries, visual craftsmen, and storytellers. I believe in the power of shared knowledge and collaborative growth. Join our philosophy.",
         "item1": "Vision",
         "item2": "Membership",
         "item3": "Benefits",
@@ -182,8 +214,45 @@ const resources = {
         "footer_title": "Let's build the future of visuals together",
         "back_btn": "Back to Home"
       },
+      "brand_guide": {
+        "cover": "Cover",
+        "guidelines": "Brand Guidelines",
+        "version": "V 1.0",
+        "index": "Index",
+        "about": "About The Brand",
+        "philosophy": "The Philosophy",
+        "introduction": "Introduction",
+        "brand_story": "Brand Story",
+        "brand_mark": "The Brand Mark",
+        "logo": "The Logo",
+        "main_logo": "Main Logo",
+        "evolution": "Logo Evolution & Transformation",
+        "final_logo": "Final Logo",
+        "safe_area": "Safe Area",
+        "minimum_size": "Minimum Size",
+        "incorrect_usage": "Incorrect Usage",
+        "color_system": "Color System",
+        "palette": "The Palette",
+        "typography": "Typography",
+        "fonts": "The Fonts",
+        "primary_typeface": "Primary Typeface",
+        "secondary_typeface": "Secondary Typeface",
+        "visual_system": "Visual System",
+        "geometry": "The Geometry",
+        "iconography": "Iconography",
+        "patterns": "Patterns",
+        "applications": "Applications",
+        "the_applications": "The Applications",
+        "promotional_materials": "Promotional Materials",
+        "thank_you": "Thank You",
+        "the_end": "The End",
+        "challenge": "Challenge",
+        "opportunity": "Opportunity",
+        "placeholder_desc": "This section is defined in the brand architecture. Detailed content will be populated based on the full brand guide document.",
+        "loading": "Loading..."
+      },
       
-            "brandIdentity": {
+      "brandIdentity": {
         "hub": {
           "title": "What Are You Building?",
           "featuredExample": "Featured Example",
@@ -203,7 +272,7 @@ const resources = {
           { "title": "A Movement", "subtitle": "Build something larger than a company.", "desc": "For ambitious initiatives, social projects, and transformative ideas.", "outcomes": ["Vision Architecture", "Purpose Framework", "Narrative Development", "Cultural Impact Strategy", "Influence Ecosystem", "Global Expansion Framework"] }
         ],
         "journeyPhases": [
-          { "title": "DISCOVER", "headline": "Understand What Must Be Built", "desc": "We explore the purpose, vision, audience, market, and opportunities behind the idea.", "deliverables": ["Discovery Workshop", "Research Framework", "Strategic Foundation"] },
+          { "title": "DISCOVER", "headline": "Understand What Must Be Built", "desc": "I explore the purpose, vision, audience, market, and opportunities behind the idea.", "deliverables": ["Discovery Workshop", "Research Framework", "Strategic Foundation"] },
           { "title": "POSITION", "headline": "Define Your Place In The World", "desc": "A powerful brand is not everything to everyone. It owns a specific position in people's minds.", "deliverables": ["Market Positioning", "Audience Mapping", "Competitive Analysis", "Differentiation Strategy"] },
           { "title": "PERSONALITY", "headline": "Give The Brand A Soul", "desc": "Before people remember logos, they remember how a brand makes them feel.", "deliverables": ["Brand Personality", "Voice & Tone", "Messaging System", "Communication Principles"] },
           { "title": "IDENTITY", "headline": "Create A Visual Language", "desc": "Strategy becomes visible.", "deliverables": ["Identity System", "Logo Architecture", "Typography System", "Color System", "Motion Principles"] },
@@ -219,7 +288,7 @@ const resources = {
           "scroll": "Explore the Cosmos"
         },
         "intro": {
-          "text": "In a market shifting at the speed of light, an identity must be a gravitational force. We craft monumental brands that echo through time, deeply rooted in the heritage of the Saudi civilization yet soaring into the future of global innovation."
+          "text": "In a market shifting at the speed of light, an identity must be a gravitational force. I craft monumental brands that echo through time, deeply rooted in the heritage of the Saudi civilization yet soaring into the future of global innovation."
         },
         "projects": [
           {
@@ -296,9 +365,9 @@ const resources = {
       },
       "creativeDirection": {
         "hero": {
-          "text1": "We do not create",
+          "text1": "I do not create",
           "text2": "content.",
-          "text3": "We engineer",
+          "text3": "I engineer",
           "text4": "attention.",
           "desc": "Step into the control room of perception.",
           "desc_span": "Everything you see is calculated.",
@@ -338,7 +407,7 @@ const resources = {
           "quote1_span": "louder than noise.",
           "quote2": "Darkness defines",
           "quote2_span": "the light.",
-          "desc": "We believe in the power of asymmetrical beauty. Perfection lies in the careful balance of chaos and order. Black is our canvas, magenta is our heartbeat."
+          "desc": "I believe in the power of asymmetrical beauty. Perfection lies in the careful balance of chaos and order. Black is my canvas, magenta is my heartbeat."
         },
         "portfolio": {
           "title1": "Director's",
@@ -346,7 +415,7 @@ const resources = {
           "conflict": "THE CONFLICT",
           "conflict_desc": "In a saturated market, attention is the rarest commodity. The brand needed to break through the noise without compromising its luxury heritage.",
           "vision": "THE VISION",
-          "vision_desc": "We engineered a visual narrative built on psychological tension—using darkness to frame the light, and silence to amplify the message.",
+          "vision_desc": "I engineered a visual narrative built on psychological tension—using darkness to frame the light, and silence to amplify the message.",
           "result": "THE RESULT",
           "result_desc": "A 300% increase in engagement and a redefined brand perception in the digital landscape.",
           "projects": [
@@ -445,7 +514,7 @@ const resources = {
             "description": "Crafting contagious messages that shape perception and behavior.",
             "psychologicalFunction": "Transforming ideas into memorable narratives.",
             "profile": {
-              "about": "We engineer language to bypass rational defense mechanisms.",
+              "about": "I engineer language to bypass rational defense mechanisms.",
               "methods": "Linguistic Anchoring, Narrative Framing, Cognitive Dissonance",
               "specializations": ["Brand Voice", "Scriptwriting", "Conversion Copy"],
               "executionProcess": "Research -> Insight -> Ideation -> Refinement -> Impact",
@@ -592,7 +661,7 @@ const resources = {
         "cat_photography": "التصوير الفوتغرافي",
         "cat_videography": "تصوير الفيديو",
         "cat_cinematography": "التصوير السينمائي",
-        "cat_brandidentity": "Design & Branding",
+        "cat_brandidentity": "التصميم والهويات البصرية",
         "cat_creative": "الإدارة الإبداعية",
         "cat_postproduction": "ما بعد الإنتاج",
         "cat_campaigns": "الحملات الإعلانية",
@@ -605,12 +674,44 @@ const resources = {
         "cat_colorgrading": "تعديل الألوان",
         "cat_directing": "الإخراج",
         "proj_global": "إعلان تقني عالمي",
+        "proj_savage": "Savage & SHē (البراد)",
+        "proj_savage_desc": "بصفتي صانع محتوى مرئي متخصص في تغطية الفعاليات الكبرى في الرياض، وثّقت بعدستي هذا الحدث الأسطوري الذي هندسته شركة \"البراد\". من خلال الإنتاج السينمائي الدقيق لتوثيق الأحداث، نقلت تفاصيل فخامة الكواليس وهندسة الإضاءة، وصولاً إلى التفاعل الجنوني للجمهور مع أنغام موسيقى الـ Deep House الساحرة وعزف الآلات الحية في واحدة من أضخم الحفلات الترفيهية.\n\nأضع بين أيديكم هذه التغطية السينمائية لتسافروا معي إلى تلك الليلة.. وتعيشوا الطاقة تنبض في كل كادر! 🎧🎬",
+        "proj_shining_tours": "شاينينج تورز (رحلات سياحية)",
+        "proj_shining_tours_desc": "من خلال عدستي، استمتعت بتوثيق رحلة مشوقة لمجموعة من السياح من مختلف دول العالم وهم يستكشفون المناظر الطبيعية الخلابة في المملكة العربية السعودية مع \"شاينينج تورز\" (Shining Tours).\n\nمن نقطة التجمع المليئة بالحماس في الرياض، إلى الانطلاق في أسطول من سيارات الدفع الرباعي نحو الطرق الوعرة، كانت الإثارة لا توصف. وثقت لحظات الغروب الساحرة في المطل الشهير \"حافة العالم\"، واختتمت المغامرة بعشاء شواء تقليدي تحت النجوم، حيث اجتمع الجميع لمشاركة تجاربهم التي لا تُنسى. هذا الفيديو هو انعكاس حقيقي لجمال السياحة في السعودية والذكريات الرائعة التي تصنعها رحلات شاينينج.",
+        "proj_sumify": "تدشين منصة سوميفاي (Sumify)",
+        "proj_sumify_desc": "بصفتي خبيراً في الإخراج الإبداعي والإنتاج المرئي الشامل، توليت القيادة الكاملة لتنفيذ فيديو التدشين الرسمي لمنصة \"سوميفاي\" (Sumify).\n\nهذا المشروع يجسد نطاق الخدمات الإبداعية المتكاملة التي أقدمها للشركات؛ حيث بدأت الرحلة بكتابة السيناريو (Scriptwriting) الذي يترجم هوية العلامة التجارية ويبسط حلولها التقنية، مروراً بتصميم اللوحات القصصية (Storyboards)، وصولاً إلى التنفيذ الكامل بتقنية الموشن جرافيك ثلاثي الأبعاد (3D Motion Graphics) لاستعراض تفاصيل المنصة بأعلى جودة بصرية.\n\nولضمان تجربة متكاملة، شملت خدماتي في هذا العمل الهندسة الصوتية المتقدمة وإنتاج التعليق الصوتي (Voiceover) الاحترافي، لتعزيز الثقة وإبراز التطور التقني للمشروع.\n\nشاهدوا فيديو التدشين الآن واكتشفوا كيف أحوّل الأفكار إلى واقع بصري مذهل يخدم أهداف الشركات! 🚀🎬",
         "proj_summer": "المجموعة الصيفية",
         "proj_silent": "الصدى الصامت",
         "proj_modern": "تصميم مواقع وتطبيقات",
         "proj_immersive": "تجربة ويب غامرة",
         "proj_growth": "تحليل النمو ٢٠٢٥",
         "proj_brand": "السرد القصصي للعلامة",
+        "proj_finzey": "إعلان فينزي للتمويل (Finzey Finance)",
+        "proj_finzey_desc": "بصفتي خبيراً في الإنتاج المرئي التجاري والإخراج الإبداعي، توليت مهمة تنفيذ هذا الإعلان الترويجي لشركة \"فينزي للتمويل\" (Finzey Finance).\n\nهذا العمل يعكس قدرتي على تقديم خدمات إنتاج مرئي متكاملة للشركات (B2B) والقطاع المالي؛ حيث بدأت الرحلة بصناعة الفكرة وكتابة السيناريو الإعلاني (Scriptwriting) لتسليط الضوء على حلول التمويل الميسرة بطريقة جذابة ومباشرة. ثم انتقلنا إلى مرحلة التصوير السينمائي للإعلانات (Commercial Videography) داخل بيئة العمل لإضفاء طابع احترافي وموثوق، وصولاً إلى مرحلة المونتاج والتحرير المرئي (Video Editing) لضمان إيقاع سريع ومؤثر يتناسب مع طبيعة منصات التواصل الاجتماعي.\n\nولأن الرسالة المالية تتطلب دقة ووضوحاً، شملت خدماتي في هذا العمل توجيه الأداء (Directing) لضمان إيصال رسالة \"فينزي\" بثقة ومصداقية تامة للمتلقي.\n\nشاهدوا الإعلان الآن واكتشفوا كيف أترجم رسائل الشركات إلى أعمال بصرية احترافية تبني الثقة مع عملائها! 🚀🎬",
+        "proj_finzey_narrative": "إعلان فينزي القصصي (Finzey Finance)",
+        "proj_finzey_narrative_desc": "بصفتي خبيراً في الإنتاج المرئي التجاري والإخراج الإبداعي، توليت مهمة تنفيذ هذا الإعلان الترويجي القصصي لشركة \"فينزي للتمويل\" (Finzey Finance).\n\nهذا العمل يعكس قدرتي على تقديم خدمات إنتاج مرئي متكاملة للشركات (B2B) والقطاع المالي؛ حيث بدأت الرحلة بصناعة الفكرة وكتابة السيناريو والحوار (Scriptwriting & Copywriting) لتقديم حلول التمويل المتوافقة مع الشريعة الإسلامية في قالب درامي قصير ومألوف للمتلقي. ثم انتقلنا إلى مرحلة التصوير السينمائي للإعلانات (Commercial Videography) داخل بيئة العمل لإضفاء طابع احترافي وموثوق، وصولاً إلى مرحلة المونتاج والتحرير المرئي (Video Editing) لضمان إيقاع سلس ومؤثر يتناسب مع طبيعة منصات التواصل الاجتماعي.\n\nولأن الرسالة المالية تتطلب دقة وإقناعاً، شملت خدماتي في هذا العمل توجيه الممثلين والأداء (Performance Directing) لضمان إيصال رسالة \"فينزي\" بثقة ومصداقية تامة، وتسليط الضوء على سهولة التمويل وعقد الشراكات.\n\nشاهدوا الإعلان الآن واكتشفوا كيف أترجم رسائل الشركات إلى أعمال بصرية احترافية تبني الثقة مع عملائها! 🚀🎬",
+        "proj_diman": "مونتاج مصنع ديمان للمياه",
+        "proj_diman_desc": "بصفتي خبيراً في المونتاج والتحرير المرئي (Video Editing)، توليت مهمة \"ما بعد الإنتاج\" للفيديو التعريفي الخاص بـ \"مصنع مياه ديمان\".\n\nيجسد هذا العمل مهارتي في تحويل المواد المصورة الخام (Raw Footage) لبيئة صناعية بحتة إلى قصة بصرية جذابة ومريحة للعين. ركزت خدماتي على المونتاج الاحترافي لضبط إيقاع اللقطات (Pacing) بما يتناغم مع حركة الآلات وسرعة خطوط الإنتاج، مما يمنح المشاهد إحساساً بسلاسة العمليات. كما قمت بتطبيق التلوين السينمائي (Color Grading) لإبراز نقاء المياه ونظافة بيئة العمل بشكل يعكس معايير الجودة العالية، بالإضافة إلى استخدام تصميم صوتي (Sound Design) هادئ ومناسب يكمل الصورة دون تشتيت الانتباه.\n\nالنتيجة كانت إخراج فيديو تعريفي ذو إيقاع بصري سلس ومترابط، لا يعرض الآلات فحسب، بل يبرز التطور التقني للمصنع، مما يجعله أداة تسويقية قوية لتعزيز ثقة العملاء والشركاء التجاريين (B2B).\n\nشاهدوا العمل الآن واكتشفوا كيف يساهم المونتاج الاحترافي في تحويل المشاهد الصناعية المعقدة إلى محتوى مرئي يخطف الأنظار! 🚀🎬",
+        "proj_tyson": "تغطية زيارة مايك تايسون",
+        "proj_tyson_desc": "بصفتي خبيراً في الإنتاج المرئي للفعاليات العالمية، توليت مهمة التغطية الميدانية والإخراج لفعالية زيارة الأسطورة مايك تايسون (Mike Tyson) لمركز \"العثيم\"، والتي شملت لقاءات جماهيرية وتكريماً خاصاً.\n\nيجسد هذا العمل مهارتي في إدارة تغطية الشخصيات العامة (Celebrity Coverage)؛ حيث ارتكزت خدماتي على التصوير الميداني الديناميكي (Event Videography) لالتقاط حضور تايسون، وتفاعل الجمهور، واللحظات الخاصة في كواليس الفعالية وسط إضاءة وتجمهر مكثف. ثم انتقلت إلى المونتاج السينمائي (Cinematic Editing) لترتيب الأحداث بشكل متسارع ومؤثر، مع التركيز على إبراز \"هيبة\" الأسطورة وتفاعل المنظمين والجمهور في قالب بصري يجمع بين القوة والاحترافية.\n\nالنتيجة هي فيديو توثيقي متميز ومكثف، يبرز نجاح الفعالية ويؤكد قدرتي على التعامل مع ضغوط التصوير في بيئات جماهيرية صعبة، مما يجعله أداة تسويقية استثنائية لتوثيق الفعاليات الكبرى وجذب الانتباه الإعلامي.\n\nشاهدوا التغطية الآن واكتشفوا كيف أحوّل زيارات المشاهير إلى محتوى بصري عالمي المستوى! 🥊🌍",
+        "proj_dar": "توثيق دار وإعمار",
+        "proj_dar_desc": "بصفتي خبيراً في الإنتاج المرئي للشركات (Corporate Videography)، توليت مهمة التصوير والإخراج لهذا الفيديو التوثيقي الذي يبرز تجربة سكّان مشاريع شركة \"دار وإعمار\" العقارية خلال فعالية معايدة الجيران.\n\nيجسد هذا العمل مهارتي في إدارة مقابلات الفيديو (Interview Production)؛ حيث ارتكزت خدماتي على التصوير السينمائي المتعدد الزوايا لالتقاط اللقطات العفوية والمشاعر الحقيقية للمستفيدين، مع التركيز على جودة الصوت لضمان وصول رسائلهم بوضوح. قمت بـ هندسة اللقطات لتدمج بين آراء السكّان حول جودة البناء، التنظيم، وتجاربهم الشخصية، وصولاً إلى المونتاج الاحترافي الذي يربط القصص الإنسانية ببعضها ليخلق محتوى تسويقياً عاطفياً يعزز من ثقة العملاء الحاليين والمستقبليين في مشاريع الشركة.\n\nالنتيجة هي فيديو توثيقي احترافي يعكس \"الحياة المجتمعية\" في مشاريع \"دار وإعمار\"، مما يجعله أداة قوية لبناء الولاء للعلامة التجارية وإبراز جودة المخرجات العمرانية.\n\nشاهدوا التغطية الآن واكتشفوا كيف أحوّل شهادات العملاء إلى قصص نجاح توثق جودة المشاريع! 🏠✨",
+        "proj_way": "تصوير مقهى ومخبز WAY",
+        "proj_way_desc": "بصفتي خبيراً في الإنتاج المرئي للشركات والتصوير التجاري (Commercial Videography)، توليت مهمة الإخراج والتصوير والمونتاج لهذا الفيديو الترويجي لمقهى ومخبز \"WAY\".\n\nيجسد هذا العمل مهارتي في خلق تجربة بصرية مريحة وجذابة؛ حيث ارتكزت خدماتي على تصوير التفاصيل (B-roll) لإبراز الهوية البصرية للمكان، بدءاً من لقطات الواجهة الخارجية، وصولاً إلى التصميم الداخلي الهادئ، وتفاصيل أدوات تحضير القهوة بمهارة عالية. كما حرصت على توثيق التفاعل البشري (Customer Experience) من خلال لقطات عفوية تظهر خدمة العملاء الودودة، مما يعكس دفء التجربة التي يقدمها المقهى لزواره.\n\nالنتيجة هي فيديو ترويجي قصير ومكثف، يمزج بين الجماليات البصرية والاحترافية التقنية، مما يجعله أداة تسويقية مثالية لمنصات التواصل الاجتماعي (Reels/Shorts) لجذب الزوار وإبراز الأجواء المميزة للمكان.\n\nشاهدوا العمل الآن واكتشفوا كيف أترجم هوية المقهى إلى تجربة بصرية تنبض بالحياة! ☕🥐",
+        "proj_marathon": "ماراثون الرياض - الاتحاد السعودي للملاكمة",
+        "proj_marathon_desc": "بصفتي خبيراً في الإنتاج المرئي للفعاليات الرياضية، توليت مهمة التغطية الميدانية والمونتاج لجناح \"الاتحاد السعودي للملاكمة\" المشارك ضمن فعاليات ماراثون الرياض.\n\nيجسد هذا العمل قدرتي على تحويل الفعاليات التفاعلية إلى محتوى بصري مليء بالطاقة والحيوية؛ حيث ارتكزت خدماتي على التصوير الميداني الديناميكي (Dynamic Event Videography) لتوثيق تفاعل الجماهير العفوي – من مختلف الأعمار – مع أنشطة الملاكمة، والتقاط اللحظات الحماسية التي تدمج بين إرادة العدائين وشغف رياضة الملاكمة. ثم انتقلت إلى مرحلة المونتاج الاحترافي السريع (Fast-Paced Editing) لخلق إيقاع بصري متسارع يتناغم مع الأجواء الرياضية ويناسب طبيعة منصات التواصل الاجتماعي.\n\nالنتيجة هي محتوى مرئي قصير ومؤثر (Short-form Content)، لا يوثق نجاح الفعالية فحسب، بل يبرز الدور الفعال للاتحاد السعودي للملاكمة في تعزيز المشاركة المجتمعية، ليكون أداة تسويقية مثالية تزيد من التفاعل الرقمي للجهة المنظمة.\n\nشاهدوا التغطية الآن واكتشفوا كيف أحوّل طاقة الجماهير إلى محتوى تفاعلي يخطف الأنظار! 🥊🏃‍♂️",
+        "proj_cr7": "مجتمع CR7 الرياضي",
+        "proj_cr7_desc": "بصفتي خبيراً في الإنتاج المرئي الرياضي وتوثيق الفعاليات الوطنية الكبرى، توليت مهمة التغطية الميدانية والمونتاج لفعالية تدريبات الجري الخاصة بـ \"مجتمع CR7 الرياضي\" (CR7 Run Club)، والمنظمة خصيصاً لدعم واحتفاء بترشح المملكة العربية السعودية لاستضافة كأس العالم 2034.\n\nيجسد هذا العمل قدرتي على دمج الروح الرياضية بالطموح الوطني في قالب بصري مؤثر؛ حيث ارتكزت خدماتي على التصوير الرياضي الميداني (Sports Videography) لتوثيق طاقة المشاركين، وحركة الجري، واللحظات الحماسية التي تخللها رفع الأعلام السعودية ومجسم كأس العالم. ثم انتقلت إلى مرحلة المونتاج السينمائي (Cinematic Editing) لمزامنة اللقطات الديناميكية مع الأهازيج الوطنية، وخلق إيقاع يلامس المشاعر ويعكس التلاحم المجتمعي.\n\nالنتيجة هي محتوى مرئي قصير وملهم مخصص لمنصات التواصل الاجتماعي، لا يوثق الحدث الرياضي فحسب، بل يترجم رؤية وطموح المملكة ليكون رسالة ترويجية قوية وفعالة تدعم هذا الإنجاز التاريخي.\n\nشاهدوا التغطية الآن واكتشفوا كيف أحوّل الفعاليات الرياضية إلى قصص بصرية تعزز الفخر الوطني! 🇸🇦🏆",
+        "proj_cafe": "تصوير مقهى ومخبز مختص",
+        "proj_cafe_desc": "بصفتي خبيراً في التصوير السينمائي والتجاري (Commercial Videography) لقطاع المقاهي والمطاعم (F&B)، توليت مهمة الإدارة والتنفيذ الكامل لتصوير هذا العمل الترويجي الخاص بأحد المقاهي والمخابز المختصة.\n\nيجسد هذا العمل مهارتي في هندسة اللقطات والتحكم بالإضاءة؛ حيث ارتكزت خدماتي على تصوير التفاصيل الدقيقة (Macro & B-roll Videography) لإبراز جودة المنتجات، بدءاً من لقطات استخلاص الإسبريسو الانسيابية، وحركة الآلات، وصولاً إلى ملمس المخبوزات الطازجة. كما اعتمدت على توظيف زوايا تصوير ديناميكية وحركة كاميرا سلسة لالتقاط جماليات التصميم الداخلي، مما يمنح المشاهد إحساساً بعمق المكان ودفء الأجواء.\n\nالنتيجة هي مادة بصرية خام (High-Quality Footage) غنية واحترافية، تلتقط \"روح المكان\" وتترجمها إلى محتوى مرئي قوي يثير حواس المشاهد، ليكون أداة التسويق الأمثل لجذب الزوار عبر منصات التواصل الاجتماعي.\n\nشاهدوا العمل الآن واكتشفوا كيف أصنع لقطات بصرية تنبض بالحياة وتبرز أدق تفاصيل قهوتكم! ☕🎬",
+        "proj_beauty": "تجهيز عروس (ريلز)",
+        "proj_beauty_desc": "بصفتي خبيراً في صناعة المحتوى الرقمي والإنتاج المرئي لمنصات التواصل الاجتماعي، توليت مهمة تصوير ومونتاج هذا الفيديو القصير لجلسة تجهيز عروس، لصالح خبيرة تجميل وتسريحات شعر (Hair Stylist).\n\nيجسد هذا العمل مهارتي في صناعة محتوى (Short-form Content) يخطف الأنظار؛ حيث ارتكزت خدماتي على التصوير الجمالي الدقيق (Beauty Videography) لالتقاط تفاصيل العمل واللمسات الفنية باحترافية. ثم انتقلت إلى مرحلة المونتاج السريع والانتقالات الاحترافية (Trendy Transitions & Video Editing) لابتكار إيقاع بصري جذاب يعرض التحول المذهل من مرحلة التجهيز إلى الإطلالة النهائية للعروس بشكل يتناغم تماماً مع الموسيقى.\n\nالنتيجة هي محتوى مرئي ديناميكي مصمم خصيصاً لمنصات (Reels و Shorts)، لا يوثق العمل فحسب، بل يبرز مهارة خبيرة التجميل ليكون أداة تسويقية قوية تجذب العملاء وتعزز التفاعل الرقمي للعلامة التجارية.\n\nشاهدوا العمل الآن واكتشفوا كيف أحوّل اللمسات الفنية إلى محتوى تفاعلي سريع الانتشار! ✂️💄",
+        "proj_boxing": "الاتحاد السعودي للملاكمة",
+        "proj_boxing_desc": "بصفتي خبيراً في الإنتاج المرئي الرياضي وتوثيق الفعاليات الكبرى، توليت مهمة التغطية الميدانية والمونتاج لفعالية \"الاتحاد السعودي للملاكمة\" ضمن معرض إكسبو 2024.\n\nيجسد هذا العمل مهارتي في التقاط الحماس والطاقة العالية للفعاليات الرياضية التفاعلية؛ حيث ركزت خدماتي على التصوير الميداني الديناميكي (Dynamic Event Videography) لإبراز تفاعل الجمهور بمختلف أعمارهم مع رياضة الملاكمة، وتوثيق الأجواء المليئة بالأدرينالين. ثم انتقلت إلى مرحلة المونتاج الاحترافي السريع (Fast-Paced Video Editing)، لابتكار إيقاع بصري متسارع يتناغم مع الحركات الرياضية والموسيقى، ومصمم خصيصاً ليحقق أعلى نسب مشاهدة وتفاعل على منصات التواصل الاجتماعي (Shorts/Reels).\n\nالنتيجة هي محتوى مرئي قصير ومؤثر لا يوثق نجاح الفعالية فحسب، بل يعزز الحضور الرقمي للاتحاد، ليكون أداة تسويقية مثالية تبرز قوة الأنشطة الرياضية والمشاركة المجتمعية.\n\nشاهدوا التغطية الآن واكتشفوا كيف أحول الفعاليات الرياضية إلى محتوى تفاعلي يخطف الأنظار في ثوانٍ معدودة! 🚀🥊",
+        "proj_finzey_short": "إعلان فينزي القصير (Finzey Finance)",
+        "proj_finzey_short_desc": "بصفتي خبيراً في الإنتاج المرئي التجاري والإخراج الإبداعي، توليت تنفيذ هذا الإعلان الترويجي القصير لشركة \"فينزي للتمويل\" (Finzey Finance)، والذي يركز على إبراز سهولة استخدام التطبيق وانتشار فروع الشركة.\n\nيجسد هذا العمل قدرتي على تقديم خدمات إنتاج مرئي متكاملة للشركات (B2B)؛ حيث بدأت بصناعة الفكرة وكتابة السيناريو (Scriptwriting) لخلق مشهد حواري عفوي وواقعي داخل السيارة، يسهل على المشاهد الارتباط به. ثم انتقلنا إلى التصوير السينمائي للإعلانات (Commercial Videography)، مع التركيز على التقاط تعابير الممثلين وإبراز الهوية البصرية للشركة في اللقطات الخارجية. واختتمت الرحلة بالمونتاج والتحرير المرئي (Video Editing) لتقديم فيديو قصير، ديناميكي، ومثالي لمنصات التواصل الاجتماعي.\n\nلضمان وصول الرسالة الإعلانية بطبيعية وإقناع، تضمنت خدماتي توجيه الأداء والممثلين (Performance Directing)، مما ساهم في إيصال رسالة \"فينزي\" حول سرعة الإجراءات وتواجدهم الدائم لخدمة العملاء.\n\nشاهدوا الإعلان الآن واكتشفوا كيف أصنع قصصاً بصرية قصيرة ومؤثرة تخدم أهداف الشركات وتصل لجمهورها المستهدف! 🚀🎬",
+        "proj_nupco": "تغطية اليوم الوطني - نوبكو",
+        "proj_nupco_desc": "بصفتي خبيراً في الإنتاج المرئي للشركات والتصوير السينمائي للفعاليات، توليت مهمة توثيق هذه التغطية الاحترافية لفعالية شركة \"نوبكو\" (Nupco) بمناسبة اليوم الوطني السعودي.\n\nيجسد هذا العمل قدرتي على تحويل الفعاليات المباشرة إلى قصص بصرية خالدة؛ حيث ارتكزت خدماتي على التصوير السينمائي الميداني (Event Videography) لالتقاط بهجة الأطفال، وتفاعل الجمهور الواسع، وأدق تفاصيل التنظيم والديكورات التراثية. ثم انتقلت إلى مرحلة المونتاج الاحترافي (Cinematic Editing) لدمج اللقطات العفوية مع الأهازيج الوطنية بطريقة تخلق إيقاعاً بصرياً يلامس المشاعر.\n\nالنتيجة كانت إنتاج فيديو تغطية متكامل لا يوثق الحدث فحسب، بل يبرز دور \"نوبكو\" في تعزيز الروح الوطنية وتفاعلها الإيجابي مع المجتمع، مما يجعله محتوى مثالياً للعلاقات العامة ومنصات الشركة.\n\nشاهدوا التغطية الآن واكتشفوا كيف أوثق الفعاليات الكبرى وأحولها إلى ذاكرة بصرية تعزز صورة العلامة التجارية! 🚀🎬",
         "proj_auto": "سير العمل المؤتمت",
         "proj_dummy_photo": "تميز فوتوغرافي",
         "proj_dummy_cinematic": "رؤية سينمائية",
@@ -700,7 +801,44 @@ const resources = {
         "footer_title": "دعنا نبني مستقبل البصريات معاً",
         "back_btn": "العودة للرئيسية"
       },
-      
+      "brand_guide": {
+        "cover": "الغلاف",
+        "guidelines": "دليل الهوية",
+        "version": "الإصدار ١.٠",
+        "index": "الفهرس",
+        "about": "عن العلامة التجارية",
+        "philosophy": "الفلسفة",
+        "introduction": "مقدمة",
+        "brand_story": "قصة العلامة",
+        "brand_mark": "علامة الهوية",
+        "logo": "الشعار",
+        "main_logo": "الشعار الأساسي",
+        "evolution": "تطور وتحول الشعار",
+        "final_logo": "الشعار النهائي",
+        "safe_area": "مساحة الأمان",
+        "minimum_size": "الحجم الأدنى",
+        "incorrect_usage": "الاستخدام الخاطئ",
+        "color_system": "نظام الألوان",
+        "palette": "لوحة الألوان",
+        "typography": "الطباعة والخطوط",
+        "fonts": "الخطوط",
+        "primary_typeface": "الخط الأساسي",
+        "secondary_typeface": "الخط الثانوي",
+        "visual_system": "النظام البصري",
+        "geometry": "الهندسة",
+        "iconography": "الأيقونات",
+        "patterns": "الأنماط",
+        "applications": "التطبيقات",
+        "the_applications": "التطبيقات",
+        "promotional_materials": "المواد الترويجية",
+        "thank_you": "شكراً لكم",
+        "the_end": "النهاية",
+        "challenge": "التحدي",
+        "opportunity": "الفرصة",
+        "placeholder_desc": "يتم تعريف هذا القسم في معمارية العلامة التجارية. سيتم إدراج المحتوى التفصيلي بناءً على مستند دليل العلامة التجارية الكامل.",
+        "loading": "جاري التحميل..."
+      },
+
       "brandIdentity": {
         "hero": {
           "title1": "Enter the",
@@ -709,7 +847,7 @@ const resources = {
           "scroll": "Explore the Cosmos"
         },
         "intro": {
-          "text": "In a market shifting at the speed of light, an identity must be a gravitational force. We craft monumental brands that echo through time, deeply rooted in the heritage of the Saudi civilization yet soaring into the future of global innovation."
+          "text": "In a market shifting at the speed of light, an identity must be a gravitational force. I craft monumental brands that echo through time, deeply rooted in the heritage of the Saudi civilization yet soaring into the future of global innovation."
         },
         "projects": [
           {
@@ -761,7 +899,7 @@ const resources = {
           { "title": "حركة", "subtitle": "ابنِ شيئاً أكبر من مجرد شركة.", "desc": "للمبادرات الطموحة، المشاريع الاجتماعية، والأفكار التحويلية.", "outcomes": ["هندسة الرؤية", "إطار الهدف", "تطوير السرد", "استراتيجية التأثير الثقافي", "نظام التأثير", "إطار التوسع العالمي"] }
         ],
         "journeyPhases": [
-          { "title": "الاكتشاف", "headline": "فهم ما يجب بناؤه", "desc": "نستكشف الغرض، الرؤية، الجمهور، السوق، والفرص الكامنة وراء الفكرة.", "deliverables": ["ورشة عمل الاكتشاف", "إطار البحث", "الأساس الاستراتيجي"] },
+          { "title": "الاكتشاف", "headline": "فهم ما يجب بناؤه", "desc": "أستكشف الغرض، الرؤية، الجمهور، السوق، والفرص الكامنة وراء الفكرة.", "deliverables": ["ورشة عمل الاكتشاف", "إطار البحث", "الأساس الاستراتيجي"] },
           { "title": "التمركز", "headline": "حدد مكانتك في العالم", "desc": "العلامة التجارية القوية لا تعني كل شيء للجميع. إنها تمتلك مكانة محددة في أذهان الناس.", "deliverables": ["التمركز في السوق", "تخطيط الجمهور", "التحليل التنافسي", "استراتيجية التميز"] },
           { "title": "الشخصية", "headline": "امنح العلامة روحاً", "desc": "قبل أن يتذكر الناس الشعارات، يتذكرون كيف جعلتهم العلامة يشعرون.", "deliverables": ["شخصية العلامة", "الصوت والنبرة", "نظام الرسائل", "مبادئ التواصل"] },
           { "title": "الهوية", "headline": "ابتكر لغة بصرية", "desc": "الاستراتيجية تصبح مرئية.", "deliverables": ["نظام الهوية", "هندسة الشعار", "نظام الطباعة", "نظام الألوان", "مبادئ الحركة"] },
@@ -777,7 +915,7 @@ const resources = {
           "scroll": "استكشف الفضاء"
         },
         "intro": {
-          "text": "في سوق يتغير بسرعة الضوء، يجب أن تكون هويتك قوة جاذبية لا تقاوم. نحن نصنع علامات تجارية أيقونية يتردد صداها عبر الزمن، متجذرة في تراث الحضارة السعودية ومحلقة نحو أفق الابتكار العالمي."
+          "text": "في سوق يتغير بسرعة الضوء، يجب أن تكون هويتك قوة جاذبية لا تقاوم. أصنع علامات تجارية أيقونية يتردد صداها عبر الزمن، متجذرة في تراث الحضارة السعودية ومحلقة نحو أفق الابتكار العالمي."
         },
         "projects": [
           {
@@ -810,9 +948,9 @@ const resources = {
       },
 "creativeDirection": {
         "hero": {
-          "text1": "نحن لا نصنع",
+          "text1": "أنا لا أصنع",
           "text2": "المحتوى.",
-          "text3": "نحن نهندس",
+          "text3": "أنا أهندس",
           "text4": "الانتباه.",
           "desc": "ادخل إلى غرفة التحكم بالإدراك.",
           "desc_span": "كل ما تراه هنا محسوب بدقة.",
@@ -959,7 +1097,7 @@ const resources = {
             "description": "صياغة رسائل معدية تشكل الإدراك والسلوك.",
             "psychologicalFunction": "تحويل الأفكار إلى روايات لا تُنسى.",
             "profile": {
-              "about": "نحن نهندس اللغة لتجاوز آليات الدفاع العقلانية.",
+              "about": "أهندس اللغة لتجاوز آليات الدفاع العقلانية.",
               "methods": "الارتساء اللغوي، التأطير السردي، التنافر المعرفي",
               "specializations": ["صوت العلامة", "كتابة السيناريو", "نصوص التحويل"],
               "executionProcess": "بحث -> رؤية -> عصف ذهني -> تنقيح -> تأثير",

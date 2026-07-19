@@ -87,8 +87,8 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             style={{ 
-              borderLeft: isRtl ? 'none' : '2px solid var(--color-magenta)',
-              borderRight: isRtl ? '2px solid var(--color-magenta)' : 'none',
+              borderLeft: isRtl ? 'none' : '2px solid var(--color-accent)',
+              borderRight: isRtl ? '2px solid var(--color-accent)' : 'none',
               paddingLeft: isRtl ? '0' : '2rem',
               paddingRight: isRtl ? '2rem' : '0',
               marginBottom: '4rem'
@@ -125,7 +125,7 @@ const Contact = () => {
                   outline: 'none',
                   transition: 'border-color 0.3s'
                 }}
-                onFocus={(e) => e.target.style.borderBottomColor = 'var(--color-magenta)'}
+                onFocus={(e) => e.target.style.borderBottomColor = 'var(--color-accent)'}
                 onBlur={(e) => e.target.style.borderBottomColor = '#333'}
               />
             </motion.div>
@@ -152,7 +152,7 @@ const Contact = () => {
                   outline: 'none',
                   transition: 'border-color 0.3s'
                 }}
-                onFocus={(e) => e.target.style.borderBottomColor = 'var(--color-orange)'}
+                onFocus={(e) => e.target.style.borderBottomColor = 'var(--color-accent-dark)'}
                 onBlur={(e) => e.target.style.borderBottomColor = '#333'}
               />
             </motion.div>
@@ -179,7 +179,7 @@ const Contact = () => {
                   outline: 'none',
                   transition: 'border-color 0.3s'
                 }}
-                onFocus={(e) => e.target.style.borderBottomColor = 'var(--color-magenta)'}
+                onFocus={(e) => e.target.style.borderBottomColor = 'var(--color-accent)'}
                 onBlur={(e) => e.target.style.borderBottomColor = '#333'}
               />
             </motion.div>
@@ -190,9 +190,9 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              <button type="submit" className="btn-solid-magenta">
+              <button type="submit" className="btn-luxury">
                 {t('contact.btn')}
-                {isRtl ? <ArrowLeft size={20} /> : <ArrowRight size={20} />}
+                <ArrowRight size={20} />
               </button>
             </motion.div>
           </form>

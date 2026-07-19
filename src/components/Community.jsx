@@ -46,7 +46,7 @@ const Community = () => {
                 transition={{ delay: 0.3 + (i * 0.1) }}
                 className="glass-panel"
                 style={{ padding: '2rem', textAlign: 'center', cursor: 'pointer' }}
-                whileHover={{ y: -5, borderColor: 'var(--color-magenta)' }}
+                whileHover={{ y: -5, borderColor: 'var(--color-accent)' }}
               >
                 <h4 style={{ fontSize: '1.2rem' }}>{item}</h4>
               </motion.div>

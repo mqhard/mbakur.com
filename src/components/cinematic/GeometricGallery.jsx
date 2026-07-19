@@ -40,13 +40,13 @@ const GeometricGallery = () => {
             fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
             color: '#fff',
             fontWeight: 900,
-            letterSpacing: '2px',
+            letterSpacing: 'var(--tracking-wide)',
             textTransform: 'uppercase',
             fontFamily: 'var(--font-primary)'
           }}
         >
           {t('creativeDirection.geometricGallery.title')} <br/>
-          <span style={{ color: 'var(--color-magenta)', textShadow: '0 0 20px rgba(255,0,127,0.3)' }}>
+          <span style={{ color: 'var(--color-accent)', textShadow: '0 0 20px rgba(255,0,127,0.3)' }}>
             {t('creativeDirection.geometricGallery.subtitle')}
           </span>
         </motion.h2>
@@ -128,7 +128,7 @@ const GeometricGallery = () => {
                   fontSize: '0.8rem',
                   color: 'var(--color-gray-light)',
                   marginBottom: '1rem',
-                  letterSpacing: '1px'
+                  letterSpacing: 'var(--tracking-tight)'
                 }}>
                   {item.cat}
                 </span>
