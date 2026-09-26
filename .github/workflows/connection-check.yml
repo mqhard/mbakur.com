@@ -1,0 +1,23 @@
+name: Verify automatic Hostinger deployment
+on:
+  push:
+    branches: [deployment-check-20260926]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install FTP client
+        run: npm install --prefix "$RUNNER_TEMP/ftp-check" --no-audit --no-fund basic-ftp@6.0.1
+      - name: Upload and verify deployment marker
+        run: NODE_PATH="$RUNNER_TEMP/ftp-check/node_modules" node scripts/check-auto-deployment.cjs
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
