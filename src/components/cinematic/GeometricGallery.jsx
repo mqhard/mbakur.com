@@ -126,7 +126,7 @@ const GeometricGallery = () => {
                   background: 'rgba(255,255,255,0.05)',
                   borderRadius: '20px',
                   fontSize: '0.8rem',
-                  color: 'var(--color-gray-light)',
+                  color: 'var(--color-text-muted)',
                   marginBottom: '1rem',
                   letterSpacing: 'var(--tracking-tight)'
                 }}>

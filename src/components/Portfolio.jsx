@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -47,6 +47,8 @@ const Portfolio = () => {
             {categories.map((cat) => (
               <button 
                 key={cat.id}
+                aria-pressed={activeFilter === cat.id}
+                className="portfolio-filter"
                 onClick={() => setActiveFilter(cat.id)}
                 style={{
                   padding: '8px 16px',
@@ -81,10 +83,11 @@ const Portfolio = () => {
         </div>
 
 
-        <motion.div layout style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2rem' }}>
+        <motion.div layout style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: '2rem' }}>
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
-              <motion.div
+              <motion.button
+                type="button"
                 layout
                 onClick={() => {
                   if (project.youtubeId) {
@@ -104,7 +107,7 @@ const Portfolio = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 key={project.id}
-                className="dotted-border"
+                className="ui-card portfolio-card"
                 style={{
                   position: 'relative',
                   height: '420px',
@@ -154,7 +157,7 @@ const Portfolio = () => {
                     {t(project.titleKey)}
                   </h3>
                 </div>
-              </motion.div>
+              </motion.button>
             ))}
           </AnimatePresence>
         </motion.div>
@@ -166,7 +169,7 @@ const Portfolio = () => {
             style={{ textAlign: 'center', padding: '5rem 0', color: '#777' }}
           >
             <p style={{ fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wide)' }}>
-              More projects coming soon...
+              {t('portfolio.empty', 'More projects coming soon...')}
             </p>
           </motion.div>
         )}

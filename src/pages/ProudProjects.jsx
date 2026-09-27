@@ -1,8 +1,7 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Video, PenTool, Layout, MonitorPlay, Zap, Sparkles, Camera } from 'lucide-react';
+import { Video, PenTool, Layout, MonitorPlay, Zap, Sparkles, Camera } from 'lucide-react';
 import { Helmet } from 'react-helmet';
 import Community from '../components/Community';
 
@@ -51,20 +50,12 @@ const ProudProjects = () => {
       </Helmet>
 
       {/* Navbar */}
-      <nav dir="ltr" style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'rgba(3,3,3,0.85)', backdropFilter: 'blur(15px)', zIndex: 100 }}>
-        <button 
-          onClick={() => navigate('/')}
-          style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'transparent', border: 'none', color: 'var(--color-gray-light)', cursor: 'pointer', fontFamily: 'var(--font-secondary)', fontSize: '1.1rem' }}
-        >
-          <ArrowLeft size={20} />
-          {t('expertisePage.back_btn', 'Back to Home')}
-        </button>
-      </nav>
+
 
       <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 5%' }}>
-        
+
         {/* 1. Hero Section */}
-        <motion.header 
+        <motion.header
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -75,7 +66,7 @@ const ProudProjects = () => {
             width: '40vw', height: '40vw', background: 'radial-gradient(circle, rgba(255,69,0,0.15) 0%, transparent 70%)',
             filter: 'blur(60px)', zIndex: 0, pointerEvents: 'none'
           }} />
-          
+
           <h1 className="gradient-text" style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', marginBottom: '1.5rem', position: 'relative', zIndex: 1, letterSpacing: 'var(--tracking-wide)' }}>
             {data.hero_title}
           </h1>
@@ -85,14 +76,14 @@ const ProudProjects = () => {
         </motion.header>
 
         {/* 2. Featured Projects Showcase */}
-        <motion.section 
+        <motion.section
           variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
           style={{ marginBottom: '15vh' }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1rem' }}>
             <div>
               <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#fff', marginBottom: '0.5rem' }}>{data.featured_title}</h2>
-              <p style={{ color: 'var(--color-gray-light)', fontSize: '1.2rem' }}>{data.featured_subtitle}</p>
+              <p style={{ color: 'var(--color-text-muted)', fontSize: '1.2rem' }}>{data.featured_subtitle}</p>
             </div>
             <Sparkles color="var(--color-accent-dark)" size={40} />
           </div>
@@ -114,7 +105,7 @@ const ProudProjects = () => {
         </motion.section>
 
         {/* 3. The Technological Arsenal */}
-        <motion.section 
+        <motion.section
           variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
           style={{ marginBottom: '15vh' }}
         >
@@ -134,11 +125,11 @@ const ProudProjects = () => {
                   </div>
                   <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem' }}>{cat.title}</h3>
                   <p style={{ color: '#aaa', lineHeight: 1.6, marginBottom: '1.5rem' }}>{cat.desc}</p>
-                  
+
                   {cat.tools && (
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center' }}>
                       {cat.tools.map((tool, tIndex) => (
-                        <span 
+                        <span
                           key={tIndex}
                           onClick={() => navigate(`/tool/${tool.toLowerCase().replace(/\s+/g, '-')}`)}
                           style={{
@@ -167,14 +158,14 @@ const ProudProjects = () => {
         </motion.section>
 
         {/* 4. Latest Articles */}
-        <motion.section 
+        <motion.section
           variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
           style={{ marginBottom: '15vh' }}
         >
            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1rem' }}>
             <div>
               <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>{data.blog_title}</h2>
-              <p style={{ color: 'var(--color-gray-light)', fontSize: '1.2rem' }}>{data.blog_subtitle}</p>
+              <p style={{ color: 'var(--color-text-muted)', fontSize: '1.2rem' }}>{data.blog_subtitle}</p>
             </div>
             <PenTool color="var(--color-accent)" size={40} />
           </div>
@@ -190,7 +181,7 @@ const ProudProjects = () => {
         </motion.section>
 
         {/* 4.5 The Sandbox */}
-        <motion.section 
+        <motion.section
           variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
           style={{ marginBottom: '15vh', background: 'url(https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80) center/cover', padding: '4rem 2rem', borderRadius: '20px', position: 'relative', overflow: 'hidden' }}
         >
@@ -198,7 +189,7 @@ const ProudProjects = () => {
           <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#00ffff' }}>{data.sandbox_title || 'THE SANDBOX'}</h2>
             <p style={{ color: '#ccc', fontSize: '1.2rem', marginTop: '1rem', marginBottom: '3rem' }}>{data.sandbox_subtitle || 'Daily experiments, code snippets, and behind the scenes.'}</p>
-            
+
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
               <div style={{ width: '220px', height: '160px', background: 'rgba(255,255,255,0.1)', borderRadius: '15px', border: '1px solid rgba(0,255,255,0.3)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'all 0.3s' }} onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseOut={(e) => e.currentTarget.style.transform = 'none'}>
                 <Zap color="#00ffff" size={32} style={{ marginBottom: '10px' }} />
@@ -213,9 +204,9 @@ const ProudProjects = () => {
                 <span style={{ fontSize: '1rem', fontWeight: 600 }}>Lighting LUTs</span>
               </div>
             </div>
-            
-            <button 
-              style={{ marginTop: '3rem', background: 'transparent', border: '1px solid #00ffff', color: '#00ffff', padding: '1rem 2.5rem', borderRadius: '30px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 'var(--tracking-tight)', cursor: 'pointer', transition: 'all 0.3s' }} 
+
+            <button
+              style={{ marginTop: '3rem', background: 'transparent', border: '1px solid #00ffff', color: '#00ffff', padding: '1rem 2.5rem', borderRadius: '30px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 'var(--tracking-tight)', cursor: 'pointer', transition: 'all 0.3s' }}
               onClick={() => window.open('https://instagram.com/mbakur', '_blank')}
               onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(0,255,255,0.1)'; e.currentTarget.style.boxShadow = '0 0 15px rgba(0,255,255,0.4)'; }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.boxShadow = 'none'; }}
@@ -227,7 +218,7 @@ const ProudProjects = () => {
 
         {/* 5. Community Section */}
       </div>
-      
+
       <Community />
 
     </div>

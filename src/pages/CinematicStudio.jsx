@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Lenis from '@studio-freight/lenis';
 import { motion, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
 import HeroCinematic from '../components/cinematic/HeroCinematic';
@@ -16,10 +14,9 @@ import CreativeCommandCenter from '../components/cinematic/CreativeCommandCenter
 import Footer from '../components/Footer';
 
 const CinematicStudio = () => {
-  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === 'ar';
-  
+
   const toggleLanguage = () => {
     const newLang = isRTL ? 'en' : 'ar';
     i18n.changeLanguage(newLang);
@@ -38,7 +35,7 @@ const CinematicStudio = () => {
       bgRef.current.style.setProperty('--mouse-x', `${x}px`);
       bgRef.current.style.setProperty('--mouse-y', `${y}px`);
     };
-    
+
     window.addEventListener('mousemove', handleGlobalMouseMove);
     return () => window.removeEventListener('mousemove', handleGlobalMouseMove);
   }, []);
@@ -72,38 +69,9 @@ const CinematicStudio = () => {
   return (
     <div className="cinematic-theme" style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }}>
       <div className="noise-overlay"></div>
-      
+
       {/* Navbar/Header matching ExpertisePage */}
-      <nav dir="ltr" style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'fixed', width: '100%', top: 0, background: 'linear-gradient(to bottom, rgba(3,3,3,0.8), transparent)', zIndex: 100 }}>
-        {/* Back Button */}
-        <button 
-          onClick={() => navigate('/')}
-          className="interactive"
-          style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'transparent', border: 'none', color: 'var(--color-gray-light)', cursor: 'pointer', fontFamily: 'var(--font-secondary)', fontSize: '1.1rem' }}
-        >
-          <ArrowLeft size={20} />
-          {t('expertisePage.back_btn')}
-        </button>
 
-        {/* Section Title */}
-        <div style={{
-          position: 'absolute',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          color: '#fff',
-          fontSize: '1rem',
-          fontWeight: 800,
-          letterSpacing: 'var(--tracking-wide)',
-          textTransform: 'uppercase',
-          fontFamily: 'var(--font-primary)',
-          opacity: 0.9,
-          display: 'none', // Hidden on very small screens if needed, but flex takes care of it usually
-          '@media (min-width: 768px)': { display: 'block' }
-        }} className="desktop-only-title">
-          {isRTL ? 'الإدارة الإبداعية' : 'Creative Direction'}
-        </div>
-
-      </nav>
 
       {/* Basic CSS for title visibility */}
       <style>{`
@@ -116,9 +84,9 @@ const CinematicStudio = () => {
       `}</style>
 
       <VisualManipulation />
-      
+
       {/* Exact replica of Contact.jsx Background but fixed to viewport */}
-      <div 
+      <div
         style={{
           position: 'fixed',
           top: 0, left: 0, right: 0, bottom: 0,
@@ -126,7 +94,7 @@ const CinematicStudio = () => {
           pointerEvents: 'none'
         }}
       >
-        <div 
+        <div
           ref={bgRef}
           style={{
             position: 'absolute',
@@ -138,9 +106,9 @@ const CinematicStudio = () => {
             transition: 'all 0.1s ease',
             zIndex: 0,
             pointerEvents: 'none'
-          }} 
+          }}
         />
-        
+
         {/* Gray Glass Filter overlay */}
         <div style={{
           position: 'absolute',

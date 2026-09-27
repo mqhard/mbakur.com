@@ -397,6 +397,14 @@ No feature should be considered complete until it has been validated across Mobi
 
 # Success Criteria
 
+## Owner requirement added 2026-09-26
+
+Every future website change or addition must preserve a coherent mobile, tablet and laptop experience in Arabic and English. A feature is incomplete if an essential action or text only works on mouse hover, if mobile is merely a clipped desktop layout, or if one language/device is left unverified.
+
+Use viewport size for layout and hover/pointer capability for interaction enhancements. Hybrid tablets must retain full touch behavior even when a trackpad is connected. Cursor-following effects may become static accents on touch; content reveal must become visible content or an explicit accessible control. Prefer native scrolling and honor reduced motion.
+
+Each UI change must document its behavior and verification for the three device classes, both languages and relevant interaction states. Reuse shared design primitives. See root AGENTS.md for the durable review gate and docs/audit-2026-09-26/MASTER-PLAN-V2-AR.md for the expanded design/client/email/analytics scope. These requirements do not authorize unrequested implementation or deployment and do not impose a new permission prompt for routine authorized work.
+
 A successful implementation means:
 
 * The website feels intentionally designed for every device.

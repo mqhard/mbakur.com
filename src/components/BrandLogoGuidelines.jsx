@@ -56,15 +56,15 @@ const BrandLogoGuidelines = ({ guidelines, isRTL, project }) => {
                     <p style={descStyle}>{isRTL ? logotype.descAr : logotype.descEn}</p>
                     
                     {/* Visual Demo */}
-                    <div style={{ width: '100%', height: '300px', background: charcoal, borderRadius: '16px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+                    <div style={{ width: '100%', minHeight: '800px', padding: '6rem 0', background: charcoal, borderRadius: '32px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
                         <motion.div 
                             initial={{ scale: 0.9, opacity: 0 }} 
                             whileInView={{ scale: 1, opacity: 1 }} 
                             transition={{ duration: 1 }}
-                            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}
+                            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}
                         >
-                            <img src={iconSrc} alt="Brand Icon" style={{ height: '80px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
-                            <div style={{ color: textLight, fontSize: '1.8rem', letterSpacing: isRTL ? '0px' : '8px', fontWeight: isRTL ? 500 : 300, fontFamily: 'sans-serif' }}>{brandNameDisplay}</div>
+                            <img src={iconSrc} alt="Brand Icon" style={{ height: '500px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+                            <div style={{ color: textLight, fontSize: '5rem', letterSpacing: isRTL ? '0px' : '25px', fontWeight: isRTL ? 500 : 300, fontFamily: 'sans-serif' }}>{brandNameDisplay}</div>
                         </motion.div>
                     </div>
                 </motion.div>
@@ -81,7 +81,7 @@ const BrandLogoGuidelines = ({ guidelines, isRTL, project }) => {
                     
                     <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
                         {/* Clear Space Demo */}
-                        <motion.div whileHover="hover" style={{ flex: '2 1 400px', height: '350px', background: sand, borderRadius: '16px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
+                        <motion.div whileHover="hover" style={{ flex: '2 1 600px', minHeight: '800px', background: sand, borderRadius: '32px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
                             {/* Grid Overlay */}
                             <motion.div 
                                 variants={{ hover: { opacity: 1 } }} 
@@ -89,26 +89,26 @@ const BrandLogoGuidelines = ({ guidelines, isRTL, project }) => {
                                 style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'linear-gradient(rgba(198, 114, 91, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(198, 114, 91, 0.2) 1px, transparent 1px)', backgroundSize: '20px 20px' }}
                             />
                             {/* The Logo */}
-                            <div style={{ position: 'relative', padding: '40px', border: `1px dashed ${terracotta}` }}>
-                                <img src={iconSrc} alt="Clear Space" style={{ height: '60px', filter: 'brightness(0)' }} />
+                            <div style={{ position: 'relative', padding: '140px', border: `2px dashed ${terracotta}` }}>
+                                <img src={iconSrc} alt="Clear Space" style={{ height: '400px', filter: 'brightness(0)' }} />
                                 {/* X Indicators */}
-                                <motion.div variants={{ hover: { opacity: 1 } }} initial={{ opacity: 0 }} style={{ position: 'absolute', top: '-25px', left: '50%', transform: 'translateX(-50%)', color: terracotta, fontWeight: 'bold' }}>{clearSpace.unit}</motion.div>
-                                <motion.div variants={{ hover: { opacity: 1 } }} initial={{ opacity: 0 }} style={{ position: 'absolute', bottom: '-25px', left: '50%', transform: 'translateX(-50%)', color: terracotta, fontWeight: 'bold' }}>{clearSpace.unit}</motion.div>
-                                <motion.div variants={{ hover: { opacity: 1 } }} initial={{ opacity: 0 }} style={{ position: 'absolute', left: '-25px', top: '50%', transform: 'translateY(-50%)', color: terracotta, fontWeight: 'bold' }}>{clearSpace.unit}</motion.div>
-                                <motion.div variants={{ hover: { opacity: 1 } }} initial={{ opacity: 0 }} style={{ position: 'absolute', right: '-25px', top: '50%', transform: 'translateY(-50%)', color: terracotta, fontWeight: 'bold' }}>{clearSpace.unit}</motion.div>
+                                <motion.div variants={{ hover: { opacity: 1 } }} initial={{ opacity: 0 }} style={{ position: 'absolute', top: '-50px', left: '50%', transform: 'translateX(-50%)', fontSize: '2rem', color: terracotta, fontWeight: 'bold' }}>{clearSpace.unit}</motion.div>
+                                <motion.div variants={{ hover: { opacity: 1 } }} initial={{ opacity: 0 }} style={{ position: 'absolute', bottom: '-50px', left: '50%', transform: 'translateX(-50%)', fontSize: '2rem', color: terracotta, fontWeight: 'bold' }}>{clearSpace.unit}</motion.div>
+                                <motion.div variants={{ hover: { opacity: 1 } }} initial={{ opacity: 0 }} style={{ position: 'absolute', left: '-50px', top: '50%', transform: 'translateY(-50%)', fontSize: '2rem', color: terracotta, fontWeight: 'bold' }}>{clearSpace.unit}</motion.div>
+                                <motion.div variants={{ hover: { opacity: 1 } }} initial={{ opacity: 0 }} style={{ position: 'absolute', right: '-50px', top: '50%', transform: 'translateY(-50%)', fontSize: '2rem', color: terracotta, fontWeight: 'bold' }}>{clearSpace.unit}</motion.div>
                             </div>
                         </motion.div>
                         
                         {/* Minimum Size Demo */}
-                        <div style={{ flex: '1 1 250px', height: '350px', background: 'rgba(255,255,255,0.02)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '2rem', gap: '2rem' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-                                <img src={iconSrc} alt="Print Min Size" style={{ height: '15px', filter: 'brightness(0) invert(1)' }} />
-                                <div style={{ fontSize: '0.8rem', opacity: 0.5, color: textLight }}>Print: 15mm</div>
+                        <div style={{ flex: '1 1 300px', minHeight: '800px', background: 'rgba(255,255,255,0.02)', borderRadius: '32px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '4rem', gap: '4rem' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                                <img src={iconSrc} alt="Print Min Size" style={{ height: '40px', filter: 'brightness(0) invert(1)' }} />
+                                <div style={{ fontSize: '1rem', opacity: 0.5, color: textLight }}>Print: 15mm</div>
                             </div>
                             <div style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.1)' }}></div>
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-                                <img src={iconSrc} alt="Digital Min Size" style={{ height: '30px', filter: 'brightness(0) invert(1)' }} />
-                                <div style={{ fontSize: '0.8rem', opacity: 0.5, color: textLight }}>Digital: 30px</div>
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                                <img src={iconSrc} alt="Digital Min Size" style={{ height: '80px', filter: 'brightness(0) invert(1)' }} />
+                                <div style={{ fontSize: '1rem', opacity: 0.5, color: textLight }}>Digital: 30px</div>
                             </div>
                         </div>
                     </div>
@@ -180,20 +180,20 @@ const BrandLogoGuidelines = ({ guidelines, isRTL, project }) => {
                                 {/* Logo display area */}
                                 <div style={{
                                     background: version.bg,
-                                    height: '220px',
+                                    height: '600px',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     justifyContent: 'center',
                                     alignItems: 'center',
-                                    gap: '0.8rem',
-                                    padding: '2rem',
+                                    gap: '1rem',
+                                    padding: '4rem',
                                     position: 'relative'
                                 }}>
                                     <img
                                         src={iconSrc}
                                         alt={version.label}
                                         style={{
-                                            height: '90px',
+                                            height: '380px',
                                             objectFit: 'contain',
                                             filter: version.logoFilter,
                                             mixBlendMode: version.logoBlend
@@ -201,8 +201,8 @@ const BrandLogoGuidelines = ({ guidelines, isRTL, project }) => {
                                     />
                                     <div style={{
                                         color: version.textColor,
-                                        fontSize: '1.4rem',
-                                        letterSpacing: isRTL ? '0px' : '6px',
+                                        fontSize: '3.5rem',
+                                        letterSpacing: isRTL ? '0px' : '15px',
                                         fontWeight: isRTL ? 500 : 300,
                                         fontFamily: 'sans-serif',
                                         opacity: 0.9
@@ -252,20 +252,20 @@ const BrandLogoGuidelines = ({ guidelines, isRTL, project }) => {
                     </h3>
                     <p style={descStyle}>{isRTL ? incorrectUse.descAr : incorrectUse.descEn}</p>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem' }}>
                         {[
                             { label: isRTL ? 'لا تقم بضغط الشعار' : 'Do not squeeze', transform: 'scaleX(0.6)' },
                             { label: isRTL ? 'لا تغير الألوان' : 'Do not change colors', filter: 'hue-rotate(90deg) brightness(0)' },
-                            { label: isRTL ? 'لا تضف ظلالاً مزعجة' : 'Do not add drop shadows', filter: 'brightness(0) drop-shadow(5px 5px 5px rgba(0,0,0,0.8))' },
-                            { label: isRTL ? 'لا تقم بإمالة الشعار' : 'Do not rotate', transform: 'rotate(15deg)' }
+                            { label: isRTL ? 'لا تضف ظلالاً مزعجة' : 'Do not add drop shadows', filter: 'brightness(0) drop-shadow(20px 20px 20px rgba(0,0,0,0.8))' },
+                            { label: isRTL ? 'لا تقم بإمالة الشعار' : 'Do not rotate', transform: 'rotate(25deg)' }
                         ].map((err, idx) => (
-                            <div key={idx} style={{ background: sand, borderRadius: '12px', height: '200px', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
+                            <div key={idx} style={{ background: sand, borderRadius: '32px', height: '500px', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
                                 <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
-                                    <img src={iconSrc} alt="Error" style={{ height: '50px', transform: err.transform, filter: err.filter || 'brightness(0)' }} />
+                                    <img src={iconSrc} alt="Error" style={{ height: '280px', transform: err.transform, filter: err.filter || 'brightness(0)' }} />
                                     {/* The Elegant Red Diagonal Line */}
-                                    <div style={{ position: 'absolute', top: '50%', left: '-20%', width: '140%', height: '2px', background: terracotta, transform: 'translateY(-50%) rotate(-25deg)', opacity: 0.8 }}></div>
+                                    <div style={{ position: 'absolute', top: '50%', left: '-20%', width: '140%', height: '4px', background: terracotta, transform: 'translateY(-50%) rotate(-25deg)', opacity: 0.8 }}></div>
                                 </div>
-                                <div style={{ background: '#fff', padding: '0.8rem', textAlign: 'center', fontSize: '0.85rem', color: charcoal, fontWeight: 500 }}>
+                                <div style={{ background: '#fff', padding: '1.2rem', textAlign: 'center', fontSize: '1.2rem', color: charcoal, fontWeight: 500 }}>
                                     {err.label}
                                 </div>
                             </div>

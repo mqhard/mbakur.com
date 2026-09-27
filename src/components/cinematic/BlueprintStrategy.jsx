@@ -52,7 +52,7 @@ const BlueprintStrategy = () => {
           }}
         >
           {t('creativeDirection.blueprint.title')} <br/>
-          <span style={{ color: 'var(--color-gray-light)', fontWeight: 300 }}>
+          <span style={{ color: 'var(--color-text-muted)', fontWeight: 300 }}>
             {t('creativeDirection.blueprint.subtitle')}
           </span>
         </motion.h2>

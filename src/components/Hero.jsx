@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -31,7 +30,7 @@ const Hero = () => {
       </video>
 
       {/* Top Gradient Overlay (for Logo/Language readability) */}
-      <div 
+      <div
         style={{
           position: 'absolute',
           top: 0, left: 0, width: '100%', height: '20vh',
@@ -40,9 +39,9 @@ const Hero = () => {
           pointerEvents: 'none'
         }}
       />
-      
+
       {/* Bottom Gradient Overlay (for text/buttons readability) */}
-      <div 
+      <div
         style={{
           position: 'absolute',
           bottom: 0, left: 0, width: '100%', height: '40vh',
@@ -53,13 +52,13 @@ const Hero = () => {
       />
 
       <div className="container" style={{ position: 'relative', zIndex: 1, height: '100%' }}>
-        
+
         {/* Top: Name as Logo aligned with Language Button */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          style={{ position: 'absolute', top: '25px', left: 0, width: '100%', textAlign: 'center', zIndex: 10 }}
+          style={{ position: 'absolute', top: 'clamp(32px, 8vh, 100px)', left: 0, width: '100%', textAlign: 'center', zIndex: 10 }}
         >
           <h1 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', lineHeight: 1, margin: 0, letterSpacing: 'var(--tracking-wide)', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
             {t('hero.title1')} <span>{t('hero.title2')}</span>
@@ -67,34 +66,34 @@ const Hero = () => {
         </motion.div>
 
         {/* Bottom: Subtitle & Buttons */}
-        <div style={{ position: 'absolute', bottom: '10vh', left: 0, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2.5rem', zIndex: 10 }}>
+        <div className="hero-content" style={{ position: 'absolute', bottom: '10vh', left: 0, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2.5rem', zIndex: 10 }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <h2 style={{ 
-              fontSize: isRTL ? 'clamp(1.2rem, 2.2vw, 1.8rem)' : 'clamp(1rem, 2vw, 1.5rem)', 
-              fontFamily: 'var(--font-secondary)', 
-              fontWeight: isRTL ? 700 : 400, 
-              color: 'var(--color-text)', 
-              margin: 0, 
-              letterSpacing: isRTL ? '0px' : '3px', 
-              textShadow: '0 2px 10px rgba(0,0,0,0.8)' 
+            <h2 style={{
+              fontSize: isRTL ? 'clamp(1.2rem, 2.2vw, 1.8rem)' : 'clamp(1rem, 2vw, 1.5rem)',
+              fontFamily: 'var(--font-secondary)',
+              fontWeight: isRTL ? 700 : 400,
+              color: 'var(--color-text)',
+              margin: 0,
+              letterSpacing: isRTL ? '0px' : '3px',
+              textShadow: '0 2px 10px rgba(0,0,0,0.8)'
             }}>
               {t('hero.subtitle')}
             </h2>
           </motion.div>
 
-          <motion.div 
+          <motion.div className="hero-actions"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
             style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}
           >
-            <button 
-              className="btn-orange" 
-              style={{ 
+            <button
+              className="ui-button ui-button--primary"
+              style={{
                 textShadow: 'none',
                 fontSize: isRTL ? '1.1rem' : '1rem',
                 minWidth: isRTL ? '280px' : 'auto',
@@ -105,14 +104,15 @@ const Hero = () => {
             >
               {t('hero.btn_explore')}
             </button>
-            <button 
+            <button
+              className="ui-button ui-button--secondary"
               onClick={() => navigate('/legacy')}
-              style={{ 
-              fontFamily: 'var(--font-primary)', textTransform: 'uppercase', 
-              fontWeight: isRTL ? 800 : 600, 
+              style={{
+              fontFamily: 'var(--font-primary)', textTransform: 'uppercase',
+              fontWeight: isRTL ? 800 : 600,
               fontSize: isRTL ? '1.1rem' : '1rem',
-              letterSpacing: isRTL ? '0px' : '2px', 
-              borderBottom: '1px solid var(--color-accent-dark)', 
+              letterSpacing: isRTL ? '0px' : '2px',
+              borderBottom: '1px solid var(--color-accent-dark)',
               textShadow: '0 2px 5px rgba(0,0,0,0.5)',
               paddingBottom: '5px',
               cursor: 'pointer'
@@ -123,7 +123,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}

@@ -1,11 +1,22 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowRight, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, X, Ruler, Sparkles, PenTool, RefreshCw, ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 import { galleryProjects } from '../data/brandGalleryData';
 import BrandLogoGuidelines from '../components/BrandLogoGuidelines';
+import BrandColorsPage from '../components/BrandColorsPage';
+import BrandTypographyPage from '../components/BrandTypographyPage';
+import BrandIconographyPage from '../components/BrandIconographyPage';
+import BrandStationeryBasicPage from '../components/BrandStationeryBasicPage';
+import BrandStationerySecondaryPage from '../components/BrandStationerySecondaryPage';
+import BrandGridsPage from '../components/BrandGridsPage';
+import BrandGeometryPage from '../components/BrandGeometryPage';
+import BrandDigitalApplicationsPage from '../components/BrandDigitalApplicationsPage';
+import BrandSignagePage from '../components/BrandSignagePage';
+import BrandPromotionalPage from '../components/BrandPromotionalPage';
+import BrandSystemsPage from '../components/BrandSystemsPage';
 
 // --- Page-level components ---
 
@@ -23,8 +34,8 @@ const PageLayout = ({ children, project }) => {
             style={{
                 background: bgColor,
                 color: textColor,
-                height: '100vh',
-                width: '100vw',
+                height: 'calc(100svh - var(--site-header-height))',
+                width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 fontFamily: 'var(--font-primary)',
@@ -113,7 +124,30 @@ const IndexPage = ({ t, isRTL }) => {
         { num: '07', title: isRTL ? 'التطبيقات الرقمية' : 'Digital', subtitle: isRTL ? 'السوشيال ميديا والموقع' : 'Social Media & Website' },
         { num: '08', title: isRTL ? 'المطبوعات واللوحات' : 'Publications & Signage', subtitle: isRTL ? 'الكتيبات واللوحات الإعلانية' : 'Brochures & Signs' },
         { num: '09', title: isRTL ? 'المواد الدعائية' : 'Promotional Materials', subtitle: isRTL ? 'الهدايا والأدوات الترويجية' : 'Merchandises & Gifts' },
+        { num: '10', title: isRTL ? 'أنظمة العلامة' : 'Brand Systems', subtitle: isRTL ? 'الأيقونات والنمط التصويري' : 'Iconography & Photography' },
     ];
+
+    // Helper to scroll to section when clicked
+    const scrollToSection = (secNum) => {
+        const indexMap = {
+            '01': 2, // Introduction
+            '02': 4, // Brand Mark
+            '03': 7, // Colors Palette
+            '04': 9, // Typography
+            '05': 11, // Visual System
+            '06': 14, // Stationery
+            '07': 17, // Digital Apps
+            '08': 19, // Publications
+            '09': 21, // Promotional
+            '10': 23, // Brand Systems
+        };
+        const pageIndex = indexMap[secNum];
+        if (pageIndex) {
+            // Need a way to dispatch a custom event or we can't easily jump from this inner component.
+            // A better way is dispatching an event to the window
+            window.dispatchEvent(new CustomEvent('jumpToPage', { detail: pageIndex }));
+        }
+    };
 
     return (
         <div style={{ display: 'flex', height: '100%', padding: '10vh 5%', position: 'relative', overflow: 'hidden' }}>
@@ -132,10 +166,11 @@ const IndexPage = ({ t, isRTL }) => {
 
             {/* Right side: List of sections in Grid */}
             <div style={{ flex: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: isRTL ? '0 5% 0 0' : '0 0 0 5%', zIndex: 2 }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem 4rem', maxHeight: '80vh', overflowY: 'auto', paddingRight: '1rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem 3rem', maxHeight: '80vh', overflowY: 'auto', paddingRight: '1rem' }}>
                     {sections.map((sec, i) => (
                         <motion.div 
                             key={sec.num}
+                            onClick={() => scrollToSection(sec.num)}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.05 + 0.3, duration: 0.4, ease: "easeOut" }}
@@ -144,8 +179,10 @@ const IndexPage = ({ t, isRTL }) => {
                                 alignItems: 'flex-start', 
                                 gap: '1.5rem',
                                 borderBottom: '1px solid rgba(255,255,255,0.05)',
-                                paddingBottom: '1.5rem'
+                                paddingBottom: '1.5rem',
+                                cursor: 'pointer',
                             }}
+                            whileHover={{ x: isRTL ? -10 : 10, background: 'rgba(255,255,255,0.02)' }}
                         >
                             <span style={{ fontSize: '1.8rem', fontWeight: 300, opacity: 0.3, fontFamily: 'monospace', marginTop: '-0.3rem' }}>{sec.num}.</span>
                             <div>
@@ -253,6 +290,16 @@ const IntroductionPage = ({ data, t, isRTL }) => {
     );
 };
 
+const DynamicIcon = ({ name }) => {
+    switch(name) {
+        case 'Ruler': return <Ruler />;
+        case 'Sparkles': return <Sparkles />;
+        case 'PenTool': return <PenTool />;
+        case 'RefreshCw': return <RefreshCw />;
+        default: return <span>{name}</span>;
+    }
+}
+
 const BrandMarkPage = ({ data, t, isRTL }) => {
     return (
         <div style={{ position: 'relative', width: '100%', height: '100%', backgroundColor: '#0A0A0A', color: '#fff', overflow: 'hidden' }}>
@@ -292,7 +339,7 @@ const BrandMarkPage = ({ data, t, isRTL }) => {
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                         {data.brandMark?.features?.map((item, idx) => (
                             <motion.div key={idx} initial={{ opacity: 0, x: isRTL ? -20 : 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.5 + (idx * 0.1) }} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '16px', backdropFilter: 'blur(10px)' }}>
-                                <div style={{ fontSize: '1.5rem', marginBottom: '0.8rem' }}>{item.icon}</div>
+                                <div style={{ fontSize: '1.5rem', marginBottom: '0.8rem', color: '#D4AF37' }}><DynamicIcon name={item.icon} /></div>
                                 <h4 style={{ fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.5rem', color: '#fff' }}>
                                     {isRTL ? item.titleAr : item.titleEn}
                                 </h4>
@@ -402,38 +449,32 @@ const createProjectPages = (project, t, isRTL) => {
     // 01. Introduction
     pages.push({ type: 'INTRODUCTION', data: project });
 
-    // 02. Brand Mark
-    pages.push({ type: 'BRAND_MARK', data: project });
+    // 02. Geometry (Replacing Brand Mark)
+    pages.push({ type: 'GEOMETRY', data: project });
+    
     if (project.logoGuidelines) {
         pages.push({ type: 'LOGO_GUIDELINES', data: project.logoGuidelines });
     }
 
     // 03. Colors Palette
-    pages.push({ type: 'SECTION_DIVIDER', data: { number: '03', title: isRTL ? 'الألوان' : 'Colors Palette', titleEn: 'Colors Palette' } });
-    project.visualIdentity?.colorSystem?.forEach(color => {
-        pages.push({ type: 'COLOR', data: { color, sectionTitle: isRTL ? 'الألوان' : 'Colors Palette' } });
-    });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'الألوان والتطبيق' : 'Colors & Usage Ratios', subtitle: isRTL ? 'الألوان الثانوية ونسب الاستخدام' : 'Secondary Colors & Usage Ratios' } });
+    pages.push({ type: 'COLORS_PALETTE', data: project });
 
     // 04. Typography
-    pages.push({ type: 'SECTION_DIVIDER', data: { number: '04', title: isRTL ? 'الخطوط' : 'Typography', titleEn: 'Typography' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'أنواع الخطوط' : 'Typefaces', subtitle: isRTL ? 'الخط الأساسي والثانوي (عربي/إنجليزي)' : 'Primary & Secondary Typefaces' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'التسلسل الهرمي' : 'Hierarchy', subtitle: 'Heading, Subheading, Body Text, Buttons' } });
+    pages.push({ type: 'TYPOGRAPHY', data: project });
 
-    // 05. Visual System
-    pages.push({ type: 'SECTION_DIVIDER', data: { number: '05', title: isRTL ? 'النظام البصري' : 'Visual System', titleEn: 'Visual System' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'التكوين البصري والشبكات' : 'Grids & Layout', subtitle: 'Grid, Layout, Margins, Spacing' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'الأيقونات والأنماط' : 'Iconography & Patterns', subtitle: 'Icon Style, Patterns, Scaling' } });
+    // 05. Visual System (Iconography)
+    if (project.id !== 'samt-architecture') {
+        pages.push({ type: 'ICONOGRAPHY', data: project });
+    }
 
     // 06. Stationery
-    pages.push({ type: 'SECTION_DIVIDER', data: { number: '06', title: isRTL ? 'التطبيقات المكتبية' : 'Stationery', titleEn: 'Stationery' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'المطبوعات الأساسية' : 'Basic Stationery', subtitle: 'Business Cards, Letterhead, Envelopes' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'المطبوعات الثانوية' : 'Secondary Stationery', subtitle: 'A4, A5, Folders, Notes' } });
+    pages.push({ type: 'STATIONERY_BASIC', data: project });
+    pages.push({ type: 'STATIONERY_SECONDARY', data: project });
 
     // 07. Digital & Applications
-    pages.push({ type: 'SECTION_DIVIDER', data: { number: '07', title: isRTL ? 'التطبيقات' : 'Applications', titleEn: 'Applications' } });
-    
-    if (project.applications && project.applications.length > 0) {
+    if (project.id === 'samt-architecture') {
+        pages.push({ type: 'DIGITAL_APPLICATIONS', data: project });
+    } else if (project.applications && project.applications.length > 0) {
         project.applications.forEach(app => {
             pages.push({ type: 'IMAGE_WITH_TEXT', data: { img: app.img, title: app.title, titleAr: app.titleAr || app.title, desc: app.desc, descAr: app.descAr || app.desc } });
         });
@@ -443,17 +484,27 @@ const createProjectPages = (project, t, isRTL) => {
     }
 
     // 08. Publications & Signage
-    pages.push({ type: 'SECTION_DIVIDER', data: { number: '08', title: isRTL ? 'المطبوعات واللوحات' : 'Publications & Signage', titleEn: 'Publications & Signage' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'الكتيبات واللوحات الإعلانية' : 'Brochures & Banners', subtitle: 'Tri-fold, Roll-up, Pop-up Banner' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'اللوحات الخارجية والداخلية' : 'Outdoor & Indoor Signage', subtitle: 'Building Signs, Reception, Wayfinding' } });
+    if (project.id === 'samt-architecture') {
+        pages.push({ type: 'PUBLICATIONS_SIGNAGE', data: project });
+    } else {
+        pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'الكتيبات واللوحات الإعلانية' : 'Brochures & Banners', subtitle: 'Tri-fold, Roll-up, Pop-up Banner' } });
+        pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'اللوحات الخارجية والداخلية' : 'Outdoor & Indoor Signage', subtitle: 'Building Signs, Reception, Wayfinding' } });
+    }
 
     // 09. Promotional Materials
-    pages.push({ type: 'SECTION_DIVIDER', data: { number: '09', title: isRTL ? 'المواد الدعائية' : 'Promotional Materials', titleEn: 'Promotional' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'أدوات الترويج والهدايا' : 'Merchandises & Gifts', subtitle: 'Mugs, Pens, Shirts, Packaging, Stickers' } });
+    if (project.id === 'samt-architecture') {
+        pages.push({ type: 'PROMOTIONAL_MATERIALS', data: project });
+    } else {
+        pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'الهدايا والأدوات الترويجية' : 'Merchandises & Gifts', subtitle: 'Tote Bags, Mugs, Pens, Notebooks, Packaging, Stickers' } });
+    }
 
     // 10. Brand Systems
-    pages.push({ type: 'SECTION_DIVIDER', data: { number: '10', title: isRTL ? 'أنظمة العلامة' : 'Brand Systems', titleEn: 'Brand Systems' } });
-    pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'ملحقات احترافية' : 'Professional Extensions', subtitle: 'Strategy, Voice, UI Components, Motion' } });
+    if (project.id === 'samt-architecture') {
+        pages.push({ type: 'BRAND_SYSTEMS', data: project });
+    } else {
+        pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'أيقونات العلامة' : 'Brand Iconography', subtitle: 'Custom Icon Set, Usage Rules' } });
+        pages.push({ type: 'PLACEHOLDER', data: { title: isRTL ? 'النمط التصويري' : 'Photography Style', subtitle: 'Moodboard, Do\'s & Don\'ts' } });
+    }
 
     // 11. End
     pages.push({ type: 'SECTION_DIVIDER', data: { number: '11', title: isRTL ? 'النهاية' : 'Thank You', titleEn: 'The End' } });
@@ -487,26 +538,54 @@ const BrandGuideViewer = () => {
     
     useEffect(() => {
         const handleKeyDown = (e) => {
-            if (e.key === 'ArrowRight') handleNext();
-            if (e.key === 'ArrowLeft') handlePrev();
+            if (e.key === 'ArrowRight') isRTL ? handlePrev() : handleNext();
+            if (e.key === 'ArrowLeft') isRTL ? handleNext() : handlePrev();
             if (e.key === 'Escape') navigate('/brand-gallery');
         };
+        const handleJumpToPage = (e) => {
+            if (e.detail !== undefined && e.detail >= 0 && e.detail < pages.length) {
+                setCurrentPage(e.detail);
+            }
+        };
         window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
+        window.addEventListener('jumpToPage', handleJumpToPage);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            window.removeEventListener('jumpToPage', handleJumpToPage);
+        };
     }, [pages]);
 
     if (!project) {
         return <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#050505', color: '#fff' }}>{t('brand_guide.loading')}</div>;
     }
 
-    const CurrentPageComponent = () => {
-        if (!pages || pages.length === 0) return <PlaceholderPage data={{ title: t('brand_guide.loading')}} t={t} isRTL={isRTL} />;
-        const pageData = pages[currentPage];
+    const pageData = pages && pages.length > 0 ? pages[currentPage] : null;
+
+    const renderCurrentPage = () => {
+        if (!pageData) return <PlaceholderPage data={{ title: t('brand_guide.loading')}} t={t} isRTL={isRTL} />;
         switch (pageData.type) {
             case 'COVER': return <CoverPage data={pageData.data} t={t} isRTL={isRTL} />;
             case 'INDEX': return <IndexPage t={t} isRTL={isRTL} />;
             case 'INTRODUCTION': return <IntroductionPage data={pageData.data} t={t} isRTL={isRTL} />;
             case 'BRAND_MARK': return <BrandMarkPage data={pageData.data} t={t} isRTL={isRTL} />;
+            case 'COLORS_PALETTE': return <BrandColorsPage data={pageData.data} project={project} t={t} isRTL={isRTL} />;
+            case 'TYPOGRAPHY': return <BrandTypographyPage project={project} t={t} isRTL={isRTL} />;
+            case 'GEOMETRY': return <BrandGeometryPage project={project} t={t} isRTL={isRTL} />;
+            case 'GRIDS_LAYOUT': return <BrandGridsPage project={project} t={t} isRTL={isRTL} />;
+            case 'ICONOGRAPHY':
+                return <BrandIconographyPage project={pageData.data} t={t} isRTL={isRTL} />;
+            case 'STATIONERY_BASIC':
+                return <BrandStationeryBasicPage project={pageData.data} t={t} isRTL={isRTL} />;
+            case 'STATIONERY_SECONDARY':
+                return <BrandStationerySecondaryPage project={pageData.data} t={t} isRTL={isRTL} />;
+            case 'DIGITAL_APPLICATIONS':
+                return <BrandDigitalApplicationsPage project={pageData.data} t={t} isRTL={isRTL} />;
+            case 'PUBLICATIONS_SIGNAGE':
+                return <BrandSignagePage project={pageData.data} t={t} isRTL={isRTL} />;
+            case 'PROMOTIONAL_MATERIALS':
+                return <BrandPromotionalPage project={pageData.data} t={t} isRTL={isRTL} />;
+            case 'BRAND_SYSTEMS':
+                return <BrandSystemsPage project={pageData.data} t={t} isRTL={isRTL} />;
             case 'LOGO_GUIDELINES':
                 return (
                     <PageLayout project={project}>
@@ -524,8 +603,48 @@ const BrandGuideViewer = () => {
                                 color: '#EBE2D5',
                                 border: '1px solid rgba(255,255,255,0.1)',
                                 padding: '0 4vw'
-                            }}>
-                            <BrandLogoGuidelines guidelines={pageData.data} isRTL={isRTL} project={project} />
+                            }}
+                            onScroll={(e) => {
+                                const indicator = document.getElementById('scroll-indicator');
+                                if (indicator) {
+                                    if (e.target.scrollTop > 50) {
+                                        indicator.style.opacity = '0';
+                                        indicator.style.pointerEvents = 'none';
+                                    } else {
+                                        indicator.style.opacity = '1';
+                                    }
+                                }
+                            }}
+                            >
+                                <BrandLogoGuidelines guidelines={pageData.data} isRTL={isRTL} project={project} />
+                            </div>
+                            
+                            <div 
+                                id="scroll-indicator"
+                                style={{
+                                    position: 'absolute',
+                                    left: '3vw',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    gap: '1rem',
+                                    zIndex: 10,
+                                    transition: 'opacity 0.3s ease'
+                                }}
+                            >
+                                <div style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', fontSize: '0.7rem', letterSpacing: isRTL ? '1px' : '4px', color: 'rgba(255,255,255,0.4)', fontFamily: isRTL ? 'sans-serif' : 'monospace' }}>
+                                    {isRTL ? 'تصفح' : 'SCROLL'}
+                                </div>
+                                <div style={{ width: '2px', height: '80px', background: 'rgba(255,255,255,0.1)', position: 'relative', overflow: 'hidden', borderRadius: '2px' }}>
+                                    <motion.div 
+                                        initial={{ y: -30 }}
+                                        animate={{ y: 90 }}
+                                        transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+                                        style={{ position: 'absolute', width: '100%', height: '30px', background: '#C6725B', top: 0, left: 0, borderRadius: '2px' }}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </PageLayout>
@@ -541,26 +660,38 @@ const BrandGuideViewer = () => {
         }
     };
 
+    const isLightBackground = pageData && (
+        pageData.type === 'COLORS_PALETTE' || 
+        (pageData.type === 'ICONOGRAPHY' && isRTL)
+    );
+    const navBtnColor = isLightBackground ? '#1A1C1D' : 'white';
+    const navBtnBorder = isLightBackground ? '1px solid rgba(0,0,0,0.2)' : '1px solid rgba(255,255,255,0.2)';
+    const navBtnBg = isLightBackground ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.1)';
+
     return (
         <PageLayout project={project}>
             <AnimatePresence mode="wait">
                 <motion.div key={currentPage} style={{flexGrow: 1, position: 'relative'}}>
-                    <CurrentPageComponent />
+                    {renderCurrentPage()}
                 </motion.div>
             </AnimatePresence>
 
-            {/* Navigation */}
-            <div dir="ltr" style={{ position: 'fixed', bottom: '5vh', right: '5vw', zIndex: 100, display: 'flex', gap: '1rem' }}>
-                <button onClick={handlePrev} disabled={currentPage === 0} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: 'white', padding: '1rem', borderRadius: '50%', cursor: 'pointer', opacity: currentPage === 0 ? 0.3 : 1 }}>
-                    <ArrowLeft />
-                </button>
-                <button onClick={handleNext} disabled={currentPage === pages.length - 1} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: 'white', padding: '1rem', borderRadius: '50%', cursor: 'pointer', opacity: currentPage === pages.length - 1 ? 0.3 : 1 }}>
-                    <ArrowRight />
-                </button>
-            </div>
-             {/* Page Number */}
-             <div style={{ position: 'fixed', bottom: '5vh', left: '5vw', zIndex: 100, color: 'white', fontFamily: 'monospace', fontSize: '1.2rem', background: 'rgba(0,0,0,0.2)', padding: '0.5rem 1rem', borderRadius: '4px' }}>
-                {currentPage + 1} / {pages.length}
+            {/* Combined Navigation and Page Indicator */}
+            <div dir="ltr" style={{ position: 'fixed', bottom: '5vh', [isRTL ? 'left' : 'right']: '5vw', zIndex: 100, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                {/* Section/Page Indicator (Above) */}
+                <div style={{ color: 'white', fontFamily: 'monospace', fontSize: '1.1rem', background: 'rgba(0,0,0,0.5)', padding: '0.6rem 1.2rem', borderRadius: '50px', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center' }}>
+                    <span>{currentPage + 1} / {pages.length}</span>
+                </div>
+
+                {/* Navigation Buttons (Below) */}
+                <div style={{ display: 'flex', gap: '0.5rem', background: 'rgba(0,0,0,0.4)', padding: '0.5rem', borderRadius: '50px', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <button onClick={isRTL ? handleNext : handlePrev} disabled={isRTL ? currentPage === pages.length - 1 : currentPage === 0} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: 'white', padding: '0.6rem', borderRadius: '50%', cursor: 'pointer', opacity: (isRTL ? currentPage === pages.length - 1 : currentPage === 0) ? 0.3 : 1, transition: 'all 0.3s', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <ArrowLeft size={20} />
+                    </button>
+                    <button onClick={isRTL ? handlePrev : handleNext} disabled={isRTL ? currentPage === 0 : currentPage === pages.length - 1} style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: 'white', padding: '0.6rem', borderRadius: '50%', cursor: 'pointer', opacity: (isRTL ? currentPage === 0 : currentPage === pages.length - 1) ? 0.3 : 1, transition: 'all 0.3s', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <ArrowRight size={20} />
+                    </button>
+                </div>
             </div>
 
         </PageLayout>

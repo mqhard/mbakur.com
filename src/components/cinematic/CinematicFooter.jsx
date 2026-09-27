@@ -38,7 +38,7 @@ const CinematicFooter = () => {
           lineHeight: 1.2
         }}>
           {t('creativeDirection.footer.title1')}<br/>
-          <span style={{ color: 'var(--color-gray-light)' }}>{t('creativeDirection.footer.title2')}</span>
+          <span style={{ color: 'var(--color-text-muted)' }}>{t('creativeDirection.footer.title2')}</span>
         </h2>
         
         <a href="mailto:m.6akur@gmail.com" className="interactive" style={{

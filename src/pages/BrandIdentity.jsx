@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
-  ArrowLeft, ArrowRight, User, Briefcase, Box, Users, Globe,
+  ArrowRight, User, Briefcase, Box, Users, Globe,
   Search, Crosshair, Heart, Droplet, BookOpen, Layers, Zap, TrendingUp, CheckCircle2
 } from 'lucide-react';
 
@@ -164,18 +164,7 @@ const BrandIdentity = () => {
       />
 
       {/* Navbar/Header */}
-      <nav style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 100 }}>
-        <button 
-          onClick={() => {
-            if (selectedPath) setSelectedPath(null);
-            else navigate('/');
-          }}
-          style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'transparent', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', fontFamily: 'var(--font-secondary)', fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: 'var(--tracking-tight)' }}
-        >
-          <ArrowLeft size={20} />
-          {selectedPath ? t('brandIdentity.hub.changePath', 'Change Path') : t('expertisePage.back_btn', 'العودة')}
-        </button>
-      </nav>
+      {selectedPath && <div className="page-context-actions"><button className="ui-button ui-button--secondary" onClick={() => setSelectedPath(null)}>{t('brandIdentity.hub.changePath', 'Change Path')}</button></div>}
 
       {/* MAIN CONTENT AREA */}
       <div style={{ position: 'relative', zIndex: 10, width: '100%', minHeight: '100vh' }}>

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Search, Play, Pause, SkipForward, SkipBack, MessageSquare, List, Volume2, MoreHorizontal, Heart } from 'lucide-react';
+import { ArrowRight, Search, Play, Pause, SkipForward, SkipBack, MessageSquare, List, Volume2, MoreHorizontal, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { galleryProjects } from '../data/brandGalleryData';
 
@@ -9,36 +9,28 @@ const BrandGallery = () => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === 'ar';
-  
+
   const [activeTab, setActiveTab] = useState('Browse');
   const [hoveredProject, setHoveredProject] = useState(galleryProjects[0]);
 
   return (
     <div style={{ background: '#0a0a0a', minHeight: '100vh', color: '#fff', fontFamily: 'var(--font-primary)' }}>
-      
+
       {/* Navbar Minimal */}
-      <nav dir="ltr" style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', position: 'fixed', top: 0, width: '100%', zIndex: 100, mixBlendMode: 'difference' }}>
-        <button 
-          onClick={() => navigate('/')}
-          style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'transparent', border: 'none', color: '#fff', cursor: 'pointer', fontFamily: 'var(--font-secondary)', fontSize: '1.1rem', letterSpacing: 'var(--tracking-tight)' }}
-        >
-          <ArrowLeft size={20} />
-          {t('brand_gallery.back')}
-        </button>
-      </nav>
+
 
       {/* VisionOS Interactive Hero Section */}
-      <section style={{ 
-        minHeight: '100vh', 
-        position: 'relative', 
-        display: 'flex', 
-        flexDirection: 'column', 
-        alignItems: 'center', 
+      <section style={{
+        minHeight: '100vh',
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         justifyContent: 'center',
         padding: '10vh 2vw 2vh 2vw',
         overflow: 'hidden'
       }}>
-        
+
         {/* Abstract/Room Background to give context to the glass */}
         <div style={{
           position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
@@ -52,9 +44,9 @@ const BrandGallery = () => {
 
         {/* Main Container Layer (Glass background + contents) */}
         <div style={{ position: 'relative', width: '100%', maxWidth: '100%', zIndex: 10 }}>
-          
+
           {/* Main Glass Panel (Sits behind the overflowing carousel) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }}
             style={{
               width: '100%',
@@ -80,20 +72,20 @@ const BrandGallery = () => {
                 {t('brand_gallery.subtitle')}
               </p>
             </div>
-            
+
             {/* Split Layout for Grid and Spotlight Panel */}
-            <div style={{ 
-              display: 'flex', 
-              flexDirection: 'row', 
-              flexWrap: 'wrap', 
-              gap: '4rem', 
-              alignItems: 'center', 
+            <div style={{
+              display: 'flex',
+              flexDirection: 'row',
+              flexWrap: 'wrap',
+              gap: '4rem',
+              alignItems: 'center',
               justifyContent: 'center',
               width: '100%'
             }}>
-              
+
               {/* Left Side: Grid of Projects */}
-              <div style={{ 
+              <div style={{
                 flex: '1 1 400px',
                 display: 'flex',
                 flexWrap: 'wrap',
@@ -102,7 +94,7 @@ const BrandGallery = () => {
                 zIndex: 20
               }} dir="ltr">
                 {galleryProjects.map((project) => (
-                      <motion.div 
+                      <motion.div
                         key={project.id}
                         onHoverStart={() => setHoveredProject(project)}
                         onClick={() => navigate(`/brand-project/${project.id}`)}
@@ -123,10 +115,10 @@ const BrandGallery = () => {
                           padding: '1.2rem'
                         }}
                       >
-                        <img 
-                          src={project.visualIdentity.logoScreen} 
-                          alt={project.brandName} 
-                          style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.5))' }} 
+                        <img
+                          src={project.visualIdentity.logoScreen}
+                          alt={project.brandName}
+                          style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.5))' }}
                         />
                       </motion.div>
                     ))}
@@ -134,24 +126,24 @@ const BrandGallery = () => {
 
               {/* Right Side: Dynamic Brand Details (Spotlight Panel) */}
               <div style={{ flex: '1 1 500px', zIndex: 10 }}>
-                <motion.div 
-                  animate={{ 
+                <motion.div
+                  animate={{
                     background: `linear-gradient(180deg, ${(hoveredProject.visualIdentity?.colorSystem?.[0]?.hex || hoveredProject.visualIdentity?.colorSystem?.[0] || '#ffffff')}15 0%, rgba(255,255,255,0.02) 100%)`,
                     borderColor: `${(hoveredProject.visualIdentity?.colorSystem?.[0]?.hex || hoveredProject.visualIdentity?.colorSystem?.[0] || '#ffffff')}40`
                   }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  style={{ 
-                    display: 'grid', 
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-                    gap: '2.5rem', 
-                    padding: '2.5rem', 
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                    gap: '2.5rem',
+                    padding: '2.5rem',
                     borderRadius: '20px',
                     border: '1px solid rgba(255,255,255,0.05)',
                     boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
                   }}
                   dir={isRTL ? 'rtl' : 'ltr'}
                 >
-                  
+
                   {/* Brand Header */}
                   <div style={{ gridColumn: '1 / -1', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '1.5rem', marginBottom: '0.5rem' }}>
                     <AnimatePresence mode="wait">
@@ -173,14 +165,14 @@ const BrandGallery = () => {
 
                   {/* Typography & Technical Details */}
                   <AnimatePresence mode="wait">
-                    <motion.div 
+                    <motion.div
                       key={`left-${hoveredProject.id}`}
                       initial={{ opacity: 0, x: isRTL ? 20 : -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: isRTL ? -20 : 20 }} transition={{ duration: 0.4, ease: "easeOut" }}
                     >
                       <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.1rem', fontWeight: 500, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: isRTL ? 'normal' : '2px', color: '#fff' }}>
                         <List size={18} /> {t('brand_gallery.specifications')}
                       </h3>
-                      
+
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                         {/* Typography */}
                         <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
@@ -197,7 +189,7 @@ const BrandGallery = () => {
                             </div>
                           )}
                         </div>
-                        
+
 
                       </div>
                     </motion.div>
@@ -205,34 +197,34 @@ const BrandGallery = () => {
 
                   {/* Color Palette & Statement */}
                   <AnimatePresence mode="wait">
-                    <motion.div 
+                    <motion.div
                       key={`right-${hoveredProject.id}`}
                       initial={{ opacity: 0, x: isRTL ? -20 : 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: isRTL ? 20 : -20 }} transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
                     >
                       <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.1rem', fontWeight: 500, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: isRTL ? 'normal' : '2px', color: '#fff' }}>
                         <Heart size={18} /> {t('brand_gallery.identity_elements')}
                       </h3>
-                      
+
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                         {/* Color Palette */}
                         <div>
                           <p style={{ margin: '0 0 12px 0', fontSize: '0.8rem', color: '#888', textTransform: 'uppercase', letterSpacing: isRTL ? 'normal' : '1px' }}>{t('brand_gallery.color_system')}</p>
                           <div style={{ display: 'flex', gap: '16px' }}>
                             {hoveredProject.visualIdentity?.colorSystem?.slice(0, 5).map((color, idx) => (
-                              <div 
-                                key={idx} 
-                                style={{ 
-                                  width: '45px', height: '45px', borderRadius: '50%', 
-                                  backgroundColor: color.hex || color, 
+                              <div
+                                key={idx}
+                                style={{
+                                  width: '45px', height: '45px', borderRadius: '50%',
+                                  backgroundColor: color.hex || color,
                                   boxShadow: `0 8px 20px ${(color.hex || color)}60, inset 0 2px 4px rgba(255,255,255,0.3)`,
                                   border: '2px solid rgba(255,255,255,0.1)'
-                                }} 
+                                }}
                                 title={color.name || color}
                               />
                             ))}
                           </div>
                         </div>
-                        
+
                         {/* Statement Snippet */}
                         <div>
                           <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem', color: '#888', textTransform: 'uppercase', letterSpacing: isRTL ? 'normal' : '1px' }}>{t('brand_gallery.brand_essence')}</p>
@@ -253,7 +245,7 @@ const BrandGallery = () => {
 
       {/* The Collection Section (Standard Archive) */}
       <section style={{ minHeight: '100vh', padding: '10vh 5%', position: 'relative', zIndex: 2 }}>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -278,7 +270,7 @@ const BrandGallery = () => {
 
 const ProjectCard = ({ project, index, navigate, isRTL, t }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -303,7 +295,7 @@ const ProjectCard = ({ project, index, navigate, isRTL, t }) => {
         <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 300, margin: 0 }}>{isRTL ? project.brandNameAr || project.brandName : project.brandName}</h3>
         <span style={{ color: '#666', fontSize: '1.2rem', fontWeight: 300, display: window.innerWidth > 768 ? 'block' : 'none' }}>{isRTL ? project.industryAr || project.industry : project.industry}</span>
       </div>
-      
+
       <div style={{ display: 'flex', alignItems: 'center', gap: '3rem', zIndex: 2 }}>
         <span style={{ color: '#666', fontSize: '1.1rem', letterSpacing: isRTL ? 'normal' : '1px' }}>{project.year}</span>
         <span style={{ padding: '8px 16px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '30px', fontSize: '0.9rem', color: '#aaa' }}>{isRTL ? project.typeAr || project.type : project.type}</span>

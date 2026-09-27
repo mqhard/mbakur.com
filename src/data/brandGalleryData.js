@@ -40,28 +40,28 @@ export const galleryProjects = [
           titleEn: "Architectural Geometry", 
           descAr: "مبني بدقة رياضية صارمة تستلهم من النسب الذهبية لتجسد توازناً بصرياً يفيض بالوقار.",
           descEn: "Built on strict mathematical precision inspired by golden ratios, embodying a visual balance that exudes prestige.",
-          icon: "📐"
+          icon: "Ruler"
         },
         { 
           titleAr: "الأيقونة الخالدة", 
           titleEn: "The Timeless Icon", 
           descAr: "رمز استثنائي يختزل الفخامة العقارية، صُمم ليترك أثراً عميقاً ومستداماً في الذاكرة.",
           descEn: "An exceptional symbol distilling real estate luxury, designed to leave a profound and lasting legacy in memory.",
-          icon: "✨"
+          icon: "Sparkles"
         },
         { 
           titleAr: "شخصية الطباعة", 
           titleEn: "Typographic Persona", 
           descAr: "حروف صُيغت ببراعة لتمزج بين أصالة الجذور ورؤية المستقبل بعنفوان وثقة لا تُضاهى.",
           descEn: "Lettering masterfully crafted to merge heritage roots with a visionary future, projecting unmatched confidence.",
-          icon: "✍️"
+          icon: "PenTool"
         },
         { 
           titleAr: "المرونة المطلقة", 
           titleEn: "Absolute Versatility", 
           descAr: "تحفة بصرية تتكيف بهيبة تامة؛ من الواجهات المعمارية العملاقة إلى أدق التفاصيل الرقمية.",
           descEn: "A visual masterpiece adapting flawlessly; from towering architectural facades to the finest digital details.",
-          icon: "🔄"
+          icon: "RefreshCw"
         }
       ]
     },
@@ -119,7 +119,7 @@ export const galleryProjects = [
       }
     },
     visualIdentity: {
-      logoScreen: "/images/brands/samt/icon_samt.png", 
+      logoScreen: "/images/brands/samt/icon_samt_white.png", 
       colorSystem: [
         { hex: "#1A1C1D", name: "Charcoal Black", rgb: "26, 28, 29", cmyk: "70, 60, 60, 80", pantone: "433 C", desc: "A grounded and deep charcoal representing the strength of raw materials." },
         { hex: "#C6725B", name: "Terracotta", rgb: "198, 114, 91", cmyk: "15, 60, 65, 5", pantone: "7601 C", desc: "A warm, earthy accent inspired by traditional Arabian clay and sunset light." },
