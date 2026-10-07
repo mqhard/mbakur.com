@@ -1,12 +1,20 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, ArrowRight, Menu, X, User } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 export default function SiteHeader({ onLogin }) {
   const { i18n, t } = useTranslation();
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
+  useEffect(() => {
+    let live = true;
+    supabase.auth.getSession().then(({ data }) => { if (live) setSignedIn(!!data.session); });
+    const { data } = supabase.auth.onAuthStateChange((_event, session) => setSignedIn(!!session));
+    return () => { live = false; data.subscription.unsubscribe(); };
+  }, []);
   const toggle = useRef(null);
   const ar = i18n.language === 'ar';
   const Back = ar ? ArrowRight : ArrowLeft;
@@ -30,7 +38,7 @@ export default function SiteHeader({ onLogin }) {
         <div className="site-header__actions">
           {pathname !== '/' && <Link className="ui-icon-button" to={pathname.startsWith('/brand-project/') ? '/brand-gallery' : '/'} aria-label={ar ? 'العودة' : 'Back'}><Back size={20} /></Link>}
           <button className="ui-button ui-button--quiet site-header__language" lang={ar ? 'en' : 'ar'} onClick={() => i18n.changeLanguage(ar ? 'en' : 'ar')}>{ar ? 'English' : 'عربي'}</button>
-          <button className="ui-icon-button" onClick={onLogin} aria-label={ar ? 'تسجيل الدخول' : 'Sign in'}><User size={20} /></button>
+          {signedIn ? <Link className="ui-icon-button" to="/dashboard" aria-label={ar ? 'حسابي' : 'My account'}><User size={20} /></Link> : <button className="ui-icon-button" onClick={onLogin} aria-label={ar ? 'تسجيل الدخول' : 'Sign in'}><User size={20} /></button>}
           <button ref={toggle} className="ui-icon-button site-header__menu" aria-expanded={open} aria-controls="site-navigation" aria-label={ar ? (open ? 'إغلاق القائمة' : 'فتح القائمة') : (open ? 'Close menu' : 'Open menu')} onClick={() => setOpen(!open)}>{open ? <X size={20} /> : <Menu size={20} />}</button>
         </div>
       </div>

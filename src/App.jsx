@@ -9,6 +9,8 @@ import CinematicStudio from './pages/CinematicStudio';
 import ProudProjects from './pages/ProudProjects';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import ResetPassword from './pages/ResetPassword';
+import Privacy from './pages/Privacy';
 import BrandIdentity from './pages/BrandIdentity';
 import BrandGallery from './pages/BrandGallery';
 import BrandGuideViewer from './pages/BrandGuideViewer';
@@ -42,6 +44,8 @@ function App() {
         <Route path="/legacy" element={<ProudProjects />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/privacy" element={<Privacy />} />
         <Route path="/brand-gallery" element={<BrandGallery />} />
         <Route path="/brand-project/:id" element={<BrandGuideViewer />} />
       </Routes>
